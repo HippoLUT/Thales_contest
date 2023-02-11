@@ -84,7 +84,8 @@ RUN apt-get -y update && \
 		vim \
 		wget \
 		ovmf \
-		xz-utils
+		xz-utils\
+		gcc-9-plugin-dev
 
 # Install rule for udev to access HS2 cable
 RUN echo "ATTRS{idVendor}==\"0403\", ATTRS{idProduct}==\"6014\", MODE=\"660\", GROUP=\"plugdev\", TAG+=\"uaccess\"" > /etc/udev/rules.d/60-openocd.rules
