@@ -1,0 +1,17 @@
+WIKI add commit push 
+- quand on veut ajouter quelque chose sur sa branche - 
+
+1. Vérifier la branche sur laquelle on est 
+git rev-parse --abbrev-ref HEAD
+(pour changer de branche utiliser git checkout mais ATTENTION les modifications faites sur une branche ne se transfèrent pas sur la nouvelle branche !)
+
+2. Enregistrer un instantané de l'état actuel dans l'historique des commits
+git add . 
+
+3. Capturer l'état d'un projet avec un message (pour reconnaître les commits)
+git commit -m "MESSAGE DESCRIPTION DU COMMIT"
+(pour le message, si on a ajouté ou dev qqchose commencer par => "feat: ...")
+(pour le message, si on a corrigé quelque chose commencer par => "fix: ...")
+
+4. Pousser toutes ces modifications sur la branche gitHub
+git push

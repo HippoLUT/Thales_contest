@@ -1,0 +1,22 @@
+WIKI CLONE GITHUB REPO
+-avec ssh connexion-
+
+1. créer une clé ssh et l'enregister sur son github perso :
+
+generate key : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent 
+adding key to GitHub account : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account 
+
+2. cloner le repo (sur terminal ubuntu)
+
+git clone git@github.com:[LIEN_CLONE_SSH]
+git clone git@github.com:gabriel-cs23/Thales_contest.git
+
+
+3. Basculer vers sa propre branche (une fois dans le dossier du projet)
+
+git checkout [NOM_DE_LA_BRANCHE]
+git checkout main
+
+(4. parfois lorsqu'on n'est pas reconnu par ubunutu : 
+git config user.email example@gmail.com
+

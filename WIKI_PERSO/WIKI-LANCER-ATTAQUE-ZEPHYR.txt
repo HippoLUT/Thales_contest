@@ -1,0 +1,14 @@
+WIKI lancer une attaque sur Zephyr
+
+1. une fois le docker lancé, choisir l'attaque en question :
+
+cd /workdir/ripe/src
+vim ripe_attack_generator.c
+
+2. lancer la commande pour build les attaques 
+ west build -p -b qemu_riscv32 /workdir/ripe
+
+3. lancer les attaques ripe 
+west build -t run 
+
+Si pas d'affichage de "success" alors c'est gagné !
