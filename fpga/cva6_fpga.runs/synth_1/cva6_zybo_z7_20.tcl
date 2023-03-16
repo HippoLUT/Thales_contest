@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-15816-boyer-Inspiron-16-Plus/incrSyn
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-130824-boyer-Inspiron-16-Plus/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-4480} -limit 1000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -106,10 +106,11 @@ set_property is_global_include true [get_files /home/boyer/git_complet_pro/Thale
 set_property file_type "Verilog Header" [get_files /home/boyer/git_complet_pro/Thales_contest/src/common_cells/include/common_cells/registers.svh]
 set_property is_global_include true [get_files /home/boyer/git_complet_pro/Thales_contest/src/common_cells/include/common_cells/registers.svh]
 read_verilog -library xil_defaultlib -sv {
-  /home/boyer/git_complet_pro/Thales_contest/src/fpga-support/rtl/SyncSpRamBeNx64.sv
   /home/boyer/git_complet_pro/Thales_contest/include/riscv_pkg.sv
   /home/boyer/git_complet_pro/Thales_contest/src/riscv-dbg/src/dm_pkg.sv
   /home/boyer/git_complet_pro/Thales_contest/include/ariane_pkg.sv
+  /home/boyer/git_complet_pro/Thales_contest/src/CFI.sv
+  /home/boyer/git_complet_pro/Thales_contest/src/fpga-support/rtl/SyncSpRamBeNx64.sv
   /home/boyer/git_complet_pro/Thales_contest/src/alu.sv
   /home/boyer/git_complet_pro/Thales_contest/src/cache_subsystem/amo_alu.sv
   /home/boyer/git_complet_pro/Thales_contest/src/amo_buffer.sv

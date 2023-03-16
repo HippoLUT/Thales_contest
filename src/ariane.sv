@@ -38,6 +38,11 @@ module ariane import ariane_pkg::*; #(
   // Timer facilities
   input  logic                         time_irq_i,   // timer interrupt in (async)
   input  logic                         debug_req_i,  // debug request (async)
+  
+  //CNR Ma partie pour les tests : 
+  output logic [1:0]    detection_signal_on_commit_JALR_o,
+  output logic [1:0]    detection_signal_on_commit_NOP_o,
+               
 `ifdef FIRESIM_TRACE
   // firesim trace port
   output traced_instr_pkg::trace_port_t trace_o,
@@ -237,7 +242,7 @@ module ariane import ariane_pkg::*; #(
   dcache_req_o_t [2:0]      dcache_req_ports_cache_ex;
   logic                     dcache_commit_wbuffer_empty;
   logic                     dcache_commit_wbuffer_not_ni;
-
+ 
   // --------------
   // Frontend
   // --------------
@@ -605,6 +610,19 @@ module ariane import ariane_pkg::*; #(
     .flush_icache_o         ( icache_flush_ctrl_cache       ),
     .*
   );
+  //CNR CFI Block
+    CFI_Mod cfi (
+    
+    .clk_i  (clk_i),
+    .rst_ni (rst_ni),
+    
+    .commit_instr_i (commit_instr_id_commit),
+    .commit_ack_i (commit_ack),
+    .detection_signal_on_commit_JALR (detection_signal_on_commit_JALR_o),
+    .detection_signal_on_commit_NOP (detection_signal_on_commit_NOP_o)
+    );
+    
+  
 
   // -------------------
   // Cache Subsystem

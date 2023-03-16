@@ -9,7 +9,7 @@ int main()
 
         printf("Je pars vers ma fonction\n");
 	fonction_cache();
-        __asm__("ADDI x0, x0, 0");
+        __asm__("ADDI x0, x1, 0");
         printf("Je reviens de ma fonction\n");
         variable_1  = variable_2;
 

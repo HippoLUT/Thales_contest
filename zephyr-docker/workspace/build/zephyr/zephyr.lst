@@ -983,8 +983,8 @@ void fonction_cache()
 80000a68:	7cd030ef          	jal	ra,80004a34 <iprintf>
 	fonction_cache();
 80000a6c:	fa9ff0ef          	jal	ra,80000a14 <fonction_cache>
-        __asm__("ADDI x0, x0, 0");
-80000a70:	00000013          	nop
+        __asm__("ADDI x0, x1, 0");
+80000a70:	00008013          	mv	zero,ra
         printf("Je reviens de ma fonction\n");
 80000a74:	80006537          	lui	a0,0x80006
 80000a78:	6c850513          	addi	a0,a0,1736 # 800066c8 <CONFIG_SYSTEM_WORKQUEUE_PRIORITY+0x800066c9>
