@@ -3,12 +3,12 @@
 void fonction_cache();
 
 int main()
+{
         int variable_1 = 1;
         int variable_2 = 132;
 
         printf("Je pars vers ma fonction\n");
-
-        fonction_cache();
+	fonction_cache();
         __asm__("ADDI x0, x0, 0");
         printf("Je reviens de ma fonction\n");
         variable_1  = variable_2;

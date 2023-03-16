@@ -1,214 +1,99 @@
 # 0 "/workdir/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/workdir/zephyr/boards/riscv/qemu_riscv32/qemu_riscv32.dts" 1
-
-
+# 1 "/workdir/zephyr/boards/riscv/cv32a6_zybo/cv32a6_zybo.dts" 1
 /dts-v1/;
 
-# 1 "/workdir/zephyr/dts/riscv/virt.dtsi" 1 3 4
-# 13 "/workdir/zephyr/dts/riscv/virt.dtsi" 3 4
-/dts-v1/;
+# 1 "/workdir/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/workdir/zephyr/dts/common/skeleton.dtsi" 3 4
+/ {
+ #address-cells = <1>;
+ #size-cells = <1>;
+ chosen { };
+ aliases { };
+};
+# 4 "/workdir/zephyr/boards/riscv/cv32a6_zybo/cv32a6_zybo.dts" 2
 
 / {
- #address-cells = < 0x01 >;
- #size-cells = < 0x01 >;
- compatible = "riscv-virtio";
- model = "riscv-virtio,qemu";
+  #address-cells = <2>;
+  #size-cells = <2>;
+  compatible = "eth,cva6-bare-dev";
+  model = "eth,cva6-bare";
+  chosen {
+    stdout-path = "/soc/uart@10000000:115200";
+    zephyr,console = &UART0;
+    zephyr,shell-uart = &UART0;
+    zephyr,sram = &DDR0;
 
- flash@20000000 {
-  bank-width = < 0x04 >;
-  reg = < 0x20000000 0x2000000 0x22000000 0x2000000 >;
-  compatible = "cfi-flash";
- };
 
- uart0: uart@10000000 {
-  interrupts = < 0x0a 1 >;
-  interrupt-parent = < &plic >;
-  clock-frequency = < 0x384000 >;
-  reg = < 0x10000000 0x100 >;
-  compatible = "ns16550";
-  reg-shift = < 0 >;
- };
-
- cpus {
-  #address-cells = < 0x01 >;
-  #size-cells = < 0x00 >;
-  timebase-frequency = < 10000000 >;
-
-  cpu@0 {
-   device_type = "cpu";
-   reg = < 0x00 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic0: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
   };
+  cpus {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    timebase-frequency = <12500000>;
+    CPU0: cpu@0 {
+      clock-frequency = <25000000>;
+      device_type = "cpu";
+      reg = <0>;
+      status = "okay";
+      compatible = "ohwg,cva6", "riscv";
+      riscv,isa = "rv32ima";
+      mmu-type = "riscv,sv32";
+      tlb-split;
 
-  cpu@1 {
-   device_type = "cpu";
-   reg = < 0x01 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic1: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
+      CPU0_intc: interrupt-controller {
+        #interrupt-cells = <1>;
+        interrupt-controller;
+        compatible = "riscv,cpu-intc";
+      };
+    };
   };
-
-  cpu@2 {
-   device_type = "cpu";
-   reg = < 0x02 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic2: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
+  DDR0: memory@80000000 {
+    device_type = "memory";
+    reg = <0x0 0x80000000 0x0 0x40000000>;
   };
+  L26: soc {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    compatible = "eth,cva6-bare-soc", "simple-bus";
+    ranges;
+    clint@2000000 {
+      compatible = "sifive,clint0";
+      interrupts-extended = <&CPU0_intc 3 &CPU0_intc 7>;
+      reg = <0x0 0x2000000 0x0 0xc0000>;
+      reg-names = "control";
+    };
+    PLIC0: interrupt-controller@c000000 {
+      #address-cells = <0>;
+      #interrupt-cells = <2>;
+      compatible = "sifive,plic-1.0.0";
+      interrupt-controller;
+      interrupts-extended = <&CPU0_intc 11 &CPU0_intc 9>;
 
-  cpu@3 {
-   device_type = "cpu";
-   reg = < 0x03 >;
-   status = "okay";
-   compatible = "riscv";
 
-   hlic3: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
+      reg = <0 0x0c000000 0 0x00002000
+          0 0x0c002000 0 0x001fe000
+          0 0x0c200000 0 0x03e00000>;
+      reg-names = "prio", "irq_en", "reg";
+      riscv,max-priority = <7>;
+      riscv,ndev = <30>;
+    };
+    debug-controller@0 {
+      compatible = "riscv,debug-013";
+      interrupts-extended = <&CPU0_intc 65535>;
+      reg = <0x0 0x0 0x0 0x1000>;
+      reg-names = "control";
+    };
+    UART0: uart@10000000 {
+      compatible = "ns16750", "ns16550";
+      reg = <0x0 0x10000000 0x0 0x1000>;
+      clock-frequency = <25000000>;
+      current-speed = <115200>;
+      interrupt-parent = <&PLIC0>;
+      interrupts = <1 1>;
+      reg-shift = <2>;
+    };
   };
-
-  cpu@4 {
-   device_type = "cpu";
-   reg = < 0x04 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic4: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
-  };
-
-  cpu@5 {
-   device_type = "cpu";
-   reg = < 0x05 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic5: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
-  };
-
-  cpu@6 {
-   device_type = "cpu";
-   reg = < 0x06 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic6: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
-  };
-
-  cpu@7 {
-   device_type = "cpu";
-   reg = < 0x07 >;
-   status = "okay";
-   compatible = "riscv";
-
-   hlic7: interrupt-controller {
-    compatible = "riscv,cpu-intc";
-    #address-cells = <0>;
-    #interrupt-cells = < 0x01 >;
-    interrupt-controller;
-   };
-  };
- };
-
- ram0: memory@80000000 {
-  device_type = "memory";
-  reg = < 0x80000000 0x10000000 >;
- };
-
- soc {
-  #address-cells = < 0x01 >;
-  #size-cells = < 0x01 >;
-  compatible = "simple-bus";
-  ranges;
-
-  plic: interrupt-controller@c000000 {
-   riscv,max-priority = <7>;
-   riscv,ndev = < 0x35 >;
-   reg = <0x0c000000 0x00002000
-          0x0c002000 0x001fe000
-          0x0c200000 0x03e00000>;
-   reg-names = "prio", "irq_en", "reg";
-   interrupts-extended = <
-    &hlic0 0x0b &hlic0 0x09
-    &hlic1 0x0b &hlic1 0x09
-    &hlic2 0x0b &hlic2 0x09
-    &hlic3 0x0b &hlic3 0x09
-    &hlic4 0x0b &hlic4 0x09
-    &hlic5 0x0b &hlic5 0x09
-    &hlic6 0x0b &hlic6 0x09
-    &hlic7 0x0b &hlic7 0x09
-   >;
-   interrupt-controller;
-   compatible = "sifive,plic-1.0.0";
-   #address-cells = < 0x00 >;
-   #interrupt-cells = < 0x02 >;
-  };
-
-  clint@2000000 {
-   compatible = "sifive,clint0";
-   reg = <0x2000000 0x10000>;
-   interrupts-extended = <&hlic0 0x03 &hlic0 0x07
-            &hlic1 0x03 &hlic1 0x07
-            &hlic2 0x03 &hlic2 0x07
-            &hlic3 0x03 &hlic3 0x07
-            &hlic4 0x03 &hlic4 0x07
-            &hlic5 0x03 &hlic5 0x07
-            &hlic6 0x03 &hlic6 0x07
-            &hlic7 0x03 &hlic7 0x07>;
-  };
- };
-};
-# 6 "/workdir/zephyr/boards/riscv/qemu_riscv32/qemu_riscv32.dts" 2
-
-/ {
- chosen {
-  zephyr,console = &uart0;
-  zephyr,shell-uart = &uart0;
-  zephyr,sram = &ram0;
- };
-};
-
-&uart0 {
- status = "okay";
 };
 # 0 "<command-line>" 2
 # 1 "/workdir/zephyr/misc/empty_file.c"

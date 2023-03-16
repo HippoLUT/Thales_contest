@@ -1,0 +1,30 @@
+# Available runners configured by board.cmake.
+runners:
+- openocd
+
+# Default flash runner if --runner is not given.
+flash-runner: openocd
+
+# Default debug runner if --runner is not given.
+debug-runner: openocd
+
+# Common runner configuration values.
+config:
+  board_dir: /workdir/zephyr/boards/riscv/cv32a6_zybo
+  # Build outputs:
+  elf_file: zephyr.elf
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gdb-py
+  openocd: /opt/toolchains/zephyr-sdk-0.15.1/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /opt/toolchains/zephyr-sdk-0.15.1/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  openocd:
+    - --cmd-load
+    - flash write_image erase
+    - --cmd-verify
+    - verify_image
+    - --config=/workdir/zephyr/boards/riscv/cv32a6_zybo/support/openocd_digilent_hs2.cfg

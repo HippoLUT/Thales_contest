@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/workdir/build/zephyr/soc/riscv/riscv-privilege/virt/cmake_install.cmake")
+  include("/workdir/build/zephyr/soc/riscv/riscv-privilege/cva6/cmake_install.cmake")
 endif()
 

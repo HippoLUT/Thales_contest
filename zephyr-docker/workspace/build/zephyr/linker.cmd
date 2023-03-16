@@ -2,7 +2,7 @@
  OUTPUT_FORMAT("elf32-littleriscv")
 MEMORY
 {
-    RAM (rwx) : ORIGIN = 0x80000000, LENGTH = ((262144) << 10)
+    RAM (rwx) : ORIGIN = 0x80000000, LENGTH = ((1048576) << 10)
    
     IDT_LIST (wx) : ORIGIN = 0xFFFFF7FF, LENGTH = 2K
 }
@@ -169,25 +169,6 @@ ztest :
   KEEP(*(SORT_BY_NAME("._cfb_font.*")))
   __font_entry_end = .;
  } > RAM
- tdata :
- {
-  *(.tdata .tdata.* .gnu.linkonce.td.*);
- } > RAM
- tbss :
- {
-  *(.tbss .tbss.* .gnu.linkonce.tb.* .tcommon);
- } > RAM
- PROVIDE(__tdata_start = ADDR(tdata));
- PROVIDE(__tdata_size = SIZEOF(tdata));
- PROVIDE(__tdata_end = __tdata_start + __tdata_size);
- PROVIDE(__tdata_align = ALIGNOF(tdata));
- PROVIDE(__tbss_start = ADDR(tbss));
- PROVIDE(__tbss_size = SIZEOF(tbss));
- PROVIDE(__tbss_end = __tbss_start + __tbss_size);
- PROVIDE(__tbss_align = ALIGNOF(tbss));
- PROVIDE(__tls_start = __tdata_start);
- PROVIDE(__tls_end = __tbss_end);
- PROVIDE(__tls_size = __tbss_end - __tdata_start);
     rodata :
  {
    . = ALIGN(4);
@@ -200,11 +181,6 @@ ztest :
  . = ALIGN(4);
  } > RAM
  __rodata_region_end = .;
- rom_mpu_padding :
- {
-  . = ALIGN(4);
-  . = ALIGN(0x1000);
- } > RAM
  __rom_region_end = .;
  __rom_region_size = __rom_region_end - __rom_region_start;
    
@@ -213,7 +189,7 @@ ztest :
  _image_ram_start = .;
     bss (NOLOAD) :
  {
-  . = ALIGN(4);
+ 
    . = ALIGN(4);
    __bss_start = .;
   __kernel_ram_start = .;
@@ -284,7 +260,7 @@ noinit (NOLOAD) :
   KEEP(*(SORT_BY_NAME("._net_buf_pool.static.*")))
  } > RAM
     __data_region_end = .;
-    . = ALIGN(4);
+   
      _image_ram_end = .;
      _end = .;
  __kernel_ram_end = .;

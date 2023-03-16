@@ -1,4 +1,4 @@
-# Install script for directory: /workdir/zephyr/samples/hello_world
+# Install script for directory: /workdir/test/ripe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

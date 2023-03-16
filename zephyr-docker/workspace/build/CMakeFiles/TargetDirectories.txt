@@ -18,8 +18,6 @@
 /workdir/build/CMakeFiles/compiler.dir
 /workdir/build/CMakeFiles/config-twister.dir
 /workdir/build/zephyr/CMakeFiles/edit_cache.dir
-/workdir/build/zephyr/CMakeFiles/debugserver.dir
-/workdir/build/zephyr/CMakeFiles/run_qemu.dir
 /workdir/build/zephyr/CMakeFiles/run.dir
 /workdir/build/zephyr/CMakeFiles/zephyr_final.dir
 /workdir/build/zephyr/CMakeFiles/linker_zephyr_final_script_target.dir
@@ -33,7 +31,6 @@
 /workdir/build/zephyr/CMakeFiles/offsets_h.dir
 /workdir/build/zephyr/CMakeFiles/zephyr_pre1.dir
 /workdir/build/zephyr/CMakeFiles/kobj_types_h_target.dir
-/workdir/build/zephyr/CMakeFiles/debugserver_qemu.dir
 /workdir/build/zephyr/CMakeFiles/linker_zephyr_prebuilt_script_target.dir
 /workdir/build/zephyr/CMakeFiles/zephyr_generated_headers.dir
 /workdir/build/zephyr/CMakeFiles/parse_syscalls_target.dir
@@ -53,9 +50,9 @@
 /workdir/build/zephyr/lib/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/lib/libc/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/lib/libc/CMakeFiles/edit_cache.dir
-/workdir/build/zephyr/lib/libc/minimal/CMakeFiles/edit_cache.dir
-/workdir/build/zephyr/lib/libc/minimal/CMakeFiles/rebuild_cache.dir
-/workdir/build/zephyr/lib/libc/minimal/CMakeFiles/lib__libc__minimal.dir
+/workdir/build/zephyr/lib/libc/newlib/CMakeFiles/edit_cache.dir
+/workdir/build/zephyr/lib/libc/newlib/CMakeFiles/rebuild_cache.dir
+/workdir/build/zephyr/lib/libc/newlib/CMakeFiles/lib__libc__newlib.dir
 /workdir/build/zephyr/lib/posix/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/lib/posix/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/lib/posix/CMakeFiles/lib__posix.dir
@@ -69,8 +66,8 @@
 /workdir/build/zephyr/soc/riscv/riscv-privilege/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/soc/riscv/riscv-privilege/common/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/soc/riscv/riscv-privilege/common/CMakeFiles/edit_cache.dir
-/workdir/build/zephyr/soc/riscv/riscv-privilege/virt/CMakeFiles/rebuild_cache.dir
-/workdir/build/zephyr/soc/riscv/riscv-privilege/virt/CMakeFiles/edit_cache.dir
+/workdir/build/zephyr/soc/riscv/riscv-privilege/cva6/CMakeFiles/rebuild_cache.dir
+/workdir/build/zephyr/soc/riscv/riscv-privilege/cva6/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/boards/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/boards/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/subsys/CMakeFiles/rebuild_cache.dir
@@ -256,11 +253,12 @@
 /workdir/build/zephyr/kernel/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/kernel/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/kernel/CMakeFiles/kernel.dir
+/workdir/build/zephyr/cmake/flash/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/cmake/flash/CMakeFiles/flash.dir
 /workdir/build/zephyr/cmake/flash/CMakeFiles/debug.dir
+/workdir/build/zephyr/cmake/flash/CMakeFiles/debugserver.dir
 /workdir/build/zephyr/cmake/flash/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/cmake/flash/CMakeFiles/attach.dir
-/workdir/build/zephyr/cmake/flash/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/cmake/usage/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/cmake/usage/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/cmake/usage/CMakeFiles/usage.dir

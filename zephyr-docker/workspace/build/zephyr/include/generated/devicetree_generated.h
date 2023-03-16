@@ -9,30 +9,17 @@
  *
  * Node dependency ordering (ordinal and path):
  *   0   /
- *   1   /chosen
- *   2   /flash@20000000
+ *   1   /aliases
+ *   2   /chosen
  *   3   /memory@80000000
  *   4   /soc
  *   5   /cpus
  *   6   /cpus/cpu@0
  *   7   /cpus/cpu@0/interrupt-controller
- *   8   /cpus/cpu@1
- *   9   /cpus/cpu@1/interrupt-controller
- *   10  /cpus/cpu@2
- *   11  /cpus/cpu@2/interrupt-controller
- *   12  /cpus/cpu@3
- *   13  /cpus/cpu@3/interrupt-controller
- *   14  /cpus/cpu@4
- *   15  /cpus/cpu@4/interrupt-controller
- *   16  /cpus/cpu@5
- *   17  /cpus/cpu@5/interrupt-controller
- *   18  /cpus/cpu@6
- *   19  /cpus/cpu@6/interrupt-controller
- *   20  /cpus/cpu@7
- *   21  /cpus/cpu@7/interrupt-controller
- *   22  /soc/interrupt-controller@c000000
- *   23  /uart@10000000
- *   24  /soc/clint@2000000
+ *   8   /soc/clint@2000000
+ *   9   /soc/debug-controller@0
+ *   10  /soc/interrupt-controller@c000000
+ *   11  /soc/uart@10000000
  *
  * Definitions derived from these nodes in dependency order are next,
  * followed by /chosen nodes.
@@ -54,14 +41,14 @@
 #define DT_N_FULL_NAME "/"
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_FOREACH_CHILD(fn) fn(DT_N_S_flash_20000000) fn(DT_N_S_uart_10000000) fn(DT_N_S_cpus) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_chosen)
-#define DT_N_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_flash_20000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_uart_10000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_chosen)
-#define DT_N_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_flash_20000000, __VA_ARGS__) fn(DT_N_S_uart_10000000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_memory_80000000, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__)
-#define DT_N_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_flash_20000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_uart_10000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_chosen, __VA_ARGS__)
-#define DT_N_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_flash_20000000) fn(DT_N_S_uart_10000000) fn(DT_N_S_cpus) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_chosen)
-#define DT_N_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_flash_20000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_uart_10000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_chosen)
-#define DT_N_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_flash_20000000, __VA_ARGS__) fn(DT_N_S_uart_10000000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_memory_80000000, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__)
-#define DT_N_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_flash_20000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_uart_10000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_chosen, __VA_ARGS__)
+#define DT_N_FOREACH_CHILD(fn) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_cpus) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc)
+#define DT_N_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_chosen) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_aliases) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc)
+#define DT_N_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_memory_80000000, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__)
+#define DT_N_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_chosen, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_aliases, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc, __VA_ARGS__)
+#define DT_N_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_cpus) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc)
+#define DT_N_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_chosen) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_aliases) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc)
+#define DT_N_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_memory_80000000, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__)
+#define DT_N_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_chosen, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_aliases, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_memory_80000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
 #define DT_N_ORD 0
@@ -71,33 +58,32 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_SUPPORTS_ORDS \
-	1, /* /chosen */ \
-	2, /* /flash@20000000 */ \
+	1, /* /aliases */ \
+	2, /* /chosen */ \
 	3, /* /memory@80000000 */ \
 	4, /* /soc */ \
-	5, /* /cpus */ \
-	23, /* /uart@10000000 */
+	5, /* /cpus */
 
 /* Existence and alternate IDs: */
 #define DT_N_EXISTS 1
-#define DT_N_INST_0_riscv_virtio DT_N
+#define DT_N_INST_0_eth_cva6_bare_dev DT_N
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_REG_NUM 0
 #define DT_N_RANGES_NUM 0
 #define DT_N_FOREACH_RANGE(fn) 
 #define DT_N_IRQ_NUM 0
-#define DT_N_COMPAT_MATCHES_riscv_virtio 1
+#define DT_N_COMPAT_MATCHES_eth_cva6_bare_dev 1
 #define DT_N_STATUS_okay 1
 
 /* Pin control (pinctrl-<i>, pinctrl-names) properties: */
 #define DT_N_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_P_compatible {"riscv-virtio"}
-#define DT_N_P_compatible_IDX_0 "riscv-virtio"
-#define DT_N_P_compatible_IDX_0_STRING_TOKEN riscv_virtio
-#define DT_N_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_VIRTIO
+#define DT_N_P_compatible {"eth,cva6-bare-dev"}
+#define DT_N_P_compatible_IDX_0 "eth,cva6-bare-dev"
+#define DT_N_P_compatible_IDX_0_STRING_TOKEN eth_cva6_bare_dev
+#define DT_N_P_compatible_IDX_0_STRING_UPPER_TOKEN ETH_CVA6_BARE_DEV
 #define DT_N_P_compatible_IDX_0_EXISTS 1
 #define DT_N_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N, compatible, 0)
 #define DT_N_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N, compatible, 0)
@@ -105,6 +91,59 @@
 #define DT_N_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N, compatible, 0, __VA_ARGS__)
 #define DT_N_P_compatible_LEN 1
 #define DT_N_P_compatible_EXISTS 1
+
+/*
+ * Devicetree node: /aliases
+ *
+ * Node identifier: DT_N_S_aliases
+ */
+
+/* Node's full path: */
+#define DT_N_S_aliases_PATH "/aliases"
+
+/* Node's name with unit-address: */
+#define DT_N_S_aliases_FULL_NAME "aliases"
+
+/* Node parent (/) identifier: */
+#define DT_N_S_aliases_PARENT DT_N
+
+/* Node's index in its parent's list of children: */
+#define DT_N_S_aliases_CHILD_IDX 1
+
+/* Helper macros for child nodes of this node. */
+#define DT_N_S_aliases_FOREACH_CHILD(fn) 
+#define DT_N_S_aliases_FOREACH_CHILD_SEP(fn, sep) 
+#define DT_N_S_aliases_FOREACH_CHILD_VARGS(fn, ...) 
+#define DT_N_S_aliases_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_aliases_FOREACH_CHILD_STATUS_OKAY(fn) 
+#define DT_N_S_aliases_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
+#define DT_N_S_aliases_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
+#define DT_N_S_aliases_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
+
+/* Node's dependency ordinal: */
+#define DT_N_S_aliases_ORD 1
+
+/* Ordinals for what this node depends on directly: */
+#define DT_N_S_aliases_REQUIRES_ORDS \
+	0, /* / */
+
+/* Ordinals for what depends directly on this node: */
+#define DT_N_S_aliases_SUPPORTS_ORDS /* nothing */
+
+/* Existence and alternate IDs: */
+#define DT_N_S_aliases_EXISTS 1
+
+/* Macros for properties that are special in the specification: */
+#define DT_N_S_aliases_REG_NUM 0
+#define DT_N_S_aliases_RANGES_NUM 0
+#define DT_N_S_aliases_FOREACH_RANGE(fn) 
+#define DT_N_S_aliases_IRQ_NUM 0
+#define DT_N_S_aliases_STATUS_okay 1
+
+/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
+#define DT_N_S_aliases_PINCTRL_NUM 0
+
+/* (No generic property macros) */
 
 /*
  * Devicetree node: /chosen
@@ -122,7 +161,7 @@
 #define DT_N_S_chosen_PARENT DT_N
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_chosen_CHILD_IDX 5
+#define DT_N_S_chosen_CHILD_IDX 0
 
 /* Helper macros for child nodes of this node. */
 #define DT_N_S_chosen_FOREACH_CHILD(fn) 
@@ -135,7 +174,7 @@
 #define DT_N_S_chosen_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_chosen_ORD 1
+#define DT_N_S_chosen_ORD 2
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_chosen_REQUIRES_ORDS \
@@ -158,104 +197,6 @@
 #define DT_N_S_chosen_PINCTRL_NUM 0
 
 /* (No generic property macros) */
-
-/*
- * Devicetree node: /flash@20000000
- *
- * Node identifier: DT_N_S_flash_20000000
- */
-
-/* Node's full path: */
-#define DT_N_S_flash_20000000_PATH "/flash@20000000"
-
-/* Node's name with unit-address: */
-#define DT_N_S_flash_20000000_FULL_NAME "flash@20000000"
-
-/* Node parent (/) identifier: */
-#define DT_N_S_flash_20000000_PARENT DT_N
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_flash_20000000_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_flash_20000000_FOREACH_CHILD(fn) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_flash_20000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_flash_20000000_ORD 2
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_flash_20000000_REQUIRES_ORDS \
-	0, /* / */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_flash_20000000_SUPPORTS_ORDS /* nothing */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_flash_20000000_EXISTS 1
-#define DT_N_INST_0_cfi_flash DT_N_S_flash_20000000
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_flash_20000000_REG_NUM 2
-#define DT_N_S_flash_20000000_REG_IDX_0_EXISTS 1
-#define DT_N_S_flash_20000000_REG_IDX_0_VAL_ADDRESS 536870912 /* 0x20000000 */
-#define DT_N_S_flash_20000000_REG_IDX_0_VAL_SIZE 33554432 /* 0x2000000 */
-#define DT_N_S_flash_20000000_REG_IDX_1_EXISTS 1
-#define DT_N_S_flash_20000000_REG_IDX_1_VAL_ADDRESS 570425344 /* 0x22000000 */
-#define DT_N_S_flash_20000000_REG_IDX_1_VAL_SIZE 33554432 /* 0x2000000 */
-#define DT_N_S_flash_20000000_RANGES_NUM 0
-#define DT_N_S_flash_20000000_FOREACH_RANGE(fn) 
-#define DT_N_S_flash_20000000_IRQ_NUM 0
-#define DT_N_S_flash_20000000_COMPAT_MATCHES_cfi_flash 1
-#define DT_N_S_flash_20000000_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_flash_20000000_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_flash_20000000_P_reg {536870912 /* 0x20000000 */, 33554432 /* 0x2000000 */, 570425344 /* 0x22000000 */, 33554432 /* 0x2000000 */}
-#define DT_N_S_flash_20000000_P_reg_IDX_0 536870912
-#define DT_N_S_flash_20000000_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_flash_20000000_P_reg_IDX_1 33554432
-#define DT_N_S_flash_20000000_P_reg_IDX_1_EXISTS 1
-#define DT_N_S_flash_20000000_P_reg_IDX_2 570425344
-#define DT_N_S_flash_20000000_P_reg_IDX_2_EXISTS 1
-#define DT_N_S_flash_20000000_P_reg_IDX_3 33554432
-#define DT_N_S_flash_20000000_P_reg_IDX_3_EXISTS 1
-#define DT_N_S_flash_20000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_flash_20000000, reg, 0) \
-	fn(DT_N_S_flash_20000000, reg, 1) \
-	fn(DT_N_S_flash_20000000, reg, 2) \
-	fn(DT_N_S_flash_20000000, reg, 3)
-#define DT_N_S_flash_20000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_flash_20000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 3)
-#define DT_N_S_flash_20000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_flash_20000000, reg, 0, __VA_ARGS__) \
-	fn(DT_N_S_flash_20000000, reg, 1, __VA_ARGS__) \
-	fn(DT_N_S_flash_20000000, reg, 2, __VA_ARGS__) \
-	fn(DT_N_S_flash_20000000, reg, 3, __VA_ARGS__)
-#define DT_N_S_flash_20000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_flash_20000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_flash_20000000, reg, 3, __VA_ARGS__)
-#define DT_N_S_flash_20000000_P_reg_EXISTS 1
-#define DT_N_S_flash_20000000_P_compatible {"cfi-flash"}
-#define DT_N_S_flash_20000000_P_compatible_IDX_0 "cfi-flash"
-#define DT_N_S_flash_20000000_P_compatible_IDX_0_STRING_TOKEN cfi_flash
-#define DT_N_S_flash_20000000_P_compatible_IDX_0_STRING_UPPER_TOKEN CFI_FLASH
-#define DT_N_S_flash_20000000_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_flash_20000000_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_flash_20000000, compatible, 0)
-#define DT_N_S_flash_20000000_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_flash_20000000, compatible, 0)
-#define DT_N_S_flash_20000000_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_flash_20000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_flash_20000000_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_flash_20000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_flash_20000000_P_compatible_LEN 1
-#define DT_N_S_flash_20000000_P_compatible_EXISTS 1
 
 /*
  * Devicetree node: /memory@80000000
@@ -297,13 +238,13 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_memory_80000000_EXISTS 1
-#define DT_N_NODELABEL_ram0 DT_N_S_memory_80000000
+#define DT_N_NODELABEL_ddr0 DT_N_S_memory_80000000
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_memory_80000000_REG_NUM 1
 #define DT_N_S_memory_80000000_REG_IDX_0_EXISTS 1
 #define DT_N_S_memory_80000000_REG_IDX_0_VAL_ADDRESS 2147483648 /* 0x80000000 */
-#define DT_N_S_memory_80000000_REG_IDX_0_VAL_SIZE 268435456 /* 0x10000000 */
+#define DT_N_S_memory_80000000_REG_IDX_0_VAL_SIZE 1073741824 /* 0x40000000 */
 #define DT_N_S_memory_80000000_RANGES_NUM 0
 #define DT_N_S_memory_80000000_FOREACH_RANGE(fn) 
 #define DT_N_S_memory_80000000_IRQ_NUM 0
@@ -313,19 +254,31 @@
 #define DT_N_S_memory_80000000_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_memory_80000000_P_reg {2147483648 /* 0x80000000 */, 268435456 /* 0x10000000 */}
-#define DT_N_S_memory_80000000_P_reg_IDX_0 2147483648
+#define DT_N_S_memory_80000000_P_reg {0 /* 0x0 */, 2147483648 /* 0x80000000 */, 0 /* 0x0 */, 1073741824 /* 0x40000000 */}
+#define DT_N_S_memory_80000000_P_reg_IDX_0 0
 #define DT_N_S_memory_80000000_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_memory_80000000_P_reg_IDX_1 268435456
+#define DT_N_S_memory_80000000_P_reg_IDX_1 2147483648
 #define DT_N_S_memory_80000000_P_reg_IDX_1_EXISTS 1
+#define DT_N_S_memory_80000000_P_reg_IDX_2 0
+#define DT_N_S_memory_80000000_P_reg_IDX_2_EXISTS 1
+#define DT_N_S_memory_80000000_P_reg_IDX_3 1073741824
+#define DT_N_S_memory_80000000_P_reg_IDX_3_EXISTS 1
 #define DT_N_S_memory_80000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_memory_80000000, reg, 0) \
-	fn(DT_N_S_memory_80000000, reg, 1)
+	fn(DT_N_S_memory_80000000, reg, 1) \
+	fn(DT_N_S_memory_80000000, reg, 2) \
+	fn(DT_N_S_memory_80000000, reg, 3)
 #define DT_N_S_memory_80000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_memory_80000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_memory_80000000, reg, 1)
+	fn(DT_N_S_memory_80000000, reg, 1) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_memory_80000000, reg, 2) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_memory_80000000, reg, 3)
 #define DT_N_S_memory_80000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_memory_80000000, reg, 0, __VA_ARGS__) \
-	fn(DT_N_S_memory_80000000, reg, 1, __VA_ARGS__)
+	fn(DT_N_S_memory_80000000, reg, 1, __VA_ARGS__) \
+	fn(DT_N_S_memory_80000000, reg, 2, __VA_ARGS__) \
+	fn(DT_N_S_memory_80000000, reg, 3, __VA_ARGS__)
 #define DT_N_S_memory_80000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_memory_80000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_memory_80000000, reg, 1, __VA_ARGS__)
+	fn(DT_N_S_memory_80000000, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_memory_80000000, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_memory_80000000, reg, 3, __VA_ARGS__)
 #define DT_N_S_memory_80000000_P_reg_EXISTS 1
 
 /*
@@ -347,14 +300,14 @@
 #define DT_N_S_soc_CHILD_IDX 4
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_soc_FOREACH_CHILD(fn) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_clint_2000000)
-#define DT_N_S_soc_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_soc_S_interrupt_controller_c000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_clint_2000000)
-#define DT_N_S_soc_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__)
-#define DT_N_S_soc_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__)
-#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_clint_2000000)
-#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_soc_S_interrupt_controller_c000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_clint_2000000)
-#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__)
-#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__)
+#define DT_N_S_soc_FOREACH_CHILD(fn) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_debug_controller_0) fn(DT_N_S_soc_S_uart_10000000)
+#define DT_N_S_soc_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_interrupt_controller_c000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_debug_controller_0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_uart_10000000)
+#define DT_N_S_soc_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) fn(DT_N_S_soc_S_debug_controller_0, __VA_ARGS__) fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
+#define DT_N_S_soc_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_debug_controller_0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
+#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_debug_controller_0) fn(DT_N_S_soc_S_uart_10000000)
+#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_interrupt_controller_c000000) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_debug_controller_0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_uart_10000000)
+#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) fn(DT_N_S_soc_S_debug_controller_0, __VA_ARGS__) fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
+#define DT_N_S_soc_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_debug_controller_0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
 #define DT_N_S_soc_ORD 4
@@ -365,18 +318,23 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
+	8, /* /soc/clint@2000000 */ \
+	9, /* /soc/debug-controller@0 */ \
+	10, /* /soc/interrupt-controller@c000000 */ \
+	11, /* /soc/uart@10000000 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_EXISTS 1
-#define DT_N_INST_0_simple_bus DT_N_S_soc
+#define DT_N_INST_0_eth_cva6_bare_soc DT_N_S_soc
+#define DT_N_INST_0_simple_bus        DT_N_S_soc
+#define DT_N_NODELABEL_l26            DT_N_S_soc
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_soc_REG_NUM 0
 #define DT_N_S_soc_RANGES_NUM 0
 #define DT_N_S_soc_FOREACH_RANGE(fn) 
 #define DT_N_S_soc_IRQ_NUM 0
+#define DT_N_S_soc_COMPAT_MATCHES_eth_cva6_bare_soc 1
 #define DT_N_S_soc_COMPAT_MATCHES_simple_bus 1
 #define DT_N_S_soc_STATUS_okay 1
 
@@ -384,16 +342,24 @@
 #define DT_N_S_soc_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_soc_P_compatible {"simple-bus"}
-#define DT_N_S_soc_P_compatible_IDX_0 "simple-bus"
-#define DT_N_S_soc_P_compatible_IDX_0_STRING_TOKEN simple_bus
-#define DT_N_S_soc_P_compatible_IDX_0_STRING_UPPER_TOKEN SIMPLE_BUS
+#define DT_N_S_soc_P_compatible {"eth,cva6-bare-soc", "simple-bus"}
+#define DT_N_S_soc_P_compatible_IDX_0 "eth,cva6-bare-soc"
+#define DT_N_S_soc_P_compatible_IDX_0_STRING_TOKEN eth_cva6_bare_soc
+#define DT_N_S_soc_P_compatible_IDX_0_STRING_UPPER_TOKEN ETH_CVA6_BARE_SOC
 #define DT_N_S_soc_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc, compatible, 0)
-#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc, compatible, 0)
-#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc, compatible, 0, __VA_ARGS__)
-#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc, compatible, 0, __VA_ARGS__)
-#define DT_N_S_soc_P_compatible_LEN 1
+#define DT_N_S_soc_P_compatible_IDX_1 "simple-bus"
+#define DT_N_S_soc_P_compatible_IDX_1_STRING_TOKEN simple_bus
+#define DT_N_S_soc_P_compatible_IDX_1_STRING_UPPER_TOKEN SIMPLE_BUS
+#define DT_N_S_soc_P_compatible_IDX_1_EXISTS 1
+#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc, compatible, 0) \
+	fn(DT_N_S_soc, compatible, 1)
+#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc, compatible, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc, compatible, 1)
+#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc, compatible, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc, compatible, 1, __VA_ARGS__)
+#define DT_N_S_soc_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc, compatible, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc, compatible, 1, __VA_ARGS__)
+#define DT_N_S_soc_P_compatible_LEN 2
 #define DT_N_S_soc_P_compatible_EXISTS 1
 
 /*
@@ -415,14 +381,14 @@
 #define DT_N_S_cpus_CHILD_IDX 2
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_1) fn(DT_N_S_cpus_S_cpu_2) fn(DT_N_S_cpus_S_cpu_3) fn(DT_N_S_cpus_S_cpu_4) fn(DT_N_S_cpus_S_cpu_5) fn(DT_N_S_cpus_S_cpu_6) fn(DT_N_S_cpus_S_cpu_7)
-#define DT_N_S_cpus_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_4) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_7)
-#define DT_N_S_cpus_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_1, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_2, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_3, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_4, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_5, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_6, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_7, __VA_ARGS__)
-#define DT_N_S_cpus_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_4, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_7, __VA_ARGS__)
-#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_1) fn(DT_N_S_cpus_S_cpu_2) fn(DT_N_S_cpus_S_cpu_3) fn(DT_N_S_cpus_S_cpu_4) fn(DT_N_S_cpus_S_cpu_5) fn(DT_N_S_cpus_S_cpu_6) fn(DT_N_S_cpus_S_cpu_7)
-#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_4) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_7)
-#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_1, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_2, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_3, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_4, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_5, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_6, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_7, __VA_ARGS__)
-#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_4, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_cpus_S_cpu_7, __VA_ARGS__)
+#define DT_N_S_cpus_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_N_S_cpus_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_N_S_cpus_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
+#define DT_N_S_cpus_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
+#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
+#define DT_N_S_cpus_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
 #define DT_N_S_cpus_ORD 5
@@ -433,14 +399,7 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_cpus_SUPPORTS_ORDS \
-	6, /* /cpus/cpu@0 */ \
-	8, /* /cpus/cpu@1 */ \
-	10, /* /cpus/cpu@2 */ \
-	12, /* /cpus/cpu@3 */ \
-	14, /* /cpus/cpu@4 */ \
-	16, /* /cpus/cpu@5 */ \
-	18, /* /cpus/cpu@6 */ \
-	20, /* /cpus/cpu@7 */
+	6, /* /cpus/cpu@0 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_cpus_EXISTS 1
@@ -498,7 +457,9 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_cpus_S_cpu_0_EXISTS 1
-#define DT_N_INST_0_riscv DT_N_S_cpus_S_cpu_0
+#define DT_N_INST_0_ohwg_cva6 DT_N_S_cpus_S_cpu_0
+#define DT_N_INST_0_riscv     DT_N_S_cpus_S_cpu_0
+#define DT_N_NODELABEL_cpu0   DT_N_S_cpus_S_cpu_0
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_cpus_S_cpu_0_REG_NUM 1
@@ -507,6 +468,7 @@
 #define DT_N_S_cpus_S_cpu_0_RANGES_NUM 0
 #define DT_N_S_cpus_S_cpu_0_FOREACH_RANGE(fn) 
 #define DT_N_S_cpus_S_cpu_0_IRQ_NUM 0
+#define DT_N_S_cpus_S_cpu_0_COMPAT_MATCHES_ohwg_cva6 1
 #define DT_N_S_cpus_S_cpu_0_COMPAT_MATCHES_riscv 1
 #define DT_N_S_cpus_S_cpu_0_STATUS_okay 1
 
@@ -545,16 +507,24 @@
 	fn(DT_N_S_cpus_S_cpu_0, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_cpus_S_cpu_0, status, 3, __VA_ARGS__)
 #define DT_N_S_cpus_S_cpu_0_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_0_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
+#define DT_N_S_cpus_S_cpu_0_P_compatible {"ohwg,cva6", "riscv"}
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0 "ohwg,cva6"
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0_STRING_TOKEN ohwg_cva6
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0_STRING_UPPER_TOKEN OHWG_CVA6
 #define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_0, compatible, 0)
-#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0, compatible, 0)
-#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_0_P_compatible_LEN 1
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_1 "riscv"
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_1_STRING_TOKEN riscv
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_1_STRING_UPPER_TOKEN RISCV
+#define DT_N_S_cpus_S_cpu_0_P_compatible_IDX_1_EXISTS 1
+#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_0, compatible, 0) \
+	fn(DT_N_S_cpus_S_cpu_0, compatible, 1)
+#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_0, compatible, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_cpus_S_cpu_0, compatible, 1)
+#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_0, compatible, 0, __VA_ARGS__) \
+	fn(DT_N_S_cpus_S_cpu_0, compatible, 1, __VA_ARGS__)
+#define DT_N_S_cpus_S_cpu_0_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_0, compatible, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_cpus_S_cpu_0, compatible, 1, __VA_ARGS__)
+#define DT_N_S_cpus_S_cpu_0_P_compatible_LEN 2
 #define DT_N_S_cpus_S_cpu_0_P_compatible_EXISTS 1
 
 /*
@@ -600,13 +570,14 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_cpus_S_cpu_0_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
+	8, /* /soc/clint@2000000 */ \
+	9, /* /soc/debug-controller@0 */ \
+	10, /* /soc/interrupt-controller@c000000 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_cpus_S_cpu_0_S_interrupt_controller_EXISTS 1
 #define DT_N_INST_0_riscv_cpu_intc DT_N_S_cpus_S_cpu_0_S_interrupt_controller
-#define DT_N_NODELABEL_hlic0       DT_N_S_cpus_S_cpu_0_S_interrupt_controller
+#define DT_N_NODELABEL_cpu0_intc   DT_N_S_cpus_S_cpu_0_S_interrupt_controller
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_cpus_S_cpu_0_S_interrupt_controller_REG_NUM 0
@@ -641,1285 +612,248 @@
 #define DT_N_S_cpus_S_cpu_0_S_interrupt_controller_P_wakeup_source_EXISTS 1
 
 /*
- * Devicetree node: /cpus/cpu@1
+ * Devicetree node: /soc/clint@2000000
  *
- * Node identifier: DT_N_S_cpus_S_cpu_1
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_1_PATH "/cpus/cpu@1"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_1_FULL_NAME "cpu@1"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_1_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_1_CHILD_IDX 1
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_1_ORD 8
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_1_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_1_SUPPORTS_ORDS \
-	9, /* /cpus/cpu@1/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_1_EXISTS 1
-#define DT_N_INST_1_riscv DT_N_S_cpus_S_cpu_1
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_1_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_1_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_REG_IDX_0_VAL_ADDRESS 1 /* 0x1 */
-#define DT_N_S_cpus_S_cpu_1_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_1_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_1_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_1_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_1_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_1_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_1_P_reg {1 /* 0x1 */}
-#define DT_N_S_cpus_S_cpu_1_P_reg_IDX_0 1
-#define DT_N_S_cpus_S_cpu_1_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_1, reg, 0)
-#define DT_N_S_cpus_S_cpu_1_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1, reg, 0)
-#define DT_N_S_cpus_S_cpu_1_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_P_status "okay"
-#define DT_N_S_cpus_S_cpu_1_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_1_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_1_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_1_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_1_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_1_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_1, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 3)
-#define DT_N_S_cpus_S_cpu_1_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 3)
-#define DT_N_S_cpus_S_cpu_1_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_1, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_1, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_1_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_1_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_1_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_1_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_1, compatible, 0)
-#define DT_N_S_cpus_S_cpu_1_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1, compatible, 0)
-#define DT_N_S_cpus_S_cpu_1_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_1_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@1/interrupt-controller
+ * Node identifier: DT_N_S_soc_S_clint_2000000
  *
- * Node identifier: DT_N_S_cpus_S_cpu_1_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
+ * Binding (compatible = sifive,clint0):
+ *   $ZEPHYR_BASE/dts/bindings/timer/sifive,clint0.yaml
  *
  * (Descriptions have moved to the Devicetree Bindings Index
  * in the documentation.)
  */
 
 /* Node's full path: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_PATH "/cpus/cpu@1/interrupt-controller"
+#define DT_N_S_soc_S_clint_2000000_PATH "/soc/clint@2000000"
 
 /* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FULL_NAME "interrupt-controller"
+#define DT_N_S_soc_S_clint_2000000_FULL_NAME "clint@2000000"
 
-/* Node parent (/cpus/cpu@1) identifier: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_1
+/* Node parent (/soc) identifier: */
+#define DT_N_S_soc_S_clint_2000000_PARENT DT_N_S_soc
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_CHILD_IDX 0
+#define DT_N_S_soc_S_clint_2000000_CHILD_IDX 0
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD(fn) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_SEP(fn, sep) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_VARGS(fn, ...) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY(fn) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
+#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_ORD 9
+#define DT_N_S_soc_S_clint_2000000_ORD 8
 
 /* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_REQUIRES_ORDS \
-	8, /* /cpus/cpu@1 */
+#define DT_N_S_soc_S_clint_2000000_REQUIRES_ORDS \
+	4, /* /soc */ \
+	7, /* /cpus/cpu@0/interrupt-controller */
 
 /* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
+#define DT_N_S_soc_S_clint_2000000_SUPPORTS_ORDS /* nothing */
 
 /* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_1_riscv_cpu_intc DT_N_S_cpus_S_cpu_1_S_interrupt_controller
-#define DT_N_NODELABEL_hlic1       DT_N_S_cpus_S_cpu_1_S_interrupt_controller
+#define DT_N_S_soc_S_clint_2000000_EXISTS 1
+#define DT_N_INST_0_sifive_clint0 DT_N_S_soc_S_clint_2000000
 
 /* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_STATUS_okay 1
+#define DT_N_S_soc_S_clint_2000000_REG_NUM 1
+#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_ADDRESS 33554432 /* 0x2000000 */
+#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_SIZE 786432 /* 0xc0000 */
+#define DT_N_S_soc_S_clint_2000000_REG_NAME_control_VAL_ADDRESS DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_ADDRESS
+#define DT_N_S_soc_S_clint_2000000_REG_NAME_control_VAL_SIZE DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_SIZE
+#define DT_N_S_soc_S_clint_2000000_RANGES_NUM 0
+#define DT_N_S_soc_S_clint_2000000_FOREACH_RANGE(fn) 
+#define DT_N_S_soc_S_clint_2000000_IRQ_NUM 2
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_VAL_irq 3
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_VAL_irq_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_VAL_irq 7
+#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_VAL_irq_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_COMPAT_MATCHES_sifive_clint0 1
+#define DT_N_S_soc_S_clint_2000000_COMPAT_VENDOR_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_COMPAT_VENDOR_IDX_0 "SiFive, Inc."
+#define DT_N_S_soc_S_clint_2000000_COMPAT_MODEL_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_COMPAT_MODEL_IDX_0 "clint0"
+#define DT_N_S_soc_S_clint_2000000_STATUS_okay 1
 
 /* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_PINCTRL_NUM 0
+#define DT_N_S_soc_S_clint_2000000_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_1_S_interrupt_controller_P_wakeup_source_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg {0 /* 0x0 */, 33554432 /* 0x2000000 */, 0 /* 0x0 */, 786432 /* 0xc0000 */}
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_0 0
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_1 33554432
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_2 0
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_2_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_3 786432
+#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_3_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_clint_2000000, reg, 0) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 1) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 2) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 3)
+#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 1) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 2) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 3)
+#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, reg, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 1, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 2, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_clint_2000000, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_reg_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_compatible {"sifive,clint0"}
+#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0 "sifive,clint0"
+#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_STRING_TOKEN sifive_clint0
+#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_STRING_UPPER_TOKEN SIFIVE_CLINT0
+#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_clint_2000000, compatible, 0)
+#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000, compatible, 0)
+#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, compatible, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, compatible, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_compatible_LEN 1
+#define DT_N_S_soc_S_clint_2000000_P_compatible_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_names {"control"}
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_IDX_0 "control"
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_IDX_0_STRING_TOKEN control
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_IDX_0_STRING_UPPER_TOKEN CONTROL
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_clint_2000000, reg_names, 0)
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000, reg_names, 0)
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, reg_names, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, reg_names, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_LEN 1
+#define DT_N_S_soc_S_clint_2000000_P_reg_names_EXISTS 1
+#define DT_N_S_soc_S_clint_2000000_P_wakeup_source 0
+#define DT_N_S_soc_S_clint_2000000_P_wakeup_source_EXISTS 1
 
 /*
- * Devicetree node: /cpus/cpu@2
+ * Devicetree node: /soc/debug-controller@0
  *
- * Node identifier: DT_N_S_cpus_S_cpu_2
+ * Node identifier: DT_N_S_soc_S_debug_controller_0
  */
 
 /* Node's full path: */
-#define DT_N_S_cpus_S_cpu_2_PATH "/cpus/cpu@2"
+#define DT_N_S_soc_S_debug_controller_0_PATH "/soc/debug-controller@0"
 
 /* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_2_FULL_NAME "cpu@2"
+#define DT_N_S_soc_S_debug_controller_0_FULL_NAME "debug-controller@0"
 
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_2_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_2_CHILD_IDX 2
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_2_ORD 10
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_2_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_2_SUPPORTS_ORDS \
-	11, /* /cpus/cpu@2/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_2_EXISTS 1
-#define DT_N_INST_2_riscv DT_N_S_cpus_S_cpu_2
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_2_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_2_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_REG_IDX_0_VAL_ADDRESS 2 /* 0x2 */
-#define DT_N_S_cpus_S_cpu_2_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_2_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_2_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_2_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_2_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_2_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_2_P_reg {2 /* 0x2 */}
-#define DT_N_S_cpus_S_cpu_2_P_reg_IDX_0 2
-#define DT_N_S_cpus_S_cpu_2_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_2, reg, 0)
-#define DT_N_S_cpus_S_cpu_2_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2, reg, 0)
-#define DT_N_S_cpus_S_cpu_2_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_P_status "okay"
-#define DT_N_S_cpus_S_cpu_2_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_2_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_2_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_2_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_2_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_2_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_2, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 3)
-#define DT_N_S_cpus_S_cpu_2_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 3)
-#define DT_N_S_cpus_S_cpu_2_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_2, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_2, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_2_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_2_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_2_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_2_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_2, compatible, 0)
-#define DT_N_S_cpus_S_cpu_2_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2, compatible, 0)
-#define DT_N_S_cpus_S_cpu_2_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_2_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@2/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_2_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_PATH "/cpus/cpu@2/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@2) identifier: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_2
+/* Node parent (/soc) identifier: */
+#define DT_N_S_soc_S_debug_controller_0_PARENT DT_N_S_soc
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_CHILD_IDX 0
+#define DT_N_S_soc_S_debug_controller_0_CHILD_IDX 2
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD(fn) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_SEP(fn, sep) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_VARGS(fn, ...) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_STATUS_OKAY(fn) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_ORD 11
+#define DT_N_S_soc_S_debug_controller_0_ORD 9
 
 /* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_REQUIRES_ORDS \
-	10, /* /cpus/cpu@2 */
+#define DT_N_S_soc_S_debug_controller_0_REQUIRES_ORDS \
+	4, /* /soc */ \
+	7, /* /cpus/cpu@0/interrupt-controller */
 
 /* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
+#define DT_N_S_soc_S_debug_controller_0_SUPPORTS_ORDS /* nothing */
 
 /* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_2_riscv_cpu_intc DT_N_S_cpus_S_cpu_2_S_interrupt_controller
-#define DT_N_NODELABEL_hlic2       DT_N_S_cpus_S_cpu_2_S_interrupt_controller
+#define DT_N_S_soc_S_debug_controller_0_EXISTS 1
+#define DT_N_INST_0_riscv_debug_013 DT_N_S_soc_S_debug_controller_0
 
 /* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_STATUS_okay 1
+#define DT_N_S_soc_S_debug_controller_0_REG_NUM 1
+#define DT_N_S_soc_S_debug_controller_0_REG_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_REG_IDX_0_VAL_ADDRESS 0 /* 0x0 */
+#define DT_N_S_soc_S_debug_controller_0_REG_IDX_0_VAL_SIZE 4096 /* 0x1000 */
+#define DT_N_S_soc_S_debug_controller_0_REG_NAME_control_VAL_ADDRESS DT_N_S_soc_S_debug_controller_0_REG_IDX_0_VAL_ADDRESS
+#define DT_N_S_soc_S_debug_controller_0_REG_NAME_control_VAL_SIZE DT_N_S_soc_S_debug_controller_0_REG_IDX_0_VAL_SIZE
+#define DT_N_S_soc_S_debug_controller_0_RANGES_NUM 0
+#define DT_N_S_soc_S_debug_controller_0_FOREACH_RANGE(fn) 
+#define DT_N_S_soc_S_debug_controller_0_IRQ_NUM 1
+#define DT_N_S_soc_S_debug_controller_0_IRQ_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_IRQ_IDX_0_VAL_irq 65535
+#define DT_N_S_soc_S_debug_controller_0_IRQ_IDX_0_VAL_irq_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_COMPAT_MATCHES_riscv_debug_013 1
+#define DT_N_S_soc_S_debug_controller_0_COMPAT_VENDOR_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
+#define DT_N_S_soc_S_debug_controller_0_COMPAT_MODEL_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_COMPAT_MODEL_IDX_0 "debug-013"
+#define DT_N_S_soc_S_debug_controller_0_STATUS_okay 1
 
 /* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_PINCTRL_NUM 0
+#define DT_N_S_soc_S_debug_controller_0_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_2_S_interrupt_controller_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@3
- *
- * Node identifier: DT_N_S_cpus_S_cpu_3
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_3_PATH "/cpus/cpu@3"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_3_FULL_NAME "cpu@3"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_3_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_3_CHILD_IDX 3
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_3_ORD 12
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_3_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_3_SUPPORTS_ORDS \
-	13, /* /cpus/cpu@3/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_3_EXISTS 1
-#define DT_N_INST_3_riscv DT_N_S_cpus_S_cpu_3
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_3_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_3_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_REG_IDX_0_VAL_ADDRESS 3 /* 0x3 */
-#define DT_N_S_cpus_S_cpu_3_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_3_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_3_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_3_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_3_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_3_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_3_P_reg {3 /* 0x3 */}
-#define DT_N_S_cpus_S_cpu_3_P_reg_IDX_0 3
-#define DT_N_S_cpus_S_cpu_3_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_3, reg, 0)
-#define DT_N_S_cpus_S_cpu_3_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3, reg, 0)
-#define DT_N_S_cpus_S_cpu_3_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_P_status "okay"
-#define DT_N_S_cpus_S_cpu_3_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_3_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_3_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_3_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_3_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_3_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_3, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 3)
-#define DT_N_S_cpus_S_cpu_3_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 3)
-#define DT_N_S_cpus_S_cpu_3_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_3, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_3, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_3_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_3_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_3_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_3_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_3, compatible, 0)
-#define DT_N_S_cpus_S_cpu_3_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3, compatible, 0)
-#define DT_N_S_cpus_S_cpu_3_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_3_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@3/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_3_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_PATH "/cpus/cpu@3/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@3) identifier: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_3
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_ORD 13
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_REQUIRES_ORDS \
-	12, /* /cpus/cpu@3 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_3_riscv_cpu_intc DT_N_S_cpus_S_cpu_3_S_interrupt_controller
-#define DT_N_NODELABEL_hlic3       DT_N_S_cpus_S_cpu_3_S_interrupt_controller
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_3_S_interrupt_controller_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@4
- *
- * Node identifier: DT_N_S_cpus_S_cpu_4
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_4_PATH "/cpus/cpu@4"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_4_FULL_NAME "cpu@4"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_4_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_4_CHILD_IDX 4
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_4_ORD 14
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_4_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_4_SUPPORTS_ORDS \
-	15, /* /cpus/cpu@4/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_4_EXISTS 1
-#define DT_N_INST_4_riscv DT_N_S_cpus_S_cpu_4
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_4_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_4_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_REG_IDX_0_VAL_ADDRESS 4 /* 0x4 */
-#define DT_N_S_cpus_S_cpu_4_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_4_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_4_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_4_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_4_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_4_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_4_P_reg {4 /* 0x4 */}
-#define DT_N_S_cpus_S_cpu_4_P_reg_IDX_0 4
-#define DT_N_S_cpus_S_cpu_4_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_4, reg, 0)
-#define DT_N_S_cpus_S_cpu_4_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4, reg, 0)
-#define DT_N_S_cpus_S_cpu_4_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_P_status "okay"
-#define DT_N_S_cpus_S_cpu_4_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_4_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_4_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_4_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_4_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_4_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_4, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 3)
-#define DT_N_S_cpus_S_cpu_4_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 3)
-#define DT_N_S_cpus_S_cpu_4_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_4, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_4, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_4_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_4_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_4_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_4_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_4, compatible, 0)
-#define DT_N_S_cpus_S_cpu_4_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4, compatible, 0)
-#define DT_N_S_cpus_S_cpu_4_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_4_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@4/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_4_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_PATH "/cpus/cpu@4/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@4) identifier: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_4
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_ORD 15
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_REQUIRES_ORDS \
-	14, /* /cpus/cpu@4 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_4_riscv_cpu_intc DT_N_S_cpus_S_cpu_4_S_interrupt_controller
-#define DT_N_NODELABEL_hlic4       DT_N_S_cpus_S_cpu_4_S_interrupt_controller
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_4_S_interrupt_controller_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@5
- *
- * Node identifier: DT_N_S_cpus_S_cpu_5
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_5_PATH "/cpus/cpu@5"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_5_FULL_NAME "cpu@5"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_5_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_5_CHILD_IDX 5
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_5_ORD 16
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_5_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_5_SUPPORTS_ORDS \
-	17, /* /cpus/cpu@5/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_5_EXISTS 1
-#define DT_N_INST_5_riscv DT_N_S_cpus_S_cpu_5
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_5_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_5_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_REG_IDX_0_VAL_ADDRESS 5 /* 0x5 */
-#define DT_N_S_cpus_S_cpu_5_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_5_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_5_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_5_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_5_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_5_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_5_P_reg {5 /* 0x5 */}
-#define DT_N_S_cpus_S_cpu_5_P_reg_IDX_0 5
-#define DT_N_S_cpus_S_cpu_5_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_5, reg, 0)
-#define DT_N_S_cpus_S_cpu_5_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5, reg, 0)
-#define DT_N_S_cpus_S_cpu_5_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_P_status "okay"
-#define DT_N_S_cpus_S_cpu_5_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_5_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_5_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_5_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_5_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_5_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_5, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 3)
-#define DT_N_S_cpus_S_cpu_5_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 3)
-#define DT_N_S_cpus_S_cpu_5_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_5, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_5, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_5_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_5_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_5_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_5_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_5, compatible, 0)
-#define DT_N_S_cpus_S_cpu_5_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5, compatible, 0)
-#define DT_N_S_cpus_S_cpu_5_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_5_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@5/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_5_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_PATH "/cpus/cpu@5/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@5) identifier: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_5
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_ORD 17
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_REQUIRES_ORDS \
-	16, /* /cpus/cpu@5 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_5_riscv_cpu_intc DT_N_S_cpus_S_cpu_5_S_interrupt_controller
-#define DT_N_NODELABEL_hlic5       DT_N_S_cpus_S_cpu_5_S_interrupt_controller
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_5_S_interrupt_controller_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@6
- *
- * Node identifier: DT_N_S_cpus_S_cpu_6
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_6_PATH "/cpus/cpu@6"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_6_FULL_NAME "cpu@6"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_6_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_6_CHILD_IDX 6
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_6_ORD 18
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_6_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_6_SUPPORTS_ORDS \
-	19, /* /cpus/cpu@6/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_6_EXISTS 1
-#define DT_N_INST_6_riscv DT_N_S_cpus_S_cpu_6
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_6_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_6_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_REG_IDX_0_VAL_ADDRESS 6 /* 0x6 */
-#define DT_N_S_cpus_S_cpu_6_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_6_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_6_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_6_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_6_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_6_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_6_P_reg {6 /* 0x6 */}
-#define DT_N_S_cpus_S_cpu_6_P_reg_IDX_0 6
-#define DT_N_S_cpus_S_cpu_6_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_6, reg, 0)
-#define DT_N_S_cpus_S_cpu_6_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6, reg, 0)
-#define DT_N_S_cpus_S_cpu_6_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_P_status "okay"
-#define DT_N_S_cpus_S_cpu_6_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_6_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_6_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_6_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_6_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_6_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_6, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 3)
-#define DT_N_S_cpus_S_cpu_6_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 3)
-#define DT_N_S_cpus_S_cpu_6_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_6, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_6, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_6_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_6_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_6_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_6_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_6, compatible, 0)
-#define DT_N_S_cpus_S_cpu_6_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6, compatible, 0)
-#define DT_N_S_cpus_S_cpu_6_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_6_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@6/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_6_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_PATH "/cpus/cpu@6/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@6) identifier: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_6
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_ORD 19
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_REQUIRES_ORDS \
-	18, /* /cpus/cpu@6 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_6_riscv_cpu_intc DT_N_S_cpus_S_cpu_6_S_interrupt_controller
-#define DT_N_NODELABEL_hlic6       DT_N_S_cpus_S_cpu_6_S_interrupt_controller
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_6_S_interrupt_controller_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@7
- *
- * Node identifier: DT_N_S_cpus_S_cpu_7
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_7_PATH "/cpus/cpu@7"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_7_FULL_NAME "cpu@7"
-
-/* Node parent (/cpus) identifier: */
-#define DT_N_S_cpus_S_cpu_7_PARENT DT_N_S_cpus
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_7_CHILD_IDX 7
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD(fn) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, __VA_ARGS__)
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_7_ORD 20
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_7_REQUIRES_ORDS \
-	5, /* /cpus */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_7_SUPPORTS_ORDS \
-	21, /* /cpus/cpu@7/interrupt-controller */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_7_EXISTS 1
-#define DT_N_INST_7_riscv DT_N_S_cpus_S_cpu_7
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_7_REG_NUM 1
-#define DT_N_S_cpus_S_cpu_7_REG_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_REG_IDX_0_VAL_ADDRESS 7 /* 0x7 */
-#define DT_N_S_cpus_S_cpu_7_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_7_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_7_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_7_COMPAT_MATCHES_riscv 1
-#define DT_N_S_cpus_S_cpu_7_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_7_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_7_P_reg {7 /* 0x7 */}
-#define DT_N_S_cpus_S_cpu_7_P_reg_IDX_0 7
-#define DT_N_S_cpus_S_cpu_7_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_7, reg, 0)
-#define DT_N_S_cpus_S_cpu_7_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7, reg, 0)
-#define DT_N_S_cpus_S_cpu_7_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7, reg, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_reg_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_P_status "okay"
-#define DT_N_S_cpus_S_cpu_7_P_status_STRING_TOKEN okay
-#define DT_N_S_cpus_S_cpu_7_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_7_P_status_ENUM_IDX 1
-#define DT_N_S_cpus_S_cpu_7_P_status_ENUM_TOKEN okay
-#define DT_N_S_cpus_S_cpu_7_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_cpus_S_cpu_7_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_7, status, 0) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 1) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 2) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 3)
-#define DT_N_S_cpus_S_cpu_7_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 3)
-#define DT_N_S_cpus_S_cpu_7_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_cpus_S_cpu_7, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_cpus_S_cpu_7, status, 3, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_status_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_P_compatible {"riscv"}
-#define DT_N_S_cpus_S_cpu_7_P_compatible_IDX_0 "riscv"
-#define DT_N_S_cpus_S_cpu_7_P_compatible_IDX_0_STRING_TOKEN riscv
-#define DT_N_S_cpus_S_cpu_7_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV
-#define DT_N_S_cpus_S_cpu_7_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_7, compatible, 0)
-#define DT_N_S_cpus_S_cpu_7_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7, compatible, 0)
-#define DT_N_S_cpus_S_cpu_7_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_7_P_compatible_EXISTS 1
-
-/*
- * Devicetree node: /cpus/cpu@7/interrupt-controller
- *
- * Node identifier: DT_N_S_cpus_S_cpu_7_S_interrupt_controller
- *
- * Binding (compatible = riscv,cpu-intc):
- *   $ZEPHYR_BASE/dts/bindings/interrupt-controller/riscv,cpu-intc.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_PATH "/cpus/cpu@7/interrupt-controller"
-
-/* Node's name with unit-address: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FULL_NAME "interrupt-controller"
-
-/* Node parent (/cpus/cpu@7) identifier: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_PARENT DT_N_S_cpus_S_cpu_7
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_CHILD_IDX 0
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD(fn) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_ORD 21
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_REQUIRES_ORDS \
-	20, /* /cpus/cpu@7 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_SUPPORTS_ORDS \
-	22, /* /soc/interrupt-controller@c000000 */ \
-	24, /* /soc/clint@2000000 */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_EXISTS 1
-#define DT_N_INST_7_riscv_cpu_intc DT_N_S_cpus_S_cpu_7_S_interrupt_controller
-#define DT_N_NODELABEL_hlic7       DT_N_S_cpus_S_cpu_7_S_interrupt_controller
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_REG_NUM 0
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_RANGES_NUM 0
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_FOREACH_RANGE(fn) 
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_IRQ_NUM 0
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_COMPAT_MATCHES_riscv_cpu_intc 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_COMPAT_VENDOR_IDX_0 "RISC-V Foundation"
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_COMPAT_MODEL_IDX_0 "cpu-intc"
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_interrupt_controller 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_interrupt_controller_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible {"riscv,cpu-intc"}
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_IDX_0 "riscv,cpu-intc"
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_IDX_0_STRING_TOKEN riscv_cpu_intc
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_CPU_INTC
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, compatible, 0)
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, compatible, 0, __VA_ARGS__)
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_LEN 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_compatible_EXISTS 1
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_wakeup_source 0
-#define DT_N_S_cpus_S_cpu_7_S_interrupt_controller_P_wakeup_source_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_compatible {"riscv,debug-013"}
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_IDX_0 "riscv,debug-013"
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_IDX_0_STRING_TOKEN riscv_debug_013
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_IDX_0_STRING_UPPER_TOKEN RISCV_DEBUG_013
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_debug_controller_0, compatible, 0)
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_debug_controller_0, compatible, 0)
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_debug_controller_0, compatible, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_debug_controller_0, compatible, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_LEN 1
+#define DT_N_S_soc_S_debug_controller_0_P_compatible_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_interrupts_extended_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg {0 /* 0x0 */, 0 /* 0x0 */, 0 /* 0x0 */, 4096 /* 0x1000 */}
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_0 0
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_1 0
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_2 0
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_2_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_3 4096
+#define DT_N_S_soc_S_debug_controller_0_P_reg_IDX_3_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_debug_controller_0, reg, 0) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 1) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 2) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 3)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_debug_controller_0, reg, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 1) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 2) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 3)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_debug_controller_0, reg, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 1, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 2, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_debug_controller_0, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_debug_controller_0, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names {"control"}
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_IDX_0 "control"
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_IDX_0_STRING_TOKEN control
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_IDX_0_STRING_UPPER_TOKEN CONTROL
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_debug_controller_0, reg_names, 0)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_debug_controller_0, reg_names, 0)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_debug_controller_0, reg_names, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_debug_controller_0, reg_names, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_LEN 1
+#define DT_N_S_soc_S_debug_controller_0_P_reg_names_EXISTS 1
 
 /*
  * Devicetree node: /soc/interrupt-controller@c000000
@@ -1943,7 +877,7 @@
 #define DT_N_S_soc_S_interrupt_controller_c000000_PARENT DT_N_S_soc
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_interrupt_controller_c000000_CHILD_IDX 0
+#define DT_N_S_soc_S_interrupt_controller_c000000_CHILD_IDX 1
 
 /* Helper macros for child nodes of this node. */
 #define DT_N_S_soc_S_interrupt_controller_c000000_FOREACH_CHILD(fn) 
@@ -1956,28 +890,21 @@
 #define DT_N_S_soc_S_interrupt_controller_c000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_interrupt_controller_c000000_ORD 22
+#define DT_N_S_soc_S_interrupt_controller_c000000_ORD 10
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_interrupt_controller_c000000_REQUIRES_ORDS \
 	4, /* /soc */ \
-	7, /* /cpus/cpu@0/interrupt-controller */ \
-	9, /* /cpus/cpu@1/interrupt-controller */ \
-	11, /* /cpus/cpu@2/interrupt-controller */ \
-	13, /* /cpus/cpu@3/interrupt-controller */ \
-	15, /* /cpus/cpu@4/interrupt-controller */ \
-	17, /* /cpus/cpu@5/interrupt-controller */ \
-	19, /* /cpus/cpu@6/interrupt-controller */ \
-	21, /* /cpus/cpu@7/interrupt-controller */
+	7, /* /cpus/cpu@0/interrupt-controller */
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_S_interrupt_controller_c000000_SUPPORTS_ORDS \
-	23, /* /uart@10000000 */
+	11, /* /soc/uart@10000000 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_S_interrupt_controller_c000000_EXISTS 1
 #define DT_N_INST_0_sifive_plic_1_0_0 DT_N_S_soc_S_interrupt_controller_c000000
-#define DT_N_NODELABEL_plic           DT_N_S_soc_S_interrupt_controller_c000000
+#define DT_N_NODELABEL_plic0          DT_N_S_soc_S_interrupt_controller_c000000
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_soc_S_interrupt_controller_c000000_REG_NUM 3
@@ -1998,55 +925,13 @@
 #define DT_N_S_soc_S_interrupt_controller_c000000_REG_NAME_reg_VAL_SIZE DT_N_S_soc_S_interrupt_controller_c000000_REG_IDX_2_VAL_SIZE
 #define DT_N_S_soc_S_interrupt_controller_c000000_RANGES_NUM 0
 #define DT_N_S_soc_S_interrupt_controller_c000000_FOREACH_RANGE(fn) 
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_NUM 16
+#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_NUM 2
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_0_VAL_irq 11
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_0_VAL_irq_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_1_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_1_VAL_irq 9
 #define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_1_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_2_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_2_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_2_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_3_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_3_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_3_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_4_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_4_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_4_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_5_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_5_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_5_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_6_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_6_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_6_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_7_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_7_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_7_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_8_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_8_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_8_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_9_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_9_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_9_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_10_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_10_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_10_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_11_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_11_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_11_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_12_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_12_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_12_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_13_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_13_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_13_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_14_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_14_VAL_irq 11
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_14_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_15_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_15_VAL_irq 9
-#define DT_N_S_soc_S_interrupt_controller_c000000_IRQ_IDX_15_VAL_irq_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_COMPAT_MATCHES_sifive_plic_1_0_0 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_COMPAT_VENDOR_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_COMPAT_VENDOR_IDX_0 "SiFive, Inc."
@@ -2058,45 +943,81 @@
 #define DT_N_S_soc_S_interrupt_controller_c000000_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_riscv_ndev 53
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_riscv_ndev 30
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_riscv_ndev_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg {201326592 /* 0xc000000 */, 8192 /* 0x2000 */, 201334784 /* 0xc002000 */, 2088960 /* 0x1fe000 */, 203423744 /* 0xc200000 */, 65011712 /* 0x3e00000 */}
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_0 201326592
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg {0 /* 0x0 */, 201326592 /* 0xc000000 */, 0 /* 0x0 */, 8192 /* 0x2000 */, 0 /* 0x0 */, 201334784 /* 0xc002000 */, 0 /* 0x0 */, 2088960 /* 0x1fe000 */, 0 /* 0x0 */, 203423744 /* 0xc200000 */, 0 /* 0x0 */, 65011712 /* 0x3e00000 */}
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_0 0
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_1 8192
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_1 201326592
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_1_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_2 201334784
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_2 0
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_2_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_3 2088960
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_3 8192
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_3_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_4 203423744
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_4 0
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_4_EXISTS 1
-#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_5 65011712
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_5 201334784
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_5_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_6 0
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_6_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_7 2088960
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_7_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_8 0
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_8_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_9 203423744
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_9_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_10 0
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_10_EXISTS 1
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_11 65011712
+#define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_IDX_11_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 0) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 1) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 2) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 3) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 4) \
-	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5)
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 6) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 7) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 8) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 9) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 10) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 11)
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 1) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 2) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 3) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 4) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5)
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 6) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 7) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 8) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 9) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 10) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 11)
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 0, __VA_ARGS__) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 1, __VA_ARGS__) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 2, __VA_ARGS__) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 3, __VA_ARGS__) \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 4, __VA_ARGS__) \
-	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5, __VA_ARGS__)
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 6, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 7, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 8, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 9, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 10, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 11, __VA_ARGS__)
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
 	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 4, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5, __VA_ARGS__)
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 7, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 8, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 9, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 10, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_interrupt_controller_c000000, reg, 11, __VA_ARGS__)
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_reg_EXISTS 1
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_riscv_max_priority 7
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_riscv_max_priority_EXISTS 1
@@ -2144,9 +1065,9 @@
 #define DT_N_S_soc_S_interrupt_controller_c000000_P_wakeup_source_EXISTS 1
 
 /*
- * Devicetree node: /uart@10000000
+ * Devicetree node: /soc/uart@10000000
  *
- * Node identifier: DT_N_S_uart_10000000
+ * Node identifier: DT_N_S_soc_S_uart_10000000
  *
  * Binding (compatible = ns16550):
  *   $ZEPHYR_BASE/dts/bindings/serial/ns16550.yaml
@@ -2156,361 +1077,229 @@
  */
 
 /* Node's full path: */
-#define DT_N_S_uart_10000000_PATH "/uart@10000000"
+#define DT_N_S_soc_S_uart_10000000_PATH "/soc/uart@10000000"
 
 /* Node's name with unit-address: */
-#define DT_N_S_uart_10000000_FULL_NAME "uart@10000000"
-
-/* Node parent (/) identifier: */
-#define DT_N_S_uart_10000000_PARENT DT_N
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_uart_10000000_CHILD_IDX 1
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_uart_10000000_FOREACH_CHILD(fn) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_uart_10000000_ORD 23
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_uart_10000000_REQUIRES_ORDS \
-	0, /* / */ \
-	22, /* /soc/interrupt-controller@c000000 */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_uart_10000000_SUPPORTS_ORDS /* nothing */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_uart_10000000_EXISTS 1
-#define DT_N_INST_0_ns16550  DT_N_S_uart_10000000
-#define DT_N_NODELABEL_uart0 DT_N_S_uart_10000000
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_uart_10000000_REG_NUM 1
-#define DT_N_S_uart_10000000_REG_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_REG_IDX_0_VAL_ADDRESS 268435456 /* 0x10000000 */
-#define DT_N_S_uart_10000000_REG_IDX_0_VAL_SIZE 256 /* 0x100 */
-#define DT_N_S_uart_10000000_RANGES_NUM 0
-#define DT_N_S_uart_10000000_FOREACH_RANGE(fn) 
-#define DT_N_S_uart_10000000_IRQ_NUM 1
-#define DT_N_S_uart_10000000_IRQ_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_IRQ_IDX_0_VAL_irq 2827
-#define DT_N_S_uart_10000000_IRQ_IDX_0_VAL_irq_EXISTS 1
-#define DT_N_S_uart_10000000_IRQ_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_IRQ_IDX_0_VAL_priority 1
-#define DT_N_S_uart_10000000_IRQ_IDX_0_VAL_priority_EXISTS 1
-#define DT_N_S_uart_10000000_COMPAT_MATCHES_ns16550 1
-#define DT_N_S_uart_10000000_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_uart_10000000_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_uart_10000000_P_reg {268435456 /* 0x10000000 */, 256 /* 0x100 */}
-#define DT_N_S_uart_10000000_P_reg_IDX_0 268435456
-#define DT_N_S_uart_10000000_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_P_reg_IDX_1 256
-#define DT_N_S_uart_10000000_P_reg_IDX_1_EXISTS 1
-#define DT_N_S_uart_10000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_uart_10000000, reg, 0) \
-	fn(DT_N_S_uart_10000000, reg, 1)
-#define DT_N_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_uart_10000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, reg, 1)
-#define DT_N_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_uart_10000000, reg, 0, __VA_ARGS__) \
-	fn(DT_N_S_uart_10000000, reg, 1, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_uart_10000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, reg, 1, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_reg_EXISTS 1
-#define DT_N_S_uart_10000000_P_reg_shift 0
-#define DT_N_S_uart_10000000_P_reg_shift_EXISTS 1
-#define DT_N_S_uart_10000000_P_clock_frequency 3686400
-#define DT_N_S_uart_10000000_P_clock_frequency_EXISTS 1
-#define DT_N_S_uart_10000000_P_hw_flow_control 0
-#define DT_N_S_uart_10000000_P_hw_flow_control_EXISTS 1
-#define DT_N_S_uart_10000000_P_status "okay"
-#define DT_N_S_uart_10000000_P_status_STRING_TOKEN okay
-#define DT_N_S_uart_10000000_P_status_STRING_UPPER_TOKEN OKAY
-#define DT_N_S_uart_10000000_P_status_ENUM_IDX 1
-#define DT_N_S_uart_10000000_P_status_ENUM_TOKEN okay
-#define DT_N_S_uart_10000000_P_status_ENUM_UPPER_TOKEN OKAY
-#define DT_N_S_uart_10000000_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_uart_10000000, status, 0) \
-	fn(DT_N_S_uart_10000000, status, 1) \
-	fn(DT_N_S_uart_10000000, status, 2) \
-	fn(DT_N_S_uart_10000000, status, 3)
-#define DT_N_S_uart_10000000_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_uart_10000000, status, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 1) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 2) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 3)
-#define DT_N_S_uart_10000000_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_uart_10000000, status, 0, __VA_ARGS__) \
-	fn(DT_N_S_uart_10000000, status, 1, __VA_ARGS__) \
-	fn(DT_N_S_uart_10000000, status, 2, __VA_ARGS__) \
-	fn(DT_N_S_uart_10000000, status, 3, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_uart_10000000, status, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, status, 3, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_status_EXISTS 1
-#define DT_N_S_uart_10000000_P_compatible {"ns16550"}
-#define DT_N_S_uart_10000000_P_compatible_IDX_0 "ns16550"
-#define DT_N_S_uart_10000000_P_compatible_IDX_0_STRING_TOKEN ns16550
-#define DT_N_S_uart_10000000_P_compatible_IDX_0_STRING_UPPER_TOKEN NS16550
-#define DT_N_S_uart_10000000_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_uart_10000000, compatible, 0)
-#define DT_N_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_uart_10000000, compatible, 0)
-#define DT_N_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_uart_10000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_uart_10000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_compatible_LEN 1
-#define DT_N_S_uart_10000000_P_compatible_EXISTS 1
-#define DT_N_S_uart_10000000_P_interrupts {10 /* 0xa */, 1 /* 0x1 */}
-#define DT_N_S_uart_10000000_P_interrupts_IDX_0 10
-#define DT_N_S_uart_10000000_P_interrupts_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_P_interrupts_IDX_1 1
-#define DT_N_S_uart_10000000_P_interrupts_IDX_1_EXISTS 1
-#define DT_N_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM(fn) fn(DT_N_S_uart_10000000, interrupts, 0) \
-	fn(DT_N_S_uart_10000000, interrupts, 1)
-#define DT_N_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_uart_10000000, interrupts, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, interrupts, 1)
-#define DT_N_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_uart_10000000, interrupts, 0, __VA_ARGS__) \
-	fn(DT_N_S_uart_10000000, interrupts, 1, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_uart_10000000, interrupts, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_uart_10000000, interrupts, 1, __VA_ARGS__)
-#define DT_N_S_uart_10000000_P_interrupts_EXISTS 1
-#define DT_N_S_uart_10000000_P_interrupt_parent DT_N_S_soc_S_interrupt_controller_c000000
-#define DT_N_S_uart_10000000_P_interrupt_parent_IDX_0 DT_N_S_soc_S_interrupt_controller_c000000
-#define DT_N_S_uart_10000000_P_interrupt_parent_IDX_0_PH DT_N_S_soc_S_interrupt_controller_c000000
-#define DT_N_S_uart_10000000_P_interrupt_parent_IDX_0_EXISTS 1
-#define DT_N_S_uart_10000000_P_interrupt_parent_LEN 1
-#define DT_N_S_uart_10000000_P_interrupt_parent_EXISTS 1
-#define DT_N_S_uart_10000000_P_wakeup_source 0
-#define DT_N_S_uart_10000000_P_wakeup_source_EXISTS 1
-
-/*
- * Devicetree node: /soc/clint@2000000
- *
- * Node identifier: DT_N_S_soc_S_clint_2000000
- *
- * Binding (compatible = sifive,clint0):
- *   $ZEPHYR_BASE/dts/bindings/timer/sifive,clint0.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_soc_S_clint_2000000_PATH "/soc/clint@2000000"
-
-/* Node's name with unit-address: */
-#define DT_N_S_soc_S_clint_2000000_FULL_NAME "clint@2000000"
+#define DT_N_S_soc_S_uart_10000000_FULL_NAME "uart@10000000"
 
 /* Node parent (/soc) identifier: */
-#define DT_N_S_soc_S_clint_2000000_PARENT DT_N_S_soc
+#define DT_N_S_soc_S_uart_10000000_PARENT DT_N_S_soc
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_clint_2000000_CHILD_IDX 1
+#define DT_N_S_soc_S_uart_10000000_CHILD_IDX 3
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD(fn) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_soc_S_clint_2000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD(fn) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_SEP(fn, sep) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_VARGS(fn, ...) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY(fn) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
+#define DT_N_S_soc_S_uart_10000000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_clint_2000000_ORD 24
+#define DT_N_S_soc_S_uart_10000000_ORD 11
 
 /* Ordinals for what this node depends on directly: */
-#define DT_N_S_soc_S_clint_2000000_REQUIRES_ORDS \
+#define DT_N_S_soc_S_uart_10000000_REQUIRES_ORDS \
 	4, /* /soc */ \
-	7, /* /cpus/cpu@0/interrupt-controller */ \
-	9, /* /cpus/cpu@1/interrupt-controller */ \
-	11, /* /cpus/cpu@2/interrupt-controller */ \
-	13, /* /cpus/cpu@3/interrupt-controller */ \
-	15, /* /cpus/cpu@4/interrupt-controller */ \
-	17, /* /cpus/cpu@5/interrupt-controller */ \
-	19, /* /cpus/cpu@6/interrupt-controller */ \
-	21, /* /cpus/cpu@7/interrupt-controller */
+	10, /* /soc/interrupt-controller@c000000 */
 
 /* Ordinals for what depends directly on this node: */
-#define DT_N_S_soc_S_clint_2000000_SUPPORTS_ORDS /* nothing */
+#define DT_N_S_soc_S_uart_10000000_SUPPORTS_ORDS /* nothing */
 
 /* Existence and alternate IDs: */
-#define DT_N_S_soc_S_clint_2000000_EXISTS 1
-#define DT_N_INST_0_sifive_clint0 DT_N_S_soc_S_clint_2000000
+#define DT_N_S_soc_S_uart_10000000_EXISTS 1
+#define DT_N_INST_0_ns16750  DT_N_S_soc_S_uart_10000000
+#define DT_N_INST_0_ns16550  DT_N_S_soc_S_uart_10000000
+#define DT_N_NODELABEL_uart0 DT_N_S_soc_S_uart_10000000
 
 /* Macros for properties that are special in the specification: */
-#define DT_N_S_soc_S_clint_2000000_REG_NUM 1
-#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_ADDRESS 33554432 /* 0x2000000 */
-#define DT_N_S_soc_S_clint_2000000_REG_IDX_0_VAL_SIZE 65536 /* 0x10000 */
-#define DT_N_S_soc_S_clint_2000000_RANGES_NUM 0
-#define DT_N_S_soc_S_clint_2000000_FOREACH_RANGE(fn) 
-#define DT_N_S_soc_S_clint_2000000_IRQ_NUM 16
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_0_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_1_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_2_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_2_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_2_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_3_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_3_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_3_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_4_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_4_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_4_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_5_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_5_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_5_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_6_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_6_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_6_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_7_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_7_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_7_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_8_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_8_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_8_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_9_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_9_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_9_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_10_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_10_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_10_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_11_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_11_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_11_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_12_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_12_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_12_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_13_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_13_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_13_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_14_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_14_VAL_irq 3
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_14_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_15_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_15_VAL_irq 7
-#define DT_N_S_soc_S_clint_2000000_IRQ_IDX_15_VAL_irq_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_COMPAT_MATCHES_sifive_clint0 1
-#define DT_N_S_soc_S_clint_2000000_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_COMPAT_VENDOR_IDX_0 "SiFive, Inc."
-#define DT_N_S_soc_S_clint_2000000_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_COMPAT_MODEL_IDX_0 "clint0"
-#define DT_N_S_soc_S_clint_2000000_STATUS_okay 1
+#define DT_N_S_soc_S_uart_10000000_REG_NUM 1
+#define DT_N_S_soc_S_uart_10000000_REG_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_REG_IDX_0_VAL_ADDRESS 268435456 /* 0x10000000 */
+#define DT_N_S_soc_S_uart_10000000_REG_IDX_0_VAL_SIZE 4096 /* 0x1000 */
+#define DT_N_S_soc_S_uart_10000000_RANGES_NUM 0
+#define DT_N_S_soc_S_uart_10000000_FOREACH_RANGE(fn) 
+#define DT_N_S_soc_S_uart_10000000_IRQ_NUM 1
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_VAL_irq 523
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_VAL_irq_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_VAL_priority 1
+#define DT_N_S_soc_S_uart_10000000_IRQ_IDX_0_VAL_priority_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_COMPAT_MATCHES_ns16750 1
+#define DT_N_S_soc_S_uart_10000000_COMPAT_MATCHES_ns16550 1
+#define DT_N_S_soc_S_uart_10000000_STATUS_okay 1
 
 /* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_soc_S_clint_2000000_PINCTRL_NUM 0
+#define DT_N_S_soc_S_uart_10000000_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_soc_S_clint_2000000_P_reg {33554432 /* 0x2000000 */, 65536 /* 0x10000 */}
-#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_0 33554432
-#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_1 65536
-#define DT_N_S_soc_S_clint_2000000_P_reg_IDX_1_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_clint_2000000, reg, 0) \
-	fn(DT_N_S_soc_S_clint_2000000, reg, 1)
-#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_soc_S_clint_2000000, reg, 1)
-#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, reg, 0, __VA_ARGS__) \
-	fn(DT_N_S_soc_S_clint_2000000, reg, 1, __VA_ARGS__)
-#define DT_N_S_soc_S_clint_2000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
-	fn(DT_N_S_soc_S_clint_2000000, reg, 1, __VA_ARGS__)
-#define DT_N_S_soc_S_clint_2000000_P_reg_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_P_compatible {"sifive,clint0"}
-#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0 "sifive,clint0"
-#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_STRING_TOKEN sifive_clint0
-#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_STRING_UPPER_TOKEN SIFIVE_CLINT0
-#define DT_N_S_soc_S_clint_2000000_P_compatible_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_clint_2000000, compatible, 0)
-#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_clint_2000000, compatible, 0)
-#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_clint_2000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_soc_S_clint_2000000_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_clint_2000000, compatible, 0, __VA_ARGS__)
-#define DT_N_S_soc_S_clint_2000000_P_compatible_LEN 1
-#define DT_N_S_soc_S_clint_2000000_P_compatible_EXISTS 1
-#define DT_N_S_soc_S_clint_2000000_P_wakeup_source 0
-#define DT_N_S_soc_S_clint_2000000_P_wakeup_source_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg {0 /* 0x0 */, 268435456 /* 0x10000000 */, 0 /* 0x0 */, 4096 /* 0x1000 */}
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_0 0
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_1 268435456
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_2 0
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_2_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_3 4096
+#define DT_N_S_soc_S_uart_10000000_P_reg_IDX_3_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_uart_10000000, reg, 0) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 1) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 2) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 3)
+#define DT_N_S_soc_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_uart_10000000, reg, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 1) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 2) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 3)
+#define DT_N_S_soc_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_uart_10000000, reg, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 1, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 2, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_reg_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_uart_10000000, reg, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, reg, 3, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_reg_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_reg_shift 2
+#define DT_N_S_soc_S_uart_10000000_P_reg_shift_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_clock_frequency 25000000
+#define DT_N_S_soc_S_uart_10000000_P_clock_frequency_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_current_speed 115200
+#define DT_N_S_soc_S_uart_10000000_P_current_speed_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_hw_flow_control 0
+#define DT_N_S_soc_S_uart_10000000_P_hw_flow_control_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_compatible {"ns16750", "ns16550"}
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_0 "ns16750"
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_0_STRING_TOKEN ns16750
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_0_STRING_UPPER_TOKEN NS16750
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_1 "ns16550"
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_1_STRING_TOKEN ns16550
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_1_STRING_UPPER_TOKEN NS16550
+#define DT_N_S_soc_S_uart_10000000_P_compatible_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_uart_10000000, compatible, 0) \
+	fn(DT_N_S_soc_S_uart_10000000, compatible, 1)
+#define DT_N_S_soc_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_uart_10000000, compatible, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, compatible, 1)
+#define DT_N_S_soc_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_uart_10000000, compatible, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_uart_10000000, compatible, 1, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_compatible_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_uart_10000000, compatible, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, compatible, 1, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_compatible_LEN 2
+#define DT_N_S_soc_S_uart_10000000_P_compatible_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupts {1 /* 0x1 */, 1 /* 0x1 */}
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_IDX_0 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_IDX_1 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_IDX_1_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_uart_10000000, interrupts, 0) \
+	fn(DT_N_S_soc_S_uart_10000000, interrupts, 1)
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_uart_10000000, interrupts, 0) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, interrupts, 1)
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_uart_10000000, interrupts, 0, __VA_ARGS__) \
+	fn(DT_N_S_soc_S_uart_10000000, interrupts, 1, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_uart_10000000, interrupts, 0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep \
+	fn(DT_N_S_soc_S_uart_10000000, interrupts, 1, __VA_ARGS__)
+#define DT_N_S_soc_S_uart_10000000_P_interrupts_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent DT_N_S_soc_S_interrupt_controller_c000000
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent_IDX_0 DT_N_S_soc_S_interrupt_controller_c000000
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent_IDX_0_PH DT_N_S_soc_S_interrupt_controller_c000000
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent_LEN 1
+#define DT_N_S_soc_S_uart_10000000_P_interrupt_parent_EXISTS 1
+#define DT_N_S_soc_S_uart_10000000_P_wakeup_source 0
+#define DT_N_S_soc_S_uart_10000000_P_wakeup_source_EXISTS 1
 
 /*
  * Chosen nodes
  */
-#define DT_CHOSEN_zephyr_console           DT_N_S_uart_10000000
+#define DT_CHOSEN_zephyr_console           DT_N_S_soc_S_uart_10000000
 #define DT_CHOSEN_zephyr_console_EXISTS    1
-#define DT_CHOSEN_zephyr_shell_uart        DT_N_S_uart_10000000
+#define DT_CHOSEN_zephyr_shell_uart        DT_N_S_soc_S_uart_10000000
 #define DT_CHOSEN_zephyr_shell_uart_EXISTS 1
 #define DT_CHOSEN_zephyr_sram              DT_N_S_memory_80000000
 #define DT_CHOSEN_zephyr_sram_EXISTS       1
 
 /* Macros for iterating over all nodes and enabled nodes */
-#define DT_FOREACH_HELPER(fn) fn(DT_N) fn(DT_N_S_flash_20000000) fn(DT_N_S_uart_10000000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_1) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_2) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_3) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_4) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_5) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_6) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_7) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_chosen)
-#define DT_FOREACH_OKAY_HELPER(fn) fn(DT_N) fn(DT_N_S_flash_20000000) fn(DT_N_S_uart_10000000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_1) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_2) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_3) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_4) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_5) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_6) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_7) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_chosen)
+#define DT_FOREACH_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_debug_controller_0) fn(DT_N_S_soc_S_uart_10000000)
+#define DT_FOREACH_OKAY_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller) fn(DT_N_S_memory_80000000) fn(DT_N_S_soc) fn(DT_N_S_soc_S_clint_2000000) fn(DT_N_S_soc_S_interrupt_controller_c000000) fn(DT_N_S_soc_S_debug_controller_0) fn(DT_N_S_soc_S_uart_10000000)
 
 /*
  * Macros for compatibles with status "okay" nodes
  */
-#define DT_COMPAT_HAS_OKAY_riscv_virtio 1
-#define DT_COMPAT_HAS_OKAY_cfi_flash 1
-#define DT_COMPAT_HAS_OKAY_ns16550 1
+#define DT_COMPAT_HAS_OKAY_eth_cva6_bare_dev 1
+#define DT_COMPAT_HAS_OKAY_ohwg_cva6 1
 #define DT_COMPAT_HAS_OKAY_riscv 1
 #define DT_COMPAT_HAS_OKAY_riscv_cpu_intc 1
+#define DT_COMPAT_HAS_OKAY_eth_cva6_bare_soc 1
 #define DT_COMPAT_HAS_OKAY_simple_bus 1
-#define DT_COMPAT_HAS_OKAY_sifive_plic_1_0_0 1
 #define DT_COMPAT_HAS_OKAY_sifive_clint0 1
+#define DT_COMPAT_HAS_OKAY_sifive_plic_1_0_0 1
+#define DT_COMPAT_HAS_OKAY_riscv_debug_013 1
+#define DT_COMPAT_HAS_OKAY_ns16750 1
+#define DT_COMPAT_HAS_OKAY_ns16550 1
 
 /*
  * Macros for status "okay" instances of each compatible
  */
-#define DT_N_INST_riscv_virtio_NUM_OKAY 1
-#define DT_N_INST_cfi_flash_NUM_OKAY 1
-#define DT_N_INST_ns16550_NUM_OKAY 1
-#define DT_N_INST_riscv_NUM_OKAY 8
-#define DT_N_INST_riscv_cpu_intc_NUM_OKAY 8
+#define DT_N_INST_eth_cva6_bare_dev_NUM_OKAY 1
+#define DT_N_INST_ohwg_cva6_NUM_OKAY 1
+#define DT_N_INST_riscv_NUM_OKAY 1
+#define DT_N_INST_riscv_cpu_intc_NUM_OKAY 1
+#define DT_N_INST_eth_cva6_bare_soc_NUM_OKAY 1
 #define DT_N_INST_simple_bus_NUM_OKAY 1
-#define DT_N_INST_sifive_plic_1_0_0_NUM_OKAY 1
 #define DT_N_INST_sifive_clint0_NUM_OKAY 1
-#define DT_FOREACH_OKAY_riscv_virtio(fn) fn(DT_N)
-#define DT_FOREACH_OKAY_VARGS_riscv_virtio(fn, ...) fn(DT_N, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_riscv_virtio(fn) fn(0)
-#define DT_FOREACH_OKAY_INST_VARGS_riscv_virtio(fn, ...) fn(0, __VA_ARGS__)
-#define DT_FOREACH_OKAY_cfi_flash(fn) fn(DT_N_S_flash_20000000)
-#define DT_FOREACH_OKAY_VARGS_cfi_flash(fn, ...) fn(DT_N_S_flash_20000000, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_cfi_flash(fn) fn(0)
-#define DT_FOREACH_OKAY_INST_VARGS_cfi_flash(fn, ...) fn(0, __VA_ARGS__)
-#define DT_FOREACH_OKAY_ns16550(fn) fn(DT_N_S_uart_10000000)
-#define DT_FOREACH_OKAY_VARGS_ns16550(fn, ...) fn(DT_N_S_uart_10000000, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_ns16550(fn) fn(0)
-#define DT_FOREACH_OKAY_INST_VARGS_ns16550(fn, ...) fn(0, __VA_ARGS__)
-#define DT_FOREACH_OKAY_riscv(fn) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_cpus_S_cpu_1) fn(DT_N_S_cpus_S_cpu_2) fn(DT_N_S_cpus_S_cpu_3) fn(DT_N_S_cpus_S_cpu_4) fn(DT_N_S_cpus_S_cpu_5) fn(DT_N_S_cpus_S_cpu_6) fn(DT_N_S_cpus_S_cpu_7)
-#define DT_FOREACH_OKAY_VARGS_riscv(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_1, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_2, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_3, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_4, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_5, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_6, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_7, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_riscv(fn) fn(0) fn(1) fn(2) fn(3) fn(4) fn(5) fn(6) fn(7)
-#define DT_FOREACH_OKAY_INST_VARGS_riscv(fn, ...) fn(0, __VA_ARGS__) fn(1, __VA_ARGS__) fn(2, __VA_ARGS__) fn(3, __VA_ARGS__) fn(4, __VA_ARGS__) fn(5, __VA_ARGS__) fn(6, __VA_ARGS__) fn(7, __VA_ARGS__)
-#define DT_FOREACH_OKAY_riscv_cpu_intc(fn) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller)
-#define DT_FOREACH_OKAY_VARGS_riscv_cpu_intc(fn, ...) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_1_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_2_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_3_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_4_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_5_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_6_S_interrupt_controller, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_7_S_interrupt_controller, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_riscv_cpu_intc(fn) fn(0) fn(1) fn(2) fn(3) fn(4) fn(5) fn(6) fn(7)
-#define DT_FOREACH_OKAY_INST_VARGS_riscv_cpu_intc(fn, ...) fn(0, __VA_ARGS__) fn(1, __VA_ARGS__) fn(2, __VA_ARGS__) fn(3, __VA_ARGS__) fn(4, __VA_ARGS__) fn(5, __VA_ARGS__) fn(6, __VA_ARGS__) fn(7, __VA_ARGS__)
+#define DT_N_INST_sifive_plic_1_0_0_NUM_OKAY 1
+#define DT_N_INST_riscv_debug_013_NUM_OKAY 1
+#define DT_N_INST_ns16750_NUM_OKAY 1
+#define DT_N_INST_ns16550_NUM_OKAY 1
+#define DT_FOREACH_OKAY_eth_cva6_bare_dev(fn) fn(DT_N)
+#define DT_FOREACH_OKAY_VARGS_eth_cva6_bare_dev(fn, ...) fn(DT_N, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_eth_cva6_bare_dev(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_eth_cva6_bare_dev(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_ohwg_cva6(fn) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_FOREACH_OKAY_VARGS_ohwg_cva6(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_ohwg_cva6(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_ohwg_cva6(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_riscv(fn) fn(DT_N_S_cpus_S_cpu_0)
+#define DT_FOREACH_OKAY_VARGS_riscv(fn, ...) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_riscv(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_riscv(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_riscv_cpu_intc(fn) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller)
+#define DT_FOREACH_OKAY_VARGS_riscv_cpu_intc(fn, ...) fn(DT_N_S_cpus_S_cpu_0_S_interrupt_controller, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_riscv_cpu_intc(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_riscv_cpu_intc(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_eth_cva6_bare_soc(fn) fn(DT_N_S_soc)
+#define DT_FOREACH_OKAY_VARGS_eth_cva6_bare_soc(fn, ...) fn(DT_N_S_soc, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_eth_cva6_bare_soc(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_eth_cva6_bare_soc(fn, ...) fn(0, __VA_ARGS__)
 #define DT_FOREACH_OKAY_simple_bus(fn) fn(DT_N_S_soc)
 #define DT_FOREACH_OKAY_VARGS_simple_bus(fn, ...) fn(DT_N_S_soc, __VA_ARGS__)
 #define DT_FOREACH_OKAY_INST_simple_bus(fn) fn(0)
 #define DT_FOREACH_OKAY_INST_VARGS_simple_bus(fn, ...) fn(0, __VA_ARGS__)
-#define DT_FOREACH_OKAY_sifive_plic_1_0_0(fn) fn(DT_N_S_soc_S_interrupt_controller_c000000)
-#define DT_FOREACH_OKAY_VARGS_sifive_plic_1_0_0(fn, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__)
-#define DT_FOREACH_OKAY_INST_sifive_plic_1_0_0(fn) fn(0)
-#define DT_FOREACH_OKAY_INST_VARGS_sifive_plic_1_0_0(fn, ...) fn(0, __VA_ARGS__)
 #define DT_FOREACH_OKAY_sifive_clint0(fn) fn(DT_N_S_soc_S_clint_2000000)
 #define DT_FOREACH_OKAY_VARGS_sifive_clint0(fn, ...) fn(DT_N_S_soc_S_clint_2000000, __VA_ARGS__)
 #define DT_FOREACH_OKAY_INST_sifive_clint0(fn) fn(0)
 #define DT_FOREACH_OKAY_INST_VARGS_sifive_clint0(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_sifive_plic_1_0_0(fn) fn(DT_N_S_soc_S_interrupt_controller_c000000)
+#define DT_FOREACH_OKAY_VARGS_sifive_plic_1_0_0(fn, ...) fn(DT_N_S_soc_S_interrupt_controller_c000000, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_sifive_plic_1_0_0(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_sifive_plic_1_0_0(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_riscv_debug_013(fn) fn(DT_N_S_soc_S_debug_controller_0)
+#define DT_FOREACH_OKAY_VARGS_riscv_debug_013(fn, ...) fn(DT_N_S_soc_S_debug_controller_0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_riscv_debug_013(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_riscv_debug_013(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_ns16750(fn) fn(DT_N_S_soc_S_uart_10000000)
+#define DT_FOREACH_OKAY_VARGS_ns16750(fn, ...) fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_ns16750(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_ns16750(fn, ...) fn(0, __VA_ARGS__)
+#define DT_FOREACH_OKAY_ns16550(fn) fn(DT_N_S_soc_S_uart_10000000)
+#define DT_FOREACH_OKAY_VARGS_ns16550(fn, ...) fn(DT_N_S_soc_S_uart_10000000, __VA_ARGS__)
+#define DT_FOREACH_OKAY_INST_ns16550(fn) fn(0)
+#define DT_FOREACH_OKAY_INST_VARGS_ns16550(fn, ...) fn(0, __VA_ARGS__)
 
 /*
  * Bus information for status "okay" nodes of each compatible

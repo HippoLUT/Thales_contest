@@ -48,8 +48,8 @@
 /workdir/zephyr/arch/riscv/Kconfig.core
 /workdir/zephyr/arch/riscv/Kconfig.isa
 /workdir/zephyr/boards/Kconfig
-/workdir/zephyr/boards/riscv/qemu_riscv32/Kconfig.board
-/workdir/zephyr/boards/riscv/qemu_riscv32/Kconfig.defconfig
+/workdir/zephyr/boards/riscv/cv32a6_zybo/Kconfig.board
+/workdir/zephyr/boards/riscv/cv32a6_zybo/Kconfig.defconfig
 /workdir/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.defconfig
 /workdir/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.shield
 /workdir/zephyr/boards/shields/adafruit_winc1500/Kconfig.defconfig

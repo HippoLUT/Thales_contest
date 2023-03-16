@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: hello_world
+# Project: ripe
 # Configurations: 
 # =============================================================================
 # =============================================================================
@@ -204,7 +204,7 @@ rule C_STATIC_LIBRARY_LINKER__arch__riscv__core_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__lib__libc__minimal_
+rule C_COMPILER__lib__libc__newlib_
   depfile = $DEP_FILE
   deps = gcc
   command = ccache /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -214,7 +214,7 @@ rule C_COMPILER__lib__libc__minimal_
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER__lib__libc__minimal_
+rule C_STATIC_LIBRARY_LINKER__lib__libc__newlib_
   command = $PRE_LINK && ccache /usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -338,7 +338,7 @@ rule C_STATIC_LIBRARY_LINKER__kernel_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/local/bin/cmake --regenerate-during-build -S/workdir/zephyr/samples/hello_world -B/workdir/build
+  command = /usr/local/bin/cmake --regenerate-during-build -S/workdir/test/ripe -B/workdir/build
   description = Re-running CMake...
   generator = 1
 
