@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -41,18 +40,18 @@ logic c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10 ;
 assign c0 = commit_ack_i == 2'b00; 
 
 
-assign c1 =   (commit_ack_i == 2'b01 ) && (commit_instr_i[0] == JALR)? 1 : 0;
-assign c2 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0] != JALR)? 1 : 0;
-assign c3 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0] == ADD)? 1 : 0;
-assign c4 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0] != ADD)? 1 : 0;
+assign c1 =   (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
+assign c2 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::JALR)? 1 : 0;
+assign c3 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
+assign c4 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
 
-assign c5 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0] != JALR) && (commit_instr_i[1] != JALR)? 1 : 0;
-assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0] == JALR) && (commit_instr_i[1] != ADD)? 1 : 0;
-assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0] == JALR) && (commit_instr_i[1] == ADD)? 1 : 0;
-assign c8 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0]!= JALR) && (commit_instr_i[1] == JALR)? 1 : 0;
-assign c9 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0] == ADD)? 1 : 0;
-assign c10 = (commit_ack_i == 2'b11 ) && (commit_instr_i[0] != ADD)? 1 : 0;
-assign c11 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0] == ADD) && (commit_instr_i[0] == JALR)? 1 : 0;
+assign c5 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::JALR)? 1 : 0;
+assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::ADD)? 1 : 0;
+assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::ADD)? 1 : 0;
+assign c8 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::JALR)? 1 : 0;
+assign c9 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
+assign c10 = (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
+assign c11 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 
 
 always_ff @(posedge clk_i or negedge rst_ni) // changement du step en fonction de l'affaire

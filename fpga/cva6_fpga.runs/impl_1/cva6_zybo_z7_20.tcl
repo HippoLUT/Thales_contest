@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/impl_1/cva6_zybo_z7_20.tcl"
+  variable script "/home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.runs/impl_1/cva6_zybo_z7_20.tcl"
   variable category "vivado_impl"
 }
 
@@ -127,9 +127,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-112046-boyer-Inspiron-16-Plus/incrSyn
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-173473-riscvcontest-Precision-Tower-5810/incrSyn
   open_checkpoint cva6_zybo_z7_20_routed.dcp
-  set_property webtalk.parent_dir /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.cache/wt [current_project]
 set_property TOP cva6_zybo_z7_20 [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

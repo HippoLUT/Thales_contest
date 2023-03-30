@@ -223,7 +223,9 @@ ifdef batch-mode
 	questa-cmd   := -do "coverage save -onexit tmp/$@.ucdb; run -a; quit -code [coverage attribute -name TESTSTATUS -concise]"
 	questa-cmd   += -do " run -all;"
 else
-	questa-cmd   := -do "  run -all;"
+	questa-cmd := -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/*"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/dfi/*"
+	questa-cmd   += -do "  run -all;"
 endif
 
 
