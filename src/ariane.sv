@@ -40,8 +40,7 @@ module ariane import ariane_pkg::*; #(
   input  logic                         debug_req_i,  // debug request (async)
   
   //CNR Ma partie pour les tests : 
-  output logic [1:0]    detection_signal_on_commit_JALR_o,
-  output logic [1:0]    detection_signal_on_commit_NOP_o,
+  output logic [3:0]    detection_signal_on_commit_JALR_o,
                
 `ifdef FIRESIM_TRACE
   // firesim trace port
@@ -618,8 +617,7 @@ module ariane import ariane_pkg::*; #(
     
     .commit_instr_i (commit_instr_id_commit),
     .commit_ack_i (commit_ack),
-    .detection_signal_on_commit_JALR (detection_signal_on_commit_JALR_o),
-    .detection_signal_on_commit_NOP (detection_signal_on_commit_NOP_o)
+    .detection_signal_on_commit_JALR (detection_signal_on_commit_JALR_o)
     );
     
   

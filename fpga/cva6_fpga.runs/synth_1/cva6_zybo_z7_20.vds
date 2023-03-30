@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 16 18:20:02 2023
-# Process ID: 130991
+# Start of session at: Thu Mar 30 11:29:09 2023
+# Process ID: 112329
 # Current directory: /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1
 # Command line: vivado -log cva6_zybo_z7_20.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cva6_zybo_z7_20.tcl
 # Log file: /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/cva6_zybo_z7_20.vds
@@ -17,11 +17,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 131038
+INFO: [Synth 8-7075] Helper process launched with PID 112361
 WARNING: [Synth 8-2507] parameter declaration becomes local in rgmii_lfsr with formal parameter declaration list [/home/boyer/git_complet_pro/Thales_contest/fpga/src/ariane-ethernet/rgmii_lfsr.sv:364]
 WARNING: [Synth 8-1921] elaboration system task fatal violates IEEE 1800 syntax [/home/boyer/git_complet_pro/Thales_contest/src/common_cells/src/stream_arbiter_flushable.sv:77]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2145.559 ; gain = 9.840 ; free physical = 5368 ; free virtual = 20221
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2145.617 ; gain = 11.840 ; free physical = 3715 ; free virtual = 23442
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cva6_zybo_z7_20' [/home/boyer/git_complet_pro/Thales_contest/fpga/src/cva6_zybo_z7_20.sv:25]
 	Parameter NumWords bound to: 3145728 - type: integer 
@@ -649,7 +649,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/g
 INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:230]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:119]
 INFO: [Synth 8-6155] done synthesizing module 'axi2mem' (41#1) [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:20]
-INFO: [Synth 8-6155] done synthesizing module 'xlnx_axi_dwidth_converter_dm_slave' (42#1) [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/.Xil/Vivado-130991-boyer-Inspiron-16-Plus/realtime/xlnx_axi_dwidth_converter_dm_slave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'xlnx_axi_dwidth_converter_dm_slave' (42#1) [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/.Xil/Vivado-112329-boyer-Inspiron-16-Plus/realtime/xlnx_axi_dwidth_converter_dm_slave_stub.v:6]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000 
 	Parameter CRITICAL_WORD_FIRST bound to: 1'b0 
@@ -921,8 +921,8 @@ INFO: [Synth 8-294] found qualifier unique on case statement: implementing as pa
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:629]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:909]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:928]
-WARNING: [Synth 8-693] zero replication count - replication ignored [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:1018]
-WARNING: [Synth 8-693] zero replication count - replication ignored [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:1073]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:1019]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/boyer/git_complet_pro/Thales_contest/src/decoder.sv:1074]
 	Parameter NR_ENTRIES bound to: 32'b00000000000000000000000000001000 
 	Parameter NR_WB_PORTS bound to: 32'b00000000000000000000000000000100 
 	Parameter NR_COMMIT_PORTS bound to: 32'b00000000000000000000000000000010 
@@ -1326,19 +1326,22 @@ INFO: [Synth 8-294] found qualifier unique on case statement: implementing as pa
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/boyer/git_complet_pro/Thales_contest/src/csr_regfile.sv:946]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/boyer/git_complet_pro/Thales_contest/src/csr_regfile.sv:1036]
 	Parameter RegOffset bound to: 7'b1011000 
-	Parameter state1 bound to: 3'b000 
-	Parameter state2 bound to: 3'b001 
-	Parameter state3 bound to: 3'b010 
-	Parameter state4 bound to: 3'b011 
-	Parameter state5 bound to: 3'b100 
-WARNING: [Synth 8-151] case item 3'b100 is unreachable [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:133]
-WARNING: [Synth 8-567] referenced signal 'c0' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c1' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c2' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c3' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c4' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c5' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-WARNING: [Synth 8-567] referenced signal 'c6' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
+	Parameter state1 bound to: 2'b00 
+	Parameter state2 bound to: 2'b01 
+	Parameter state3 bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:91]
+WARNING: [Synth 8-567] referenced signal 'c2' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c5' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c7' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c0' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c1' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c8' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c11' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c6' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c4' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c10' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c3' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
+WARNING: [Synth 8-567] referenced signal 'c9' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:71]
 	Parameter ArianeCfg[RASDepth] bound to: 2 - type: integer 
 	Parameter ArianeCfg[BTBEntries] bound to: 32 - type: integer 
 	Parameter ArianeCfg[BHTEntries] bound to: 128 - type: integer 
@@ -2284,18 +2287,18 @@ INFO: [Synth 8-226] default block is never used [/home/boyer/git_complet_pro/Tha
 	Parameter AxiVldRdy bound to: 1'b1 
 	Parameter LockIn bound to: 1'b1 
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2633.910 ; gain = 498.191 ; free physical = 5064 ; free virtual = 19926
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2634.000 ; gain = 500.223 ; free physical = 3329 ; free virtual = 23087
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.785 ; gain = 511.066 ; free physical = 5149 ; free virtual = 20012
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2646.875 ; gain = 513.098 ; free physical = 3441 ; free virtual = 23178
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.785 ; gain = 511.066 ; free physical = 5149 ; free virtual = 20012
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2646.875 ; gain = 513.098 ; free physical = 3441 ; free virtual = 23178
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2646.785 ; gain = 0.000 ; free physical = 5033 ; free virtual = 19895
+Netlist sorting complete. Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2646.875 ; gain = 0.000 ; free physical = 3313 ; free virtual = 23050
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -2328,22 +2331,22 @@ Parsing XDC File [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs
 Finished Parsing XDC File [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2945.254 ; gain = 0.000 ; free physical = 4770 ; free virtual = 19632
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2945.312 ; gain = 0.000 ; free physical = 3050 ; free virtual = 22808
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2945.254 ; gain = 0.000 ; free physical = 4770 ; free virtual = 19632
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2945.312 ; gain = 0.000 ; free physical = 3049 ; free virtual = 22807
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'i_axi_dwidth_converter_dm_master' at clock pin 's_axi_aclk' is different from the actual clock period '40.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'i_axi_dwidth_converter_dm_slave' at clock pin 's_axi_aclk' is different from the actual clock period '40.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 5103 ; free virtual = 19995
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 3403 ; free virtual = 23160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 5102 ; free virtual = 19994
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 3402 ; free virtual = 23159
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2355,7 +2358,7 @@ Applied set_property DONT_TOUCH = true for i_xlnx_clk_gen. (constraint file  aut
 Applied set_property DONT_TOUCH = true for i_axi_dwidth_converter_dm_master. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_axi_dwidth_converter_dm_slave. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 5104 ; free virtual = 19996
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 3403 ; free virtual = 23161
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'axi_BW_allocator'
 INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'axi_BR_allocator'
@@ -2495,12 +2498,11 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encodin
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  state1 |                               00 |                               00
-                  state4 |                               01 |                               11
-                  state3 |                               10 |                               10
-                  state2 |                               11 |                               01
+                  state1 |                              001 |                               00
+                  state2 |                              010 |                               01
+                  state3 |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_actual_reg' using encoding 'sequential' in module 'CFI_Mod'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_actual_reg' using encoding 'one-hot' in module 'CFI_Mod'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -2687,7 +2689,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'w_state_q_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_q_reg' using encoding 'sequential' in module 'axi_riscv_lrsc'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 1770 ; free virtual = 16643
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 239 ; free virtual = 19863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -2753,7 +2755,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 177   
 	                4 Bit    Registers := 364   
 	                3 Bit    Registers := 401   
-	                2 Bit    Registers := 483   
+	                2 Bit    Registers := 482   
 	                1 Bit    Registers := 1274  
 +---Multipliers : 
 	              33x33  Multipliers := 1     
@@ -2779,14 +2781,14 @@ Detailed RTL Component Info :
 	   7 Input   64 Bit        Muxes := 2     
 	   2 Input   41 Bit        Muxes := 4     
 	   2 Input   32 Bit        Muxes := 670   
-	   3 Input   32 Bit        Muxes := 7     
+	   3 Input   32 Bit        Muxes := 8     
 	   4 Input   32 Bit        Muxes := 18    
-	   8 Input   32 Bit        Muxes := 1     
+	   6 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 2     
 	  60 Input   32 Bit        Muxes := 3     
 	  61 Input   32 Bit        Muxes := 1     
 	  49 Input   32 Bit        Muxes := 1     
-	   7 Input   32 Bit        Muxes := 2     
-	   6 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
 	  12 Input   32 Bit        Muxes := 9     
 	  39 Input   32 Bit        Muxes := 1     
 	   5 Input   32 Bit        Muxes := 4     
@@ -2820,25 +2822,24 @@ Detailed RTL Component Info :
 	   9 Input    8 Bit        Muxes := 1     
 	   5 Input    8 Bit        Muxes := 2     
 	   4 Input    7 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 20    
 	  20 Input    7 Bit        Muxes := 1     
-	  14 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 22    
 	  19 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 73    
 	   4 Input    6 Bit        Muxes := 2     
 	  17 Input    6 Bit        Muxes := 1     
-	  64 Input    6 Bit        Muxes := 1     
 	   8 Input    6 Bit        Muxes := 2     
-	  12 Input    6 Bit        Muxes := 1     
+	  12 Input    6 Bit        Muxes := 2     
 	   3 Input    6 Bit        Muxes := 3     
+	  64 Input    6 Bit        Muxes := 1     
 	   6 Input    6 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 131   
 	   4 Input    5 Bit        Muxes := 2     
-	   8 Input    5 Bit        Muxes := 3     
-	   9 Input    5 Bit        Muxes := 2     
 	   3 Input    5 Bit        Muxes := 5     
 	   6 Input    5 Bit        Muxes := 3     
+	   8 Input    5 Bit        Muxes := 3     
 	   7 Input    5 Bit        Muxes := 1     
+	   9 Input    5 Bit        Muxes := 2     
 	  31 Input    5 Bit        Muxes := 2     
 	   5 Input    5 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 1576  
@@ -2850,46 +2851,45 @@ Detailed RTL Component Info :
 	   5 Input    4 Bit        Muxes := 2     
 	  46 Input    4 Bit        Muxes := 3     
 	   8 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 727   
+	   2 Input    3 Bit        Muxes := 731   
 	   8 Input    3 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 12    
 	   4 Input    3 Bit        Muxes := 11    
 	   7 Input    3 Bit        Muxes := 5     
 	   6 Input    3 Bit        Muxes := 5     
-	   3 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 5     
 	  19 Input    3 Bit        Muxes := 4     
 	  23 Input    3 Bit        Muxes := 1     
 	  12 Input    3 Bit        Muxes := 1     
 	   9 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 682   
-	   4 Input    2 Bit        Muxes := 25    
-	   8 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 24    
+	   8 Input    2 Bit        Muxes := 2     
 	   3 Input    2 Bit        Muxes := 21    
 	   7 Input    2 Bit        Muxes := 7     
+	   6 Input    2 Bit        Muxes := 3     
+	  19 Input    2 Bit        Muxes := 3     
 	  10 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 3     
-	  12 Input    2 Bit        Muxes := 1     
-	  19 Input    2 Bit        Muxes := 3     
-	   6 Input    2 Bit        Muxes := 3     
 	  40 Input    2 Bit        Muxes := 3     
 	  41 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 4827  
-	   4 Input    1 Bit        Muxes := 148   
+	   2 Input    1 Bit        Muxes := 4830  
+	   4 Input    1 Bit        Muxes := 146   
 	   8 Input    1 Bit        Muxes := 32    
-	   5 Input    1 Bit        Muxes := 40    
+	   5 Input    1 Bit        Muxes := 39    
 	   7 Input    1 Bit        Muxes := 58    
 	  12 Input    1 Bit        Muxes := 55    
 	  15 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 166   
-	   9 Input    1 Bit        Muxes := 7     
-	  16 Input    1 Bit        Muxes := 1     
-	  60 Input    1 Bit        Muxes := 7     
-	  64 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 167   
 	   6 Input    1 Bit        Muxes := 30    
+	   9 Input    1 Bit        Muxes := 7     
 	  14 Input    1 Bit        Muxes := 2     
 	  19 Input    1 Bit        Muxes := 6     
 	  20 Input    1 Bit        Muxes := 1     
 	  11 Input    1 Bit        Muxes := 1     
+	  60 Input    1 Bit        Muxes := 7     
+	  64 Input    1 Bit        Muxes := 1     
+	  16 Input    1 Bit        Muxes := 1     
 	  13 Input    1 Bit        Muxes := 1     
 	  39 Input    1 Bit        Muxes := 2     
 	  30 Input    1 Bit        Muxes := 2     
@@ -2959,57 +2959,6 @@ WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__113 i
 WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__113 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__112 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__112 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__112 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__111 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__111 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__111 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__110 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__110 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__110 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__109 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__109 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__109 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__108 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__108 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__108 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__107 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__107 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__107 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__106 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__106 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__106 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__105 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__105 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__105 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__104 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__104 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__104 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__103 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__103 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__103 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__102 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__102 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__102 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__101 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__101 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__101 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__100 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__100 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__100 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__99 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__99 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__99 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__98 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__98 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__98 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__97 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__97 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__97 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__96 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_ni in module rr_arb_tree__parameterized3__96 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port flush_i in module rr_arb_tree__parameterized3__96 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module rr_arb_tree__parameterized3__95 is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_reg[0][is_rd_fpr_flag] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_reg[1][is_rd_fpr_flag] )
@@ -3019,7 +2968,60 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_re
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_reg[5][is_rd_fpr_flag] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_reg[6][is_rd_fpr_flag] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_q_reg[7][is_rd_fpr_flag] )
+WARNING: [Synth 8-7129] Port rst_ni in module sram__8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_ni in module sram__1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__24 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__17 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__18 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__20 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__21 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__22 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst_RBI in module SyncSpRamBeNx64__23 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rr_i[1] in module rr_arb_tree__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rr_i[0] in module rr_arb_tree__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_off_i[2] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_off_i[1] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_off_i[0] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][7] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][6] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][5] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][4] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][3] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][2] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][1] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][dirty][0] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][7] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][6] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][5] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][4] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][3] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][2] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][1] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][txblock][0] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][checked] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][hit_oh][7] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][hit_oh][6] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][hit_oh][5] in module wt_dcache_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbuffer_data_i[7][hit_oh][4] in module wt_dcache_mem is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design wt_dcache__GB1 has port rd_tag_only_i[1] driven by constant 0
+WARNING: [Synth 8-3917] design wt_dcache__GB1 has port rd_tag_only_i[0] driven by constant 0
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'i_wt_dcache_wbuffer/wbuffer_q_reg[0][wtag][29]' (FDCE) to 'i_wt_dcache_wbuffer/wbuffer_q_reg[0][wtag][31]'
 INFO: [Synth 8-3886] merging instance 'i_wt_dcache_wbuffer/wbuffer_q_reg[0][wtag][30]' (FDCE) to 'i_wt_dcache_wbuffer/wbuffer_q_reg[0][wtag][31]'
@@ -3044,29 +3046,20 @@ INFO: [Synth 8-3886] merging instance 'i_wt_dcache_wbuffer/wbuffer_q_reg[6][wtag
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_wt_dcache_wbuffer/\wbuffer_q_reg[6][wtag][31] )
 INFO: [Synth 8-3886] merging instance 'i_wt_dcache_wbuffer/wbuffer_q_reg[7][wtag][29]' (FDCE) to 'i_wt_dcache_wbuffer/wbuffer_q_reg[7][wtag][31]'
 INFO: [Synth 8-3886] merging instance 'i_wt_dcache_wbuffer/wbuffer_q_reg[7][wtag][30]' (FDCE) to 'i_wt_dcache_wbuffer/wbuffer_q_reg[7][wtag][31]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_wt_dcache_wbuffer/\wbuffer_q_reg[7][wtag][31] )
+INFO: [Synth 8-3886] merging instance 'i_adapter/i_icache_data_fifo/mem_q_reg[1][paddr][0]' (FDCE) to 'i_adapter/i_icache_data_fifo/mem_q_reg[1][paddr][1]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/i_icache_data_fifo/mem_q_reg[0][paddr][0]' (FDCE) to 'i_adapter/i_icache_data_fifo/mem_q_reg[0][paddr][1]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/i_icache_data_fifo/mem_q_reg[1][paddr][1]' (FDCE) to 'i_adapter/i_icache_data_fifo/mem_q_reg[1][paddr][2]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/i_icache_data_fifo/mem_q_reg[0][paddr][1]' (FDCE) to 'i_adapter/i_icache_data_fifo/mem_q_reg[0][paddr][2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i_adapter/i_icache_data_fifo/mem_q_reg[1][paddr][2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i_adapter/i_icache_data_fifo/mem_q_reg[0][paddr][2] )
+INFO: [Synth 8-3886] merging instance 'i_adapter/dcache_rtrn_inv_q_reg[way][0]' (FDC) to 'i_adapter/dcache_rtrn_inv_q_reg[way][2]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/dcache_rtrn_inv_q_reg[way][1]' (FDC) to 'i_adapter/dcache_rtrn_inv_q_reg[way][2]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/dcache_rtrn_inv_q_reg[way][2]' (FDC) to 'i_adapter/dcache_rtrn_type_q_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_adapter/dcache_rtrn_inv_q_reg[vld]' (FDC) to 'i_adapter/dcache_rtrn_type_q_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i_adapter/dcache_rtrn_type_q_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_wt_icache/cl_offset_q_reg[0]' (FDCE) to 'i_wt_icache/cl_offset_q_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_wt_icache/\cl_offset_q_reg[1] )
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:72]
-DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: A*B.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: A*B.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
-INFO: [Synth 8-5587] ROM size for "amo_op_d" is below threshold of ROM address width. It will be mapped to LUTs
-INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "medeleg_d" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "scounteren_d" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "mstatus_d" won't be mapped to RAM because it is too sparse
@@ -3089,7 +3082,42 @@ INFO: [Synth 8-5546] ROM "mtval_d" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5546] ROM "dcache_d" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "icache_d" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "perf_we_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'id_stage_i/issue_q_reg[sbe][ex][valid]' into 'id_stage_i/issue_q_reg[sbe][valid]' [/home/boyer/git_complet_pro/Thales_contest/src/id_stage.sv:122]
+INFO: [Synth 8-5587] ROM size for "id_stage_i/decoder_i/instruction_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "id_stage_i/decoder_i/instruction_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "id_stage_i/decoder_i/instruction_o" won't be mapped to RAM because it is too sparse
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][1]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][2]' (LDCP) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][3]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][4]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][5]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][6]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][7]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][8]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][9]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][10]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][11]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][12]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][13]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][14]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][15]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][16]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][17]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][18]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][19]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][20]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][21]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][22]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][23]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][24]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][25]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][26]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][27]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][28]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][29]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][30]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_frontend/i_instr_queue/\fetch_entry_o_reg[ex][cause][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\pmpaddr_q_reg[15][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\mip_q_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\mideleg_q_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\medeleg_q_reg[1] )
@@ -3212,36 +3240,30 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfi
 INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[22]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
 INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[22]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\pmpaddr_q_reg[15][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\medeleg_q_reg[23] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][1]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (csr_regfile_i/\mip_q_reg[23] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[23]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[23]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][2]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[24]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[24]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][3]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[25]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[25]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][4]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[26]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[26]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][5]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[27]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[27]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][6]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcsr_q_reg[xdebugver][28]' (FDCE) to 'csr_regfile_i/dcsr_q_reg[xdebugver][31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[28]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[28]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/satp_q_reg[asid][7]' (FDCE) to 'csr_regfile_i/satp_q_reg[asid][8]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcsr_q_reg[xdebugver][29]' (FDCE) to 'csr_regfile_i/dcsr_q_reg[xdebugver][31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[29]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[29]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/icache_q_reg[30]' (FDCE) to 'csr_regfile_i/icache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/dcache_q_reg[30]' (FDCE) to 'csr_regfile_i/dcache_q_reg[31]'
-INFO: [Synth 8-3886] merging instance 'csr_regfile_i/mstatus_q_reg[fs][0]' (FDCE) to 'csr_regfile_i/mstatus_q_reg[fs][1]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (fetch_entry_o_reg[ex][cause][31]) is unused and will be removed from module instr_queue.
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:72]
+DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: A*B.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: A*B.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: Generating DSP i_multiplier/mult_result_d, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+DSP Report: operator i_multiplier/mult_result_d is absorbed into DSP i_multiplier/mult_result_d.
+INFO: [Synth 8-5587] ROM size for "amo_op_d" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "extract_transfer_size" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[47]) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[46]) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[45]) is unused and will be removed from module mult.
@@ -3323,36 +3345,17 @@ WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[19]__
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[18]__1) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[17]__1) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[47]__2) is unused and will be removed from module mult.
-INFO: [Synth 8-4471] merging register 'id_stage_i/issue_q_reg[sbe][ex][valid]' into 'id_stage_i/issue_q_reg[sbe][valid]' [/home/boyer/git_complet_pro/Thales_contest/src/id_stage.sv:122]
-INFO: [Synth 8-5587] ROM size for "id_stage_i/decoder_i/instruction_o" is below threshold of ROM address width. It will be mapped to LUTs
-INFO: [Synth 8-5546] ROM "id_stage_i/decoder_i/instruction_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][1]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][2]' (LDCP) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][3]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][4]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][5]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][6]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][7]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][8]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][9]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][10]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][11]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][12]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][13]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][14]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Synth 8-3886] merging instance 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][15]' (LDC) to 'i_frontend/i_instr_queue/fetch_entry_o_reg[ex][cause][31]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-3332] Sequential element (fetch_entry_o_reg[ex][cause][31]) is unused and will be removed from module instr_queue.
 INFO: [Synth 8-5546] ROM "resp_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ip_re_o" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port master\.aw_user[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port master\.w_user[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port master\.ar_user[0] driven by constant 0
+WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O127 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O128 driven by constant 1
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O129 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.b_resp[1] driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.b_resp[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.b_user[0] driven by constant 0
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O131 driven by constant 1
+WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O130 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_data[63] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_data[62] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_data[61] driven by constant 0
@@ -3419,16 +3422,16 @@ WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_data[1] dri
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_data[0] driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_resp[1] driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_resp[0] driven by constant 0
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O132 driven by constant 1
+WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O131 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port spi\.r_user[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port gpio\.b_user[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port gpio\.r_user[0] driven by constant 0
+WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O139 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O140 driven by constant 1
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O141 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.b_resp[1] driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.b_resp[0] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.b_user[0] driven by constant 0
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O143 driven by constant 1
+WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port O142 driven by constant 1
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[63] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[62] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[61] driven by constant 0
@@ -3442,13 +3445,11 @@ WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[5
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[53] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[52] driven by constant 0
 WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[51] driven by constant 0
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[50] driven by constant 0
-WARNING: [Synth 8-3917] design cva6_zybo_z7_20__GCB0 has port ethernet\.r_data[49] driven by constant 0
 INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (ip_re_o_reg[0]) is unused and will be removed from module plic_regs.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 1224 ; free virtual = 16238
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:02:03 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 570 ; free virtual = 19300
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3524,13 +3525,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:23 ; elapsed = 00:02:27 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 1053 ; free virtual = 16126
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:02:09 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 402 ; free virtual = 19190
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:46 ; elapsed = 00:02:51 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 1003 ; free virtual = 16081
+Finished Timing Optimization : Time (s): cpu = 00:02:06 ; elapsed = 00:02:33 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 371 ; free virtual = 19132
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3720,8 +3721,6 @@ INFO: [Synth 8-7052] The timing for the instance i_cache_subsystemi_11/i_wt_icac
 INFO: [Synth 8-7052] The timing for the instance i_cache_subsystemi_11/i_wt_icache/gen_sram[3].data_sram/genblk1[1].i_ram/Mem_DP_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_3/i_bootrom/addr_q_reg_rep_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_3/i_bootrom/addr_q_reg_rep_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-Combination loop (list two pins only) .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/tvm_csr_id  .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/debug_mode
-The design has combinational loop or hierarchical design, no retiming 
 INFO: [Synth 8-5816] Retiming module `axi_node_wrap_with_slices__GCB0_tempName`
 	Numbers of forward move = 0, and backward move = 0
 
@@ -3736,10 +3735,6 @@ INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20`
 INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20' done
 
 
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:94]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:94]
-Combination loop (list two pins only) .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/commit_ack_o[1]  .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/commit_ack_o[0]
-The design has combinational loop or hierarchical design, no retiming 
 INFO: [Synth 8-5816] Retiming module `ariane__GCB0_tempName`
 	Numbers of forward move = 0, and backward move = 0
 
@@ -3754,8 +3749,8 @@ INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20`
 INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20' done
 
 
-Combination loop (list two pins only) .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/tvm_csr_id  .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/debug_mode
-The design has combinational loop or hierarchical design, no retiming 
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:94]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/boyer/git_complet_pro/Thales_contest/src/multiplier.sv:94]
 INFO: [Synth 8-5816] Retiming module `ariane__GCB1_tempName`
 	Numbers of forward move = 0, and backward move = 0
 
@@ -3770,8 +3765,6 @@ INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20`
 INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20' done
 
 
-Combination loop (list two pins only) .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/tvm_csr_id  .:cva6_zybo_z7_20/<ariane>/i_arianei_12:ariane__GCB0_tempName/debug_mode
-The design has combinational loop or hierarchical design, no retiming 
 INFO: [Synth 8-6153] Backward retiming for register i_0/i_ariane_peripherals/i_axi2apb_64_32_plic/RDATA_Q_0_reg[30] through instance i_0/i_2293 fails due to: UNCOMPATIBLE REGISTERS
 
 INFO: [Synth 8-6153] Backward retiming for register i_0/i_ariane_peripherals/i_axi2apb_64_32_plic/RDATA_Q_0_reg[29] through instance i_0/i_2292 fails due to: UNCOMPATIBLE REGISTERS
@@ -5141,9 +5134,8 @@ INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20`
 INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20' done
 
 
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:00 ; elapsed = 00:03:10 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 534 ; free virtual = 15325
+Finished Technology Mapping : Time (s): cpu = 00:02:21 ; elapsed = 00:03:13 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 568 ; free virtual = 18248
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -5206,37 +5198,37 @@ INFO: [Synth 8-4649] Removing BlackBox instance \i_ariane/i_frontend/i_instr_que
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:06 ; elapsed = 00:03:17 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 521 ; free virtual = 15330
+Finished IO Insertion : Time (s): cpu = 00:02:28 ; elapsed = 00:03:21 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 509 ; free virtual = 18242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:06 ; elapsed = 00:03:17 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 521 ; free virtual = 15330
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:28 ; elapsed = 00:03:21 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 542 ; free virtual = 18243
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:11 ; elapsed = 00:03:21 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 508 ; free virtual = 15317
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:33 ; elapsed = 00:03:26 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 522 ; free virtual = 18224
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:11 ; elapsed = 00:03:21 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 507 ; free virtual = 15316
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:34 ; elapsed = 00:03:26 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 521 ; free virtual = 18225
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:11 ; elapsed = 00:03:22 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 506 ; free virtual = 15314
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:34 ; elapsed = 00:03:27 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 521 ; free virtual = 18225
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:12 ; elapsed = 00:03:22 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 506 ; free virtual = 15314
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:34 ; elapsed = 00:03:27 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 519 ; free virtual = 18224
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -5261,44 +5253,45 @@ Report Cell Usage:
 |3     |xlnx_blk_mem_gen                    |     1|
 |4     |xlnx_clk_gen                        |     1|
 |5     |BUFG                                |     1|
-|6     |CARRY4                              |  1356|
+|6     |CARRY4                              |  1492|
 |7     |DSP48E1                             |     4|
-|9     |LUT1                                |   164|
-|10    |LUT2                                |  2913|
-|11    |LUT3                                |  8590|
-|12    |LUT4                                |  3361|
-|13    |LUT5                                |  6452|
-|14    |LUT6                                | 11326|
-|15    |MUXF7                               |  1337|
-|16    |MUXF8                               |    35|
+|9     |LUT1                                |   166|
+|10    |LUT2                                |  2981|
+|11    |LUT3                                |  9115|
+|12    |LUT4                                |  3144|
+|13    |LUT5                                |  6353|
+|14    |LUT6                                | 11716|
+|15    |MUXF7                               |  1435|
+|16    |MUXF8                               |    44|
 |17    |RAMB36E1                            |    38|
-|20    |FDCE                                | 22789|
-|21    |FDPE                                |    44|
-|22    |FDRE                                |    17|
+|20    |FDCE                                | 22927|
+|21    |FDPE                                |    46|
+|22    |FDRE                                |    15|
 |23    |IBUF                                |     6|
-|24    |OBUF                                |     6|
+|24    |OBUF                                |     5|
+|25    |OBUFT                               |     1|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:12 ; elapsed = 00:03:22 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 506 ; free virtual = 15314
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:34 ; elapsed = 00:03:27 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 519 ; free virtual = 18224
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 585 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:03 ; elapsed = 00:03:17 . Memory (MB): peak = 2961.129 ; gain = 511.066 ; free physical = 5047 ; free virtual = 19885
-Synthesis Optimization Complete : Time (s): cpu = 00:03:15 ; elapsed = 00:03:26 . Memory (MB): peak = 2961.129 ; gain = 825.410 ; free physical = 5062 ; free virtual = 19887
+Synthesis finished with 0 errors, 0 critical warnings and 587 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:26 ; elapsed = 00:03:22 . Memory (MB): peak = 2962.156 ; gain = 513.098 ; free physical = 5087 ; free virtual = 22775
+Synthesis Optimization Complete : Time (s): cpu = 00:02:37 ; elapsed = 00:03:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 5101 ; free virtual = 22775
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2961.129 ; gain = 0.000 ; free physical = 5054 ; free virtual = 19849
-INFO: [Netlist 29-17] Analyzing 2770 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.50 . Memory (MB): peak = 2962.156 ; gain = 0.000 ; free physical = 5050 ; free virtual = 22730
+INFO: [Netlist 29-17] Analyzing 3013 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2985.141 ; gain = 0.000 ; free physical = 4970 ; free virtual = 19794
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2986.168 ; gain = 0.000 ; free physical = 5038 ; free virtual = 22685
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-811 Infos, 341 Warnings, 0 Critical Warnings and 0 Errors encountered.
+812 Infos, 345 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:22 ; elapsed = 00:03:34 . Memory (MB): peak = 2985.141 ; gain = 849.488 ; free physical = 5159 ; free virtual = 19984
+synth_design: Time (s): cpu = 00:02:46 ; elapsed = 00:03:40 . Memory (MB): peak = 2986.168 ; gain = 852.457 ; free physical = 5224 ; free virtual = 22872
 INFO: [Common 17-1381] The checkpoint '/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/cva6_zybo_z7_20.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3017.156 ; gain = 32.016 ; free physical = 5189 ; free virtual = 19995
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3018.184 ; gain = 32.016 ; free physical = 5223 ; free virtual = 22879
 INFO: [runtcl-4] Executing : report_utilization -file cva6_zybo_z7_20_utilization_synth.rpt -pb cva6_zybo_z7_20_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 16 18:23:48 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 30 11:33:02 2023...

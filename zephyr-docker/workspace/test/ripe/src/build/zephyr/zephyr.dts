@@ -1,0 +1,80 @@
+/dts-v1/;
+
+/ {
+	#address-cells = < 0x2 >;
+	#size-cells = < 0x2 >;
+	compatible = "eth,cva6-bare-dev";
+	model = "eth,cva6-bare";
+	chosen {
+		stdout-path = "/soc/uart@10000000:115200";
+		zephyr,console = &UART0;
+		zephyr,shell-uart = &UART0;
+		zephyr,sram = &DDR0;
+	};
+	aliases {
+	};
+	cpus {
+		#address-cells = < 0x1 >;
+		#size-cells = < 0x0 >;
+		timebase-frequency = < 0xbebc20 >;
+		CPU0: cpu@0 {
+			clock-frequency = < 0x17d7840 >;
+			device_type = "cpu";
+			reg = < 0x0 >;
+			status = "okay";
+			compatible = "ohwg,cva6", "riscv";
+			riscv,isa = "rv32ima";
+			mmu-type = "riscv,sv32";
+			tlb-split;
+			CPU0_intc: interrupt-controller {
+				#interrupt-cells = < 0x1 >;
+				interrupt-controller;
+				compatible = "riscv,cpu-intc";
+				phandle = < 0x1 >;
+			};
+		};
+	};
+	DDR0: memory@80000000 {
+		device_type = "memory";
+		reg = < 0x0 0x80000000 0x0 0x40000000 >;
+	};
+	L26: soc {
+		#address-cells = < 0x2 >;
+		#size-cells = < 0x2 >;
+		compatible = "eth,cva6-bare-soc", "simple-bus";
+		ranges;
+		clint@2000000 {
+			compatible = "sifive,clint0";
+			interrupts-extended = < &CPU0_intc 0x3 &CPU0_intc 0x7 >;
+			reg = < 0x0 0x2000000 0x0 0xc0000 >;
+			reg-names = "control";
+		};
+		PLIC0: interrupt-controller@c000000 {
+			#address-cells = < 0x0 >;
+			#interrupt-cells = < 0x2 >;
+			compatible = "sifive,plic-1.0.0";
+			interrupt-controller;
+			interrupts-extended = < &CPU0_intc 0xb &CPU0_intc 0x9 >;
+			reg = < 0x0 0xc000000 0x0 0x2000 0x0 0xc002000 0x0 0x1fe000 0x0 0xc200000 0x0 0x3e00000 >;
+			reg-names = "prio", "irq_en", "reg";
+			riscv,max-priority = < 0x7 >;
+			riscv,ndev = < 0x1e >;
+			phandle = < 0x2 >;
+		};
+		debug-controller@0 {
+			compatible = "riscv,debug-013";
+			interrupts-extended = < &CPU0_intc 0xffff >;
+			reg = < 0x0 0x0 0x0 0x1000 >;
+			reg-names = "control";
+		};
+		UART0: uart@10000000 {
+			compatible = "ns16750", "ns16550";
+			reg = < 0x0 0x10000000 0x0 0x1000 >;
+			clock-frequency = < 0x17d7840 >;
+			current-speed = < 0x1c200 >;
+			interrupt-parent = < &PLIC0 >;
+			interrupts = < 0x1 0x1 >;
+			reg-shift = < 0x2 >;
+		};
+	};
+};

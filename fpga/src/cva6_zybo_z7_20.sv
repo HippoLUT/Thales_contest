@@ -27,8 +27,7 @@ module cva6_zybo_z7_20 (
   input  logic     clk_sys   ,
   input  logic     cpu_reset ,
   //CNR Add for test
-  output logic [1:0] JALR,
-  output logic [1:0] NOP,
+  output logic [3:0] JALR,
 
 `ifdef PS7_DDR
   inout wire [14:0]DDR_addr,
@@ -548,8 +547,7 @@ ariane #(
     .debug_req_i  ( debug_req_irq       ),
     .axi_req_o    ( axi_ariane_req      ),
     .axi_resp_i   ( axi_ariane_resp     ),
-    . detection_signal_on_commit_JALR_o(JALR), //CNR
-    . detection_signal_on_commit_NOP_o(NOP)
+    . detection_signal_on_commit_JALR_o(JALR) //CNR
 );
 
 axi_master_connect i_axi_master_connect_ariane (.axi_req_i(axi_ariane_req), .axi_resp_o(axi_ariane_resp), .master(slave[0]));

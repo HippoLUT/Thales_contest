@@ -68,6 +68,13 @@ module commit_stage import ariane_pkg::*; #(
 //     .probe9(1'b0) // input wire [0:0]  probe9
 // );
 
+scoreboard_entry_t commit_inst_0;
+scoreboard_entry_t commit_inst_1;
+
+assign commit_inst_0 = commit_instr_i[0];
+assign commit_inst_1 = commit_instr_i[1];
+
+
     for (genvar i = 0; i < NR_COMMIT_PORTS; i++) begin : gen_waddr
       assign waddr_o[i] = commit_instr_i[i].rd[4:0];
     end
