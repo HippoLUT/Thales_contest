@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 30 14:29:20 2023
-# Process ID: 96275
+# Start of session at: Thu Mar 30 15:55:11 2023
+# Process ID: 248508
 # Current directory: /home/chuckNoRisc/git_version_finale/Thales_contest
 # Command line: vivado
 # Log file: /home/chuckNoRisc/git_version_finale/Thales_contest/vivado.log
@@ -14,12 +14,11 @@ open_project /home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.
 Scanning sources...
 Finished scanning sources
 WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.srcs/sources_1'.
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory '/home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 7095.348 ; gain = 27.035 ; free physical = 23174 ; free virtual = 29113
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 7095.344 ; gain = 30.039 ; free physical = 22230 ; free virtual = 28459
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 30 14:37:20 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 30 16:39:05 2023...

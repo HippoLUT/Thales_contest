@@ -1,17 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-  
-int main(void)
+
+void fonction1()
 {
 
-  printf("hello World!\n"); 
-  
-  //wait end of uart frame
-  volatile int c, d;  
-  for (c = 1; c <= 32767; c++)
-    for (d = 1; d <= 32767; d++)
-      {}
-          
-  return(0);
+	int x = 0;
+	int y = 0;
+
+	x = 2;
+	x = y + x ;
+
+
 }
 
+
+int fonction2(int x)
+{
+	return x*x;
+}
+
+int main(void)
+{
+	int returnval=0;
+        __asm__("ADDI x0, x1, 0");
+        __asm__("ADDI x0, x1, 0");
+        __asm__("ADDI x0, x1, 0");
+        __asm__("ADDI x0, x1, 0");
+	fonction1();
+        __asm__("ADDI x0, x0, 0");
+        __asm__("ADDI x0, x0, 0");
+        __asm__("ADDI x0, x0, 0");
+        __asm__("ADDI x0, x0, 0");
+	returnval = fonction2(3);
+
+	fonction1();
+	fonction1();
+	fonction1();
+        __asm__("ADDI x0, x1, 2");
+        __asm__("ADDI x0, x1, 2");
+        __asm__("ADDI x0, x1, 2");
+        __asm__("ADDI x0, x1, 2");
+        __asm__("ADDI x0, x0, 2");
+        __asm__("ADDI x0, x0, 2");
+        __asm__("ADDI x0, x0, 2");
+        __asm__("ADDI x0, x0, 2");
+
+        return (0);
+}

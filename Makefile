@@ -223,8 +223,14 @@ ifdef batch-mode
 	questa-cmd   := -do "coverage save -onexit tmp/$@.ucdb; run -a; quit -code [coverage attribute -name TESTSTATUS -concise]"
 	questa-cmd   += -do " run -all;"
 else
-	questa-cmd := -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/*"
-	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/dfi/*"
+	questa-cmd := -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/clk_i"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/rst_ni"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/commit_ack_o"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/pc_o"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/commit_inst_0"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/commit_inst_1"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/commit_stage_i/exception_o"
+	questa-cmd += -do " add wave -position insertpoint sim:/ariane_tb/dut/i_ariane/cfi/*"
 	questa-cmd   += -do "  run -all;"
 endif
 
