@@ -22,6 +22,10 @@ int fonction2(int x)
 int main(void)
 {
 	int returnval=0;
+
+	printf("hippo");
+
+
         __asm__("ADDI x0, x1, 0");
         __asm__("ADDI x0, x1, 0");
         __asm__("ADDI x0, x1, 0");
@@ -32,7 +36,7 @@ int main(void)
         __asm__("ADDI x0, x0, 0");
         __asm__("ADDI x0, x0, 0");
 	returnval = fonction2(3);
-
+	
 	fonction1();
 	fonction1();
 	fonction1();
