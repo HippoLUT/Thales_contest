@@ -17,7 +17,13 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-   
+
+//A faire
+//A faire
+//Checker les instr.bp == Return || NOcf -> No control Flow Predicty
+
+
+
 module CFI_Mod import ariane_pkg::*;(
     input  logic clk_i, // Clock
     input  logic rst_ni, // Asynchronous Reset active low
