@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 30 14:58:01 2023
-# Process ID: 173593
-# Current directory: /home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.runs/synth_1
+# Start of session at: Fri Mar 31 17:51:00 2023
+# Process ID: 340855
+# Current directory: /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1
 # Command line: vivado -log cva6_zybo_z7_20.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cva6_zybo_z7_20.tcl
-# Log file: /home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.runs/synth_1/cva6_zybo_z7_20.vds
-# Journal file: /home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.runs/synth_1/vivado.jou
+# Log file: /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/cva6_zybo_z7_20.vds
+# Journal file: /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source cva6_zybo_z7_20.tcl -notrace

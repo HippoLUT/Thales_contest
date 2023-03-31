@@ -7,9 +7,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/opt/Vitis/2020.1/bin:/opt/Vivado/2020.1/ids_lite/ISE/bin/lin64:/opt/Vivado/2020.1/bin
+  PATH=/home/boyer/App/Xilinx/Vitis/2020.1/bin:/home/boyer/App/Xilinx/Vivado/2020.1/ids_lite/ISE/bin/lin64:/home/boyer/App/Xilinx/Vivado/2020.1/bin
 else
-  PATH=/opt/Vitis/2020.1/bin:/opt/Vivado/2020.1/ids_lite/ISE/bin/lin64:/opt/Vivado/2020.1/bin:$PATH
+  PATH=/home/boyer/App/Xilinx/Vitis/2020.1/bin:/home/boyer/App/Xilinx/Vivado/2020.1/ids_lite/ISE/bin/lin64:/home/boyer/App/Xilinx/Vivado/2020.1/bin:$PATH
 fi
 export PATH
 
@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/chuckNoRisc/git_version_finale/Thales_contest/fpga/cva6_fpga.runs/impl_1'
+HD_PWD='/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

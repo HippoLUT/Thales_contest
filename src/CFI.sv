@@ -43,8 +43,25 @@ reg[1:0] state_actual,state_next;
 
 logic c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10 ;
 
-assign c0 = commit_ack_i == 2'b00; 
+logic isABasicNop;
+logic isADoubleBasicNop;
+logic isMyNop;
 
+assign isABasicNop = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
+assign isADoubleBasicNop = ((commit_ack_i == 2'b11)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000)&&(commit_instr_i[1].op == ariane_pkg::ADDW)&&(commit_instr_i[1].rs1 == 6'h000000)&&(commit_instr_i[1].rd == 6'h000000))? 1 : 0;
+assign isMyNope = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000001)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
+
+
+assign detection_signal_on_commit_JALR[1] = isABasicNop;
+always begin
+if(isMyNope)
+begin
+    detection_signal_on_commit_JALR[0]= 1;
+end
+end
+
+assign c0 = commit_ack_i == 2'b00; 
+//assign detection_signal_on_commit_JALR[1] = commit_ack_i[0];
 
 assign c1 =   (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 assign c2 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::JALR)? 1 : 0;
@@ -64,7 +81,9 @@ always_ff @(posedge clk_i or negedge rst_ni) // changement du step en fonction d
 begin
     if(~rst_ni)
         begin
-            state_actual <= state1; 
+            state_actual <= state1;
+            detection_signal_on_commit_JALR[1] = 0; 
+              detection_signal_on_commit_JALR[0]= 0;
         end
     else
     begin
@@ -77,7 +96,7 @@ always_ff @(state_actual,commit_instr_i,commit_ack_i)
 begin
     state_next = state_actual; // Au cas où y'a aucune condition satisfaites...
     detection_signal_on_commit_JALR[3:2] = state_actual;
-    detection_signal_on_commit_JALR[0] = 0;
+   // detection_signal_on_commit_JALR[0] = 0;
     /*exception_o = 1'b0; // car seul sur le state 3 y'en a une.
     
     state_o = state_actual;
@@ -114,7 +133,8 @@ begin
             end
         state3:
             begin
-                    detection_signal_on_commit_JALR[0] = 1;
+           // if(commit_instr_i[0].bp.predict_address == 8'h80000
+              //  detection_signal_on_commit_JALR[0] = 1;
                 //exception_o = 1'b1;
                 state_next = state1;
             end 

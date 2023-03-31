@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date                      : Thu Mar 30 15:06:37 2023
-| Host                      : riscvcontest-Precision-Tower-5810 running 64-bit Ubuntu 20.04.5 LTS
+| Date                      : Fri Mar 31 17:56:37 2023
+| Host                      : boyer-Inspiron-16-Plus running 64-bit Ubuntu 20.04.5 LTS
 | Command                   : report_io -file cva6_zybo_z7_20_io_placed.rpt
 | Design                    : cva6_zybo_z7_20
 | Device                    : xc7z020
@@ -10,7 +10,7 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 | Package                   : clg400
 | Package Version           : FINAL 2012-06-26
 | Package Pin Delay Version : VERS. 2.0 2012-06-26
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 IO Information
 
@@ -269,7 +269,7 @@ Table of Contents
 | M12        |             |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M13        |             |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M14        | JALR[0]     | High Range | IO_L23P_T3_35           | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| M15        | JALR[1]     | High Range | IO_L23N_T3_35           | TRISTATE    | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| M15        | JALR[1]     | High Range | IO_L23N_T3_35           | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M16        |             | High Range | VCCO_35                 | VCCO        |             |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | M17        |             | High Range | IO_L8P_T1_AD10P_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M18        |             | High Range | IO_L8N_T1_AD10N_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
