@@ -22,7 +22,7 @@
 //A faire
 //Checker les instr.bp == Return || NOcf -> No control Flow Predicty
 
-
+//Ce module doit détecter que lorsque l'on return on ne tombe pas sur un ADD x0 x0 x0 permet de contrer le ROP.
 
 module CFI_Mod import ariane_pkg::*;(
     input  logic clk_i, // Clock
@@ -50,8 +50,6 @@ logic isMyNop;
 assign isABasicNop = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
 assign isADoubleBasicNop = ((commit_ack_i == 2'b11)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000)&&(commit_instr_i[1].op == ariane_pkg::ADDW)&&(commit_instr_i[1].rs1 == 6'h000000)&&(commit_instr_i[1].rd == 6'h000000))? 1 : 0;
 assign isMyNope = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000001)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
-
-
 assign detection_signal_on_commit_JALR[1] = isABasicNop;
 always begin
 if(isMyNope)
@@ -62,19 +60,24 @@ end
 
 assign c0 = commit_ack_i == 2'b00; 
 //assign detection_signal_on_commit_JALR[1] = commit_ack_i[0];
+//Inverser la condition pour pouvoir checker que l'on ne jump pas au milieu d'une fonction..
+//If JAL then IF pas de nop alors interdit
 
+//Chose à faire, checker que le JALc est bien utilisé que pour des fonctions ais pas tout le temps pour rien
+
+//Pour notre NOP checker x1 qui est le NOP
 assign c1 =   (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 assign c2 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::JALR)? 1 : 0;
-assign c3 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
-assign c4 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
+assign c3 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
+assign c4 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
 
 assign c5 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::JALR)? 1 : 0;
-assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::ADD)? 1 : 0;
-assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::ADD)? 1 : 0;
+assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::ADD)? 1 : 0;
+assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::ADD)? 1 : 0;
 assign c8 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::JALR)? 1 : 0;
-assign c9 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
-assign c10 = (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
-assign c11 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
+assign c9 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
+assign c10 = (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
+assign c11 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 
 
 always_ff @(posedge clk_i or negedge rst_ni) // changement du step en fonction de l'affaire
