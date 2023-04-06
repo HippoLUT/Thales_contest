@@ -537,7 +537,7 @@ module decoder import ariane_pkg::*; (
                 // --------------------------------
                 // Reg-Immediate Operations
                 // --------------------------------
-                riscv::OpcodeOpImm: begin
+                riscv::OpcodeOpImm: begin //CNR Le nop est la
                     instruction_o.fu  = ALU;
                     imm_select = IIMM;
                     instruction_o.rs1[4:0] = instr.itype.rs1;

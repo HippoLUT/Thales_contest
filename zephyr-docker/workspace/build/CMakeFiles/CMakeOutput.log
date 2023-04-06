@@ -7,6 +7,8 @@ Id flags:
 
 The output was:
 0
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 5 1 64 [bb 2] NOTE_INSN_BASIC_BLOCK)
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
@@ -27,7 +29,7 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 The CXX compiler identification is GNU, found in "/workdir/build/CMakeFiles/3.20.5/CompilerIdCXX/a.out"
 
 Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-riscv64-zephyr-elf-gcc (Zephyr SDK 0.15.1) 12.1.0
+chuck_riscv64-zephyr-elf-gcc (Zephyr SDK 0.15.1) 12.1.0
 Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

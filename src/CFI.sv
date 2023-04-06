@@ -39,24 +39,22 @@ localparam[1:0] // Etats de la FSM, 2 bits -> 00 01 10 11 -> celui la useless
     state3 = 2'b10;
 
 reg[1:0] state_actual,state_next;
+
+
 //Chose à vérifier avant -> Est ce que le Commit n'est que sur un seul coup d'horloge ou pas ???
 
 logic c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10 ;
-
-logic isABasicNop;
-logic isADoubleBasicNop;
-logic isMyNop;
-
-assign isABasicNop = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
-assign isADoubleBasicNop = ((commit_ack_i == 2'b11)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000000)&&(commit_instr_i[0].rd == 6'h000000)&&(commit_instr_i[1].op == ariane_pkg::ADDW)&&(commit_instr_i[1].rs1 == 6'h000000)&&(commit_instr_i[1].rd == 6'h000000))? 1 : 0;
-assign isMyNope = ((commit_ack_i == 2'b01)&&(commit_instr_i[0].op == ariane_pkg::ADDW)&&(commit_instr_i[0].rs1 == 6'h000001)&&(commit_instr_i[0].rd == 6'h000000))? 1 : 0;
-assign detection_signal_on_commit_JALR[1] = isABasicNop;
+/*
 always begin
-if(isMyNope)
+if(nop_perso[0])
 begin
-    detection_signal_on_commit_JALR[0]= 1;
+    detection_signal_on_commit_JALR[0] += 1;
 end
-end
+if(nop_perso[1])
+begin
+    detection_signal_on_commit_JALR[1] += 1;
+end 
+end*/
 
 assign c0 = commit_ack_i == 2'b00; 
 //assign detection_signal_on_commit_JALR[1] = commit_ack_i[0];
@@ -64,20 +62,45 @@ assign c0 = commit_ack_i == 2'b00;
 //If JAL then IF pas de nop alors interdit
 
 //Chose à faire, checker que le JALc est bien utilisé que pour des fonctions ais pas tout le temps pour rien
+logic[1:0] nop_perso;
+assign nop_perso[0] = (commit_instr_i[0].op == ariane_pkg::ADD) && (commit_instr_i[0].fu == ariane_pkg::ALU) && (commit_instr_i[0].rs1 == 5'b00001) && (commit_instr_i[0].rd == 5'b00000) && (commit_instr_i[0].result[31:0] == 32'b00000000000000000000000000000011);
+assign nop_perso[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i[1].fu == ariane_pkg::ALU) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000) && (commit_instr_i[1].result[31:0] == 32'b00000000000000000000000000000011);
+//assign nop_perso[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i[1].fu == ariane_pkg::ALU) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000) && (commit_instr_i[1].result[31:0] == 3'b011);
+
+always_ff @(posedge clk_i or negedge rst_ni)
+begin
+ if(~rst_ni)
+ begin
+    detection_signal_on_commit_JALR = 4'b0000;
+ end
+ else
+ begin
+ if (nop_perso[0] == 1&& commit_ack_i[0]==1 )
+  begin
+    detection_signal_on_commit_JALR += 1;
+  end
+  if(nop_perso[1] == 1&& commit_ack_i[1]==1)
+  begin
+    detection_signal_on_commit_JALR +=1;
+  end
+  
+ end
+ end
+
 
 //Pour notre NOP checker x1 qui est le NOP
 assign c1 =   (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 assign c2 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::JALR)? 1 : 0;
-assign c3 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
-assign c4 =  (commit_ack_i == 2'b01 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
+assign c3 =  (commit_ack_i == 2'b01 ) && (!nop_perso[0])? 1 : 0;
+assign c4 =  (commit_ack_i == 2'b01 ) && (nop_perso[0])? 1 : 0;
 
 assign c5 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::JALR)? 1 : 0;
-assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::ADD)? 1 : 0;
-assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[1].op != ariane_pkg::ADD)? 1 : 0;
+assign c6 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (nop_perso[1])? 1 : 0;
+assign c7 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::JALR) && (!nop_perso[1])? 1 : 0;
 assign c8 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::JALR) && (commit_instr_i[1].op == ariane_pkg::JALR)? 1 : 0;
-assign c9 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD)? 1 : 0;
-assign c10 = (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op == ariane_pkg::ADD)? 1 : 0;
-assign c11 =  (commit_ack_i == 2'b11 ) && (commit_instr_i[0].op != ariane_pkg::ADD) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
+assign c9 =  (commit_ack_i == 2'b11 ) && (!nop_perso[0])? 1 : 0;
+assign c10 = (commit_ack_i == 2'b11 ) && (nop_perso[0])? 1 : 0;
+assign c11 =  (commit_ack_i == 2'b11 ) && (!nop_perso[0]) && (commit_instr_i[0].op == ariane_pkg::JALR)? 1 : 0;
 
 
 always_ff @(posedge clk_i or negedge rst_ni) // changement du step en fonction de l'affaire
@@ -85,8 +108,6 @@ begin
     if(~rst_ni)
         begin
             state_actual <= state1;
-            detection_signal_on_commit_JALR[1] = 0; 
-              detection_signal_on_commit_JALR[0]= 0;
         end
     else
     begin
@@ -98,7 +119,7 @@ end
 always_ff @(state_actual,commit_instr_i,commit_ack_i)
 begin
     state_next = state_actual; // Au cas où y'a aucune condition satisfaites...
-    detection_signal_on_commit_JALR[3:2] = state_actual;
+   // detection_signal_on_commit_JALR[3:2] = state_actual;
    // detection_signal_on_commit_JALR[0] = 0;
     /*exception_o = 1'b0; // car seul sur le state 3 y'en a une.
     

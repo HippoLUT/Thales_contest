@@ -16,11 +16,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 22281
+INFO: [Synth 8-7075] Helper process launched with PID 742387
 WARNING: [Synth 8-2507] parameter declaration becomes local in rgmii_lfsr with formal parameter declaration list [/home/boyer/git_complet_pro/Thales_contest/fpga/src/ariane-ethernet/rgmii_lfsr.sv:364]
 WARNING: [Synth 8-1921] elaboration system task fatal violates IEEE 1800 syntax [/home/boyer/git_complet_pro/Thales_contest/src/common_cells/src/stream_arbiter_flushable.sv:77]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2145.617 ; gain = 11.840 ; free physical = 4999 ; free virtual = 27264
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2145.555 ; gain = 9.840 ; free physical = 5435 ; free virtual = 23910
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cva6_zybo_z7_20' [/home/boyer/git_complet_pro/Thales_contest/fpga/src/cva6_zybo_z7_20.sv:25]
 	Parameter NumWords bound to: 3145728 - type: integer 
@@ -648,7 +648,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/g
 INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:230]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:119]
 INFO: [Synth 8-6155] done synthesizing module 'axi2mem' (41#1) [/home/boyer/git_complet_pro/Thales_contest/src/axi_mem_if/src/axi2mem.sv:20]
-INFO: [Synth 8-6155] done synthesizing module 'xlnx_axi_dwidth_converter_dm_slave' (42#1) [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/.Xil/Vivado-22244-boyer-Inspiron-16-Plus/realtime/xlnx_axi_dwidth_converter_dm_slave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'xlnx_axi_dwidth_converter_dm_slave' (42#1) [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/.Xil/Vivado-742371-boyer-Inspiron-16-Plus/realtime/xlnx_axi_dwidth_converter_dm_slave_stub.v:6]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000 
 	Parameter CRITICAL_WORD_FIRST bound to: 1'b0 
@@ -1328,20 +1328,19 @@ INFO: [Synth 8-294] found qualifier unique on case statement: implementing as pa
 	Parameter state1 bound to: 2'b00 
 	Parameter state2 bound to: 2'b01 
 	Parameter state3 bound to: 2'b10 
-WARNING: [Synth 8-85] always block has no event control specified [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:54]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:118]
-WARNING: [Synth 8-567] referenced signal 'c2' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c5' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c7' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c0' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c1' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c8' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c11' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c6' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c4' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c10' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c3' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
-WARNING: [Synth 8-567] referenced signal 'c9' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:98]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:139]
+WARNING: [Synth 8-567] referenced signal 'c2' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c5' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c7' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c0' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c1' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c8' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c11' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c6' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c4' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c10' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c3' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
+WARNING: [Synth 8-567] referenced signal 'c9' should be on the sensitivity list [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:119]
 	Parameter ArianeCfg[RASDepth] bound to: 2 - type: integer 
 	Parameter ArianeCfg[BTBEntries] bound to: 32 - type: integer 
 	Parameter ArianeCfg[BHTEntries] bound to: 128 - type: integer 
@@ -2287,18 +2286,18 @@ INFO: [Synth 8-226] default block is never used [/home/boyer/git_complet_pro/Tha
 	Parameter AxiVldRdy bound to: 1'b1 
 	Parameter LockIn bound to: 1'b1 
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2634.000 ; gain = 500.223 ; free physical = 4730 ; free virtual = 26964
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2633.906 ; gain = 498.191 ; free physical = 5117 ; free virtual = 23602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.875 ; gain = 513.098 ; free physical = 4825 ; free virtual = 27052
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.781 ; gain = 511.066 ; free physical = 5191 ; free virtual = 23676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.875 ; gain = 513.098 ; free physical = 4825 ; free virtual = 27052
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2646.781 ; gain = 511.066 ; free physical = 5191 ; free virtual = 23676
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2646.875 ; gain = 0.000 ; free physical = 4713 ; free virtual = 26943
+Netlist sorting complete. Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2646.781 ; gain = 0.000 ; free physical = 5048 ; free virtual = 23535
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -2331,16 +2330,23 @@ Parsing XDC File [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs
 Finished Parsing XDC File [/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.312 ; gain = 0.000 ; free physical = 4442 ; free virtual = 26678
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2945.250 ; gain = 0.000 ; free physical = 4789 ; free virtual = 23277
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2947.312 ; gain = 0.000 ; free physical = 4442 ; free virtual = 26678
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2945.250 ; gain = 0.000 ; free physical = 4789 ; free virtual = 23277
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'i_axi_dwidth_converter_dm_master' at clock pin 's_axi_aclk' is different from the actual clock period '40.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'i_axi_dwidth_converter_dm_slave' at clock pin 's_axi_aclk' is different from the actual clock period '40.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 4796 ; free virtual = 27031
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 5079 ; free virtual = 23593
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'aw_state_q_reg' in module 'axi_riscv_amos'
+INFO: [Synth 8-802] inferred FSM for state register 'w_state_q_reg' in module 'axi_riscv_amos'
+INFO: [Synth 8-802] inferred FSM for state register 'b_state_q_reg' in module 'axi_riscv_amos'
+INFO: [Synth 8-802] inferred FSM for state register 'ar_state_q_reg' in module 'axi_riscv_amos'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_q_reg' in module 'axi_riscv_amos'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_q_reg' in module 'axi_riscv_lrsc'
+INFO: [Synth 8-802] inferred FSM for state register 'w_state_q_reg' in module 'axi_riscv_lrsc'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -2448,15 +2454,6 @@ WARNING: [Synth 8-327] inferring latch for variable 'fetch_entry_o_reg[ex][cause
                   FINISH |                               10 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'serdiv'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  state1 |                               00 |                               00
-                  state2 |                               01 |                               01
-                  state3 |                               10 |                               10
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_actual_reg' using encoding 'sequential' in module 'CFI_Mod'
-WARNING: [Synth 8-327] inferring latch for variable 'detection_signal_on_commit_JALR_reg' [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:53]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -2643,7 +2640,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'w_state_q_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_q_reg' using encoding 'sequential' in module 'axi_riscv_lrsc'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 1450 ; free virtual = 23690
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 1740 ; free virtual = 20286
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -2667,6 +2664,7 @@ Detailed RTL Component Info :
 	   2 Input    6 Bit       Adders := 4     
 	   2 Input    5 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 18    
+	   3 Input    4 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 47    
 	   3 Input    3 Bit       Adders := 3     
 	   4 Input    3 Bit       Adders := 1     
@@ -2707,7 +2705,7 @@ Detailed RTL Component Info :
 	                7 Bit    Registers := 24    
 	                6 Bit    Registers := 122   
 	                5 Bit    Registers := 177   
-	                4 Bit    Registers := 364   
+	                4 Bit    Registers := 365   
 	                3 Bit    Registers := 401   
 	                2 Bit    Registers := 482   
 	                1 Bit    Registers := 1274  
@@ -2816,10 +2814,10 @@ Detailed RTL Component Info :
 	  23 Input    3 Bit        Muxes := 1     
 	  12 Input    3 Bit        Muxes := 1     
 	   9 Input    3 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 686   
+	   2 Input    2 Bit        Muxes := 682   
 	   4 Input    2 Bit        Muxes := 24    
 	   8 Input    2 Bit        Muxes := 2     
-	   3 Input    2 Bit        Muxes := 23    
+	   3 Input    2 Bit        Muxes := 21    
 	   7 Input    2 Bit        Muxes := 7     
 	  10 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 3     
@@ -2827,14 +2825,14 @@ Detailed RTL Component Info :
 	   6 Input    2 Bit        Muxes := 3     
 	  40 Input    2 Bit        Muxes := 3     
 	  41 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 4830  
+	   2 Input    1 Bit        Muxes := 4826  
 	   4 Input    1 Bit        Muxes := 146   
 	   8 Input    1 Bit        Muxes := 32    
 	   5 Input    1 Bit        Muxes := 39    
 	   7 Input    1 Bit        Muxes := 58    
 	  12 Input    1 Bit        Muxes := 55    
 	  15 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 167   
+	   3 Input    1 Bit        Muxes := 166   
 	   9 Input    1 Bit        Muxes := 7     
 	  16 Input    1 Bit        Muxes := 1     
 	  60 Input    1 Bit        Muxes := 7     
@@ -3277,12 +3275,6 @@ WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[19]__
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[18]__1) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[17]__1) is unused and will be removed from module mult.
 WARNING: [Synth 8-3332] Sequential element (i_multiplier/mult_result_q_reg[47]__2) is unused and will be removed from module mult.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'cfi/detection_signal_on_commit_JALR_reg[1]/Q' [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'cfi/detection_signal_on_commit_JALR_reg[0]/Q' [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/boyer/git_complet_pro/Thales_contest/src/CFI.sv:88]
 INFO: [Synth 8-4471] merging register 'id_stage_i/issue_q_reg[sbe][ex][valid]' into 'id_stage_i/issue_q_reg[sbe][valid]' [/home/boyer/git_complet_pro/Thales_contest/src/id_stage.sv:122]
 INFO: [Synth 8-5587] ROM size for "id_stage_i/decoder_i/instruction_o" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "id_stage_i/decoder_i/instruction_o" is below threshold of ROM address width. It will be mapped to LUTs
@@ -3409,7 +3401,7 @@ INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (ip_re_o_reg[0]) is unused and will be removed from module plic_regs.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 1370 ; free virtual = 23322
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:01:45 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 1328 ; free virtual = 19927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3485,13 +3477,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:41 ; elapsed = 00:01:45 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 1195 ; free virtual = 23212
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:01:52 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 1165 ; free virtual = 19822
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 1154 ; free virtual = 23177
+Finished Timing Optimization : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 1101 ; free virtual = 19764
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5096,7 +5088,7 @@ INFO: [Synth 8-5816] Retiming module `cva6_zybo_z7_20' done
 
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:19 ; elapsed = 00:02:25 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 959 ; free virtual = 22418
+Finished Technology Mapping : Time (s): cpu = 00:02:26 ; elapsed = 00:02:32 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 538 ; free virtual = 19028
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -5159,37 +5151,37 @@ INFO: [Synth 8-4649] Removing BlackBox instance \i_ariane/i_frontend/i_instr_que
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:25 ; elapsed = 00:02:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 917 ; free virtual = 22418
+Finished IO Insertion : Time (s): cpu = 00:02:32 ; elapsed = 00:02:38 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 481 ; free virtual = 19020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:25 ; elapsed = 00:02:31 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 918 ; free virtual = 22418
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:32 ; elapsed = 00:02:39 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 481 ; free virtual = 19020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:29 ; elapsed = 00:02:36 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 899 ; free virtual = 22409
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:36 ; elapsed = 00:02:43 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 470 ; free virtual = 19009
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:30 ; elapsed = 00:02:36 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 899 ; free virtual = 22409
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:37 ; elapsed = 00:02:43 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 470 ; free virtual = 19009
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:30 ; elapsed = 00:02:36 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 899 ; free virtual = 22409
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:37 ; elapsed = 00:02:44 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 450 ; free virtual = 19009
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:30 ; elapsed = 00:02:37 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 899 ; free virtual = 22409
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:37 ; elapsed = 00:02:44 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 450 ; free virtual = 19009
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -5217,41 +5209,41 @@ Report Cell Usage:
 |6     |CARRY4                              |  1356|
 |7     |DSP48E1                             |     4|
 |9     |LUT1                                |   164|
-|10    |LUT2                                |  2957|
-|11    |LUT3                                |  8525|
-|12    |LUT4                                |  3289|
-|13    |LUT5                                |  6502|
-|14    |LUT6                                | 11404|
-|15    |MUXF7                               |  1300|
+|10    |LUT2                                |  2928|
+|11    |LUT3                                |  8524|
+|12    |LUT4                                |  3296|
+|13    |LUT5                                |  6505|
+|14    |LUT6                                | 11389|
+|15    |MUXF7                               |  1308|
 |16    |MUXF8                               |    34|
 |17    |RAMB36E1                            |    38|
-|20    |FDCE                                | 22789|
+|20    |FDCE                                | 22833|
 |21    |FDPE                                |    45|
 |22    |FDRE                                |    15|
 |23    |IBUF                                |     6|
 |24    |OBUF                                |     6|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:30 ; elapsed = 00:02:37 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 899 ; free virtual = 22409
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:37 ; elapsed = 00:02:44 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 450 ; free virtual = 19009
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 6 critical warnings and 586 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:23 ; elapsed = 00:02:32 . Memory (MB): peak = 2962.156 ; gain = 513.098 ; free physical = 5456 ; free virtual = 26968
-Synthesis Optimization Complete : Time (s): cpu = 00:02:33 ; elapsed = 00:02:41 . Memory (MB): peak = 2962.156 ; gain = 828.379 ; free physical = 5470 ; free virtual = 26968
+Synthesis finished with 0 errors, 0 critical warnings and 585 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:29 ; elapsed = 00:02:38 . Memory (MB): peak = 2961.125 ; gain = 511.066 ; free physical = 5044 ; free virtual = 23583
+Synthesis Optimization Complete : Time (s): cpu = 00:02:40 ; elapsed = 00:02:46 . Memory (MB): peak = 2961.125 ; gain = 825.410 ; free physical = 5060 ; free virtual = 23585
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2962.156 ; gain = 0.000 ; free physical = 5438 ; free virtual = 26936
-INFO: [Netlist 29-17] Analyzing 2732 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.45 . Memory (MB): peak = 2961.125 ; gain = 0.000 ; free physical = 5022 ; free virtual = 23546
+INFO: [Netlist 29-17] Analyzing 2740 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2986.168 ; gain = 0.000 ; free physical = 5382 ; free virtual = 26880
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2985.137 ; gain = 0.000 ; free physical = 4968 ; free virtual = 23494
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-813 Infos, 347 Warnings, 6 Critical Warnings and 0 Errors encountered.
+811 Infos, 345 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:41 ; elapsed = 00:02:49 . Memory (MB): peak = 2986.168 ; gain = 852.457 ; free physical = 5573 ; free virtual = 27071
+synth_design: Time (s): cpu = 00:02:48 ; elapsed = 00:02:55 . Memory (MB): peak = 2985.137 ; gain = 849.488 ; free physical = 5158 ; free virtual = 23683
 INFO: [Common 17-1381] The checkpoint '/home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.runs/synth_1/cva6_zybo_z7_20.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3018.184 ; gain = 32.016 ; free physical = 5587 ; free virtual = 27087
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3017.152 ; gain = 32.016 ; free physical = 5146 ; free virtual = 23681
 INFO: [runtcl-4] Executing : report_utilization -file cva6_zybo_z7_20_utilization_synth.rpt -pb cva6_zybo_z7_20_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  1 17:29:55 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  6 17:10:01 2023...

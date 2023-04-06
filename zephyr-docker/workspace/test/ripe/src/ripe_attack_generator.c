@@ -2,14 +2,16 @@
 void main()
 {
 	
-	__asm__("ADDI x0, x0, 0");
-	//printf("OHOOO");
-        //__asm__("ADDI x0, x1, 0");
-	//printf("OHOOO");
-        //__asm__("ADDI x0, x0, 2");
-	printf("OHOOO");
-        __asm__("ADDI x0, x1, 3");
 	printf("Canette");
-	__asm__("ADDI x0, x1, 4");
+	__asm__("ADDI x0, x1, 3");
+	printf("test");
+	__asm__("ADDI x0, x0, 3");
+	jsp_ma_fonction();
+
+}
+
+void jsp_ma_fonction()
+{
+	printf("Je rentre dans ma fonction\n ");
 
 }
