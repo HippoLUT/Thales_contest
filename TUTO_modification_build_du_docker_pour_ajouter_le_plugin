@@ -1,0 +1,20 @@
+ajout du plugin lors de la compilation du docker:
+
+ajouter dans : zephyr-docker/Dockerfile
+après la ligne 147 (juste après l'installation de Zephyr SDK a la ligne 142) la commande suivante:
+
+RUN cd /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/ && sudo mv riscv64-zephyr-elf-gcc chuck_riscv64-zephyr-elf-gcc && echo -e '#!/bin/bash\ncmd="$@"\ncmd="$cmd -fplugin=/workdir/PATH_TO_PLUGIN/mypluginAddInstructChuckRISCV9.so"\neval "/opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/chuck_riscv64-zephyr-elf-gcc $cmd"' >> riscv64-zephyr-elf-gcc && sudo chmod +x riscv64-zephyr-elf-gcc
+
+c'est pas très beau mais : c'est une suite de commande bash :
+
+cd /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/
+
+sudo mv riscv64-zephyr-elf-gcc chuck_riscv64-zephyr-elf-gcc
+
+### Attention a bien mettre le bon path vers le plugin
+echo -e '#!/bin/bash\ncmd="$@"\ncmd="$cmd -fplugin=/workdir/PATH_TO_PLUGIN/mypluginAddInstructChuckRISCV9.so"\neval "/opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/chuck_riscv64-zephyr-elf-gcc $cmd"' >> riscv64-zephyr-elf-gcc
+
+sudo chmod +x riscv64-zephyr-elf-gcc
+
+cd /
+
