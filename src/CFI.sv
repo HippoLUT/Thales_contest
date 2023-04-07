@@ -63,8 +63,8 @@ assign c0 = commit_ack_i == 2'b00;
 
 //Chose à faire, checker que le JALc est bien utilisé que pour des fonctions ais pas tout le temps pour rien
 logic[1:0] nop_perso;
-assign nop_perso[0] = (commit_instr_i[0].op == ariane_pkg::ADD) && (commit_instr_i[0].fu == ariane_pkg::ALU) && (commit_instr_i[0].rs1 == 5'b00001) && (commit_instr_i[0].rd == 5'b00000) && (commit_instr_i[0].result[31:0] == 32'b00000000000000000000000000000011);
-assign nop_perso[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i[1].fu == ariane_pkg::ALU) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000) && (commit_instr_i[1].result[31:0] == 32'b00000000000000000000000000000011);
+assign nop_perso[0] = (commit_instr_i[0].op == ariane_pkg::ADD) && (commit_instr_i[0].fu == ariane_pkg::ALU) && (commit_instr_i[0].rs1 == 5'b00001) && (commit_instr_i[0].rd == 5'b00000) && (commit_instr_i[0].result[2:0] == 3'b011);
+assign nop_perso[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i[1].fu == ariane_pkg::ALU) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000) && (commit_instr_i[1].result[2:0] == 3'b011);
 //assign nop_perso[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i[1].fu == ariane_pkg::ALU) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000) && (commit_instr_i[1].result[31:0] == 3'b011);
 
 always_ff @(posedge clk_i or negedge rst_ni)
