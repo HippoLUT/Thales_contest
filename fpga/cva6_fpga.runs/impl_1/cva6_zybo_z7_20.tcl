@@ -127,7 +127,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-5152-boyer-Inspiron-16-Plus/incrSyn
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-472500-boyer-Inspiron-16-Plus/incrSyn
   open_checkpoint cva6_zybo_z7_20_routed.dcp
   set_property webtalk.parent_dir /home/boyer/git_complet_pro/Thales_contest/fpga/cva6_fpga.cache/wt [current_project]
 set_property TOP cva6_zybo_z7_20 [current_fileset]

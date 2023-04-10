@@ -53,8 +53,8 @@ module commit_stage import ariane_pkg::*; #(
     output logic                                    flush_commit_o,     // request a pipeline flush
     output logic                                    sfence_vma_o        // flush TLBs and pipeline
 );
-/*
- ila_0 i_ila_commit (
+
+/* ila_0 i_ila_commit (
      .clk(clk_i), // input wire clk
      .probe0(commit_instr_i[0].pc), // input wire [63:0]  probe0
      .probe1(commit_instr_i[1].pc), // input wire [63:0]  probe1
@@ -66,6 +66,12 @@ module commit_stage import ariane_pkg::*; #(
      .probe7(1'b0), // input wire [0:0]  probe7
      .probe8(1'b0), // input wire [0:0]  probe8
      .probe9(1'b0) // input wire [0:0]  probe9
+ );*/
+ 
+ /*
+ ila_0 i_ila_commit (
+     .clk(clk_i), // input wire clk
+     .probe0(commit_ack_o) // input wire [63:0]  probe0
  );*/
 
 scoreboard_entry_t commit_inst_0;
