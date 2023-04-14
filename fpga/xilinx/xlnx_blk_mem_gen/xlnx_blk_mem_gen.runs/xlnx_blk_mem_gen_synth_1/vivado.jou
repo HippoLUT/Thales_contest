@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 16 14:51:14 2023
-# Process ID: 14547
+# Start of session at: Thu Apr 13 11:00:28 2023
+# Process ID: 487045
 # Current directory: /home/boyer/git_complet_pro/Thales_contest/fpga/xilinx/xlnx_blk_mem_gen/xlnx_blk_mem_gen.runs/xlnx_blk_mem_gen_synth_1
 # Command line: vivado -log xlnx_blk_mem_gen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xlnx_blk_mem_gen.tcl
 # Log file: /home/boyer/git_complet_pro/Thales_contest/fpga/xilinx/xlnx_blk_mem_gen/xlnx_blk_mem_gen.runs/xlnx_blk_mem_gen_synth_1/xlnx_blk_mem_gen.vds

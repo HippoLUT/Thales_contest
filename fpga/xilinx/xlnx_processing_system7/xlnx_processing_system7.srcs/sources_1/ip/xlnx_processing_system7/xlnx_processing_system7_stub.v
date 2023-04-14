@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Thu Mar 16 14:52:48 2023
+// Date        : Thu Apr 13 11:02:16 2023
 // Host        : boyer-Inspiron-16-Plus running 64-bit Ubuntu 20.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/boyer/git_complet_pro/Thales_contest/fpga/xilinx/xlnx_processing_system7/xlnx_processing_system7.srcs/sources_1/ip/xlnx_processing_system7/xlnx_processing_system7_stub.v

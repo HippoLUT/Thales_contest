@@ -1,0 +1,4 @@
+// /workdir/ripe/build/zephyr/zephyr_pre0.elf
+digraph "Device dependency graph" {
+	23 [label="uart@10000000\nOrdinal: 23 | Handle: 1\n/uart@10000000"]
+}

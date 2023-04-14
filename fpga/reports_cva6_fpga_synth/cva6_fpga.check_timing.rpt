@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Mon Apr 10 09:52:00 2023
+| Date         : Fri Apr 14 11:31:31 2023
 | Host         : boyer-Inspiron-16-Plus running 64-bit Ubuntu 20.04.5 LTS
 | Command      : check_timing -verbose -file reports_cva6_fpga_synth/cva6_fpga.check_timing.rpt
 | Design       : cva6_zybo_z7_20
@@ -14,12 +14,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (0)
+1. checking no_clock (152)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (0)
+4. checking unconstrained_internal_endpoints (152)
 5. checking no_input_delay (2)
-6. checking no_output_delay (5)
+6. checking no_output_delay (1)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -27,9 +27,162 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (0)
-------------------------
- There are 0 register/latch pins with no clock.
+1. checking no_clock (152)
+--------------------------
+ There are 152 register/latch pins with no clock driven by root clock pin: i_ariane/cfi/flow_integrity_violated_o_reg/Q (HIGH)
+
+i_ariane/commit_stage_i/amo_valid_commit_o_reg/G
+i_ariane/commit_stage_i/commit_ack_o_reg[0]/G
+i_ariane/commit_stage_i/commit_ack_o_reg[1]/G
+i_ariane/commit_stage_i/commit_csr_o_reg/G
+i_ariane/commit_stage_i/commit_lsu_o_reg/G
+i_ariane/commit_stage_i/csr_op_o_reg[0]/G
+i_ariane/commit_stage_i/csr_op_o_reg[1]/G
+i_ariane/commit_stage_i/csr_op_o_reg[2]/G
+i_ariane/commit_stage_i/csr_op_o_reg[3]/G
+i_ariane/commit_stage_i/csr_op_o_reg[4]/G
+i_ariane/commit_stage_i/csr_op_o_reg[5]/G
+i_ariane/commit_stage_i/csr_op_o_reg[6]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[0]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[10]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[11]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[12]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[13]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[14]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[15]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[16]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[17]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[18]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[19]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[1]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[20]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[21]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[22]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[23]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[24]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[25]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[26]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[27]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[28]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[29]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[2]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[30]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[31]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[3]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[4]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[5]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[6]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[7]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[8]/G
+i_ariane/commit_stage_i/csr_wdata_o_reg[9]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][0]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][1]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][2]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][31]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][3]/G
+i_ariane/commit_stage_i/exception_o_reg[cause][4]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][0]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][10]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][11]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][12]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][13]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][14]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][15]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][16]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][17]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][18]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][19]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][1]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][20]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][21]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][22]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][23]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][24]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][25]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][26]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][27]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][28]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][29]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][2]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][30]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][31]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][3]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][4]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][5]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][6]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][7]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][8]/G
+i_ariane/commit_stage_i/exception_o_reg[tval][9]/G
+i_ariane/commit_stage_i/exception_o_reg[valid]/G
+i_ariane/commit_stage_i/fence_i_o_reg/G
+i_ariane/commit_stage_i/fence_o_reg/G
+i_ariane/commit_stage_i/flush_commit_o_reg/G
+i_ariane/commit_stage_i/sfence_vma_o_reg/G
+i_ariane/commit_stage_i/wdata_o_reg[0][0]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][10]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][11]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][12]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][13]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][14]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][15]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][16]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][17]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][18]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][19]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][1]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][20]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][21]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][22]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][23]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][24]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][25]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][26]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][27]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][28]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][29]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][2]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][30]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][31]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][3]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][4]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][5]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][6]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][7]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][8]/G
+i_ariane/commit_stage_i/wdata_o_reg[0][9]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][0]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][10]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][11]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][12]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][13]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][14]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][15]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][16]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][17]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][18]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][19]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][1]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][20]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][21]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][22]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][23]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][24]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][25]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][26]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][27]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][28]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][29]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][2]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][30]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][31]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][3]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][4]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][5]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][6]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][7]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][8]/G
+i_ariane/commit_stage_i/wdata_o_reg[1][9]/G
+i_ariane/commit_stage_i/we_gpr_o_reg[0]/G
 
 
 2. checking constant_clock (0)
@@ -42,9 +195,162 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (0)
-------------------------------------------------
- There are 0 pins that are not constrained for maximum delay.
+4. checking unconstrained_internal_endpoints (152)
+--------------------------------------------------
+ There are 152 pins that are not constrained for maximum delay. (HIGH)
+
+i_ariane/commit_stage_i/amo_valid_commit_o_reg/D
+i_ariane/commit_stage_i/commit_ack_o_reg[0]/D
+i_ariane/commit_stage_i/commit_ack_o_reg[1]/D
+i_ariane/commit_stage_i/commit_csr_o_reg/D
+i_ariane/commit_stage_i/commit_lsu_o_reg/D
+i_ariane/commit_stage_i/csr_op_o_reg[0]/D
+i_ariane/commit_stage_i/csr_op_o_reg[1]/D
+i_ariane/commit_stage_i/csr_op_o_reg[2]/D
+i_ariane/commit_stage_i/csr_op_o_reg[3]/D
+i_ariane/commit_stage_i/csr_op_o_reg[4]/D
+i_ariane/commit_stage_i/csr_op_o_reg[5]/D
+i_ariane/commit_stage_i/csr_op_o_reg[6]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[0]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[10]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[11]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[12]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[13]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[14]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[15]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[16]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[17]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[18]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[19]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[1]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[20]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[21]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[22]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[23]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[24]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[25]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[26]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[27]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[28]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[29]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[2]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[30]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[31]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[3]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[4]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[5]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[6]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[7]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[8]/D
+i_ariane/commit_stage_i/csr_wdata_o_reg[9]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][0]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][1]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][2]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][31]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][3]/D
+i_ariane/commit_stage_i/exception_o_reg[cause][4]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][0]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][10]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][11]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][12]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][13]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][14]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][15]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][16]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][17]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][18]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][19]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][1]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][20]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][21]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][22]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][23]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][24]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][25]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][26]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][27]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][28]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][29]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][2]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][30]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][31]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][3]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][4]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][5]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][6]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][7]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][8]/D
+i_ariane/commit_stage_i/exception_o_reg[tval][9]/D
+i_ariane/commit_stage_i/exception_o_reg[valid]/D
+i_ariane/commit_stage_i/fence_i_o_reg/D
+i_ariane/commit_stage_i/fence_o_reg/D
+i_ariane/commit_stage_i/flush_commit_o_reg/D
+i_ariane/commit_stage_i/sfence_vma_o_reg/D
+i_ariane/commit_stage_i/wdata_o_reg[0][0]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][10]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][11]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][12]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][13]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][14]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][15]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][16]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][17]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][18]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][19]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][1]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][20]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][21]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][22]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][23]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][24]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][25]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][26]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][27]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][28]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][29]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][2]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][30]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][31]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][3]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][4]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][5]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][6]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][7]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][8]/D
+i_ariane/commit_stage_i/wdata_o_reg[0][9]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][0]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][10]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][11]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][12]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][13]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][14]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][15]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][16]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][17]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][18]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][19]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][1]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][20]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][21]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][22]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][23]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][24]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][25]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][26]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][27]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][28]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][29]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][2]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][30]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][31]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][3]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][4]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][5]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][6]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][7]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][8]/D
+i_ariane/commit_stage_i/wdata_o_reg[1][9]/D
+i_ariane/commit_stage_i/we_gpr_o_reg[0]/D
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -59,14 +365,10 @@ rx
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (5)
+6. checking no_output_delay (1)
 -------------------------------
- There are 5 ports with no output delay specified. (HIGH)
+ There is 1 port with no output delay specified. (HIGH)
 
-JALR[0]
-JALR[1]
-JALR[2]
-JALR[3]
 tx
 
  There are 0 ports with no output delay but user has a false path constraint

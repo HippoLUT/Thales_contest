@@ -41,6 +41,7 @@ module ariane import ariane_pkg::*; #(
   
   //CNR Ma partie pour les tests : 
   output logic [3:0]    detection_signal_on_commit_JALR_o,
+  
                
 `ifdef FIRESIM_TRACE
   // firesim trace port
@@ -63,6 +64,10 @@ module ariane import ariane_pkg::*; #(
   // ------------------------------------------
   riscv::priv_lvl_t           priv_lvl;
   exception_t                 ex_commit; // exception from commit stage
+  //CNR
+  exception_t                 ex_cfi;   //Exception from CFI 
+  logic                       flow_intergity_violated_sig;
+  
   bp_resolve_t                resolved_branch;
   logic [riscv::VLEN-1:0]     pc_commit;
   logic                       eret;
@@ -460,6 +465,8 @@ module ariane import ariane_pkg::*; #(
   commit_stage #(
     .NR_COMMIT_PORTS ( NR_COMMIT_PORTS )
   ) commit_stage_i (
+    //CNR
+    .flow_intergity_violated_i(flow_intergity_violated_sig),
     .clk_i,
     .rst_ni,
     .halt_i                 ( halt_ctrl                     ),
@@ -508,7 +515,8 @@ module ariane import ariane_pkg::*; #(
     .commit_ack_i           ( commit_ack                    ),
     .boot_addr_i            ( boot_addr_i[riscv::XLEN-1:0]  ),
     .hart_id_i              ( hart_id_i[riscv::XLEN-1:0]    ),
-    .ex_i                   ( ex_commit                     ),
+    //.ex_i                   ( ex_cfi                        ), //CNR
+    .ex_i                   (ex_commit                      ),
     .csr_op_i               ( csr_op_commit_csr             ),
     .csr_write_fflags_i     ( csr_write_fflags_commit_cs    ),
     .dirty_fp_state_i       ( dirty_fp_state                ),
@@ -551,6 +559,7 @@ module ariane import ariane_pkg::*; #(
     .ipi_i,
     .irq_i,
     .time_irq_i,
+    .cfi_interupt_i(flow_intergity_violated_sig), // CNR
     .*
   );
   // ------------------------
@@ -614,9 +623,11 @@ module ariane import ariane_pkg::*; #(
     
     .clk_i  (clk_i),
     .rst_ni (rst_ni),
-    
+    .flow_integrity_violated_o(flow_intergity_violated_sig),
+    //.exept_cfi_i(ex_commit),
     .commit_instr_i (commit_instr_id_commit),
     .commit_ack_i (commit_ack),
+    //.exept_cfi_o(ex_cfi),
     .detection_signal_on_commit_JALR (detection_signal_on_commit_JALR_o)
     );
     
