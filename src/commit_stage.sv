@@ -18,7 +18,6 @@ module commit_stage import ariane_pkg::*; #(
 )(
 
     //CNR 
-    input logic                                     flow_intergity_violated_i,
     input  logic                                    clk_i,
     input  logic                                    rst_ni,
     input  logic                                    halt_i,             // request to halt the core
@@ -106,8 +105,6 @@ assign commit_inst_1 = commit_instr_i[1];
     // -------------------
     // write register file or commit instruction in LSU or CSR Buffer
     always_comb begin : commit
-    if(!flow_intergity_violated_i)
-    begin
         // default assignments
         commit_ack_o[0]    = 1'b0;
         commit_ack_o[1]    = 1'b0;
@@ -264,14 +261,12 @@ assign commit_inst_1 = commit_instr_i[1];
             end
         end
     end
-end
+//end
     // -----------------------------
     // Exception & Interrupt Logic
     // -----------------------------
     // here we know for sure that we are taking the exception
     always_comb begin : exception_handling
-    if(!flow_intergity_violated_i)
-    begin
         // Multiple simultaneous interrupts and traps at the same privilege level are handled in the following decreasing
         // priority order: external interrupts, software interrupts, timer interrupts, then finally any synchronous traps. (1.10 p.30)
         // interrupts are correctly prioritized in the CSR reg file, exceptions are prioritized here
@@ -304,6 +299,5 @@ end
         if (halt_i) begin
             exception_o.valid = 1'b0;
         end
-    end
     end
 endmodule

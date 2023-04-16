@@ -7,7 +7,7 @@ Id flags:
 
 The output was:
 0
-> Inspecting function 'main'
+> MAIN function 'main'
 	 adding function jump after RTL: (note 5 1 64 [bb 2] NOTE_INSN_BASIC_BLOCK)
 
 

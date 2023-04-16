@@ -13,3 +13,5 @@ project(ripe)
 
 #target_sources(app PRIVATE src/ripe_attack_generator.c src/setjmp.S )
 target_sources(app PRIVATE src/ripe_attack_generator.c )
+
+#target_link_libraries(app PRIVATE /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/riscv64-zephyr-elf/lib/libc.a)

@@ -65,8 +65,8 @@ module ariane import ariane_pkg::*; #(
   riscv::priv_lvl_t           priv_lvl;
   exception_t                 ex_commit; // exception from commit stage
   //CNR
-  exception_t                 ex_cfi;   //Exception from CFI 
-  logic                       flow_intergity_violated_sig;
+  logic [1:0]                 flow_intergity_violated_sig;
+  logic                       is_enable_sig;
   
   bp_resolve_t                resolved_branch;
   logic [riscv::VLEN-1:0]     pc_commit;
@@ -466,7 +466,7 @@ module ariane import ariane_pkg::*; #(
     .NR_COMMIT_PORTS ( NR_COMMIT_PORTS )
   ) commit_stage_i (
     //CNR
-    .flow_intergity_violated_i(flow_intergity_violated_sig),
+    //.flow_intergity_violated_i(flow_intergity_violated_sig),
     .clk_i,
     .rst_ni,
     .halt_i                 ( halt_ctrl                     ),
@@ -560,6 +560,7 @@ module ariane import ariane_pkg::*; #(
     .irq_i,
     .time_irq_i,
     .cfi_interupt_i(flow_intergity_violated_sig), // CNR
+    .available_i(is_enable_sig),
     .*
   );
   // ------------------------
@@ -628,6 +629,7 @@ module ariane import ariane_pkg::*; #(
     .commit_instr_i (commit_instr_id_commit),
     .commit_ack_i (commit_ack),
     //.exept_cfi_o(ex_cfi),
+    .available_o(is_enable_sig),
     .detection_signal_on_commit_JALR (detection_signal_on_commit_JALR_o)
     );
     
