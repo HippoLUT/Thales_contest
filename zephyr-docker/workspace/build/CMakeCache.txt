@@ -18,7 +18,7 @@
 APPLICATION_BINARY_DIR:PATH=/workdir/build
 
 //Application Source Directory
-APPLICATION_SOURCE_DIR:PATH=/workdir/ripe
+APPLICATION_SOURCE_DIR:PATH=/workdir/test/ripe
 
 //Selected board
 BOARD:STRING=cv32a6_zybo
@@ -39,7 +39,7 @@ CACHED_BOARD:STRING=cv32a6_zybo
 // listed, e.g. CONF_FILE="prj1.conf;prj2.conf" The CACHED_CONF_FILE
 // is internal Zephyr variable used between CMake runs. To change
 // CONF_FILE, use the CONF_FILE variable.
-CACHED_CONF_FILE:STRING=/workdir/ripe/prj.conf
+CACHED_CONF_FILE:STRING=/workdir/test/ripe/prj.conf
 
 //Selected shield
 CACHED_SHIELD:STRING=
@@ -349,7 +349,7 @@ ZEPHYR_SDK_INSTALL_DIR:PATH=/opt/toolchains/zephyr-sdk-0.15.1
 Zephyr-Kernel_BINARY_DIR:STATIC=/workdir/build
 
 //Value Computed by CMake
-Zephyr-Kernel_SOURCE_DIR:STATIC=/workdir/ripe
+Zephyr-Kernel_SOURCE_DIR:STATIC=/workdir/test/ripe
 
 //The directory containing a CMake configuration file for Zephyr-sdk.
 Zephyr-sdk_DIR:PATH=/opt/toolchains/zephyr-sdk-0.15.1/cmake
@@ -364,7 +364,7 @@ Zephyr_DIR:PATH=/workdir/zephyr/share/zephyr-package/cmake
 ripe_BINARY_DIR:STATIC=/workdir/build
 
 //Value Computed by CMake
-ripe_SOURCE_DIR:STATIC=/workdir/ripe
+ripe_SOURCE_DIR:STATIC=/workdir/test/ripe
 
 
 ########################
@@ -372,7 +372,7 @@ ripe_SOURCE_DIR:STATIC=/workdir/ripe
 ########################
 
 //The application configuration folder
-APPLICATION_CONFIG_DIR:INTERNAL=/workdir/ripe
+APPLICATION_CONFIG_DIR:INTERNAL=/workdir/test/ripe
 //DT bindings root directories
 CACHED_DTS_ROOT_BINDINGS:INTERNAL=/workdir/zephyr/dts/bindings
 //ADVANCED property for variable: CMAKE_ADDR2LINE
@@ -468,7 +468,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/workdir/ripe
+CMAKE_HOME_DIRECTORY:INTERNAL=/workdir/test/ripe
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM

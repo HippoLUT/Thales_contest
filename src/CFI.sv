@@ -32,7 +32,7 @@ module CFI_Mod import ariane_pkg::*;(
 );
 enum logic [1:0] {state_JALR_1=2'b00, state_JALR_2=2'b01, state_JALR_3=2'b10} state_JALR; // declare state_JALRs as enum
 enum logic [1:0] {state_JAL_1=2'b00, state_JAL_2=2'b01, state_JAL_3=2'b10} state_JAL; // declare state_JALs as enum
-enum logic [1:0]{state_halt = 2'b00, state_check = 2'b11} state_enable;
+enum logic {state_halt = 1'b0, state_check = 1'b1} state_enable;
 
 logic c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11;
 logic a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11;
@@ -60,8 +60,11 @@ assign nop_gcc[1] = (commit_instr_i[1].op == ariane_pkg::ADD) && (commit_instr_i
 assign JALR_det[0] = (commit_instr_i[0].op == ariane_pkg::JALR) && (commit_instr_i[0].fu == ariane_pkg::CTRL_FLOW) && (commit_instr_i[0].rs1 == 5'b00001) && (commit_instr_i[0].rd == 5'b00000);
 assign JALR_det[1] = (commit_instr_i[1].op == ariane_pkg::JALR) && (commit_instr_i[1].fu == ariane_pkg::CTRL_FLOW) && (commit_instr_i[1].rs1 == 5'b00001) && (commit_instr_i[1].rd == 5'b00000);
 
-assign JAL_det[0] = (commit_instr_i[0].op == ariane_pkg::JAL) && (commit_instr_i[0].fu == ariane_pkg::CTRL_FLOW)&&(commit_instr_i[0].rd != 5'b00000);
-assign JAL_det[1] = (commit_instr_i[1].op == ariane_pkg::JAL) && (commit_instr_i[1].fu == ariane_pkg::CTRL_FLOW)&&(commit_instr_i[0].rd != 5'b00000);
+assign JAL_det[0] = (commit_instr_i[0].op == ariane_pkg::JAL) && (commit_instr_i[0].fu == ariane_pkg::CTRL_FLOW)&&((commit_instr_i[0].rd == 5'b00001)||(commit_instr_i[0].rd == 5'b00101));
+assign JAL_det[1] = (commit_instr_i[1].op == ariane_pkg::JAL) && (commit_instr_i[1].fu == ariane_pkg::CTRL_FLOW)&&((commit_instr_i[1].rd == 5'b00001)||(commit_instr_i[1].rd == 5'b00101));
+
+//assign JAL_det[0] = (commit_instr_i[0].op == ariane_pkg::JAL) && (commit_instr_i[0].fu == ariane_pkg::CTRL_FLOW)&&(commit_instr_i[0].rd != 5'b00000)&&(commit_instr_i[0].rd != 5'b00001);
+//assign JAL_det[1] = (commit_instr_i[1].op == ariane_pkg::JAL) && (commit_instr_i[1].fu == ariane_pkg::CTRL_FLOW)&&(commit_instr_i[1].rd != 5'b00000)&&(commit_instr_i[0].rd != 5'b00001);
 
 assign c1 =   (commit_ack_i == 2'b01 ) && JALR_det[0] ? 1 : 0;
 assign c2 =  (commit_ack_i == 2'b01 ) && (!JALR_det[0])? 1 : 0;
@@ -94,7 +97,8 @@ assign b3 =  (commit_ack_i == 2'b11 ) && (available[0])? 1 : 0;
 assign b4 =  (commit_ack_i == 2'b11 ) && (available[1])? 1 : 0;
 
 //assign detection_signal_on_commit_JALR[0] = available_o;
-
+assign detection_signal_on_commit_JALR[0] = state_JALR[0];
+assign detection_signal_on_commit_JALR[1] = state_JALR[1]; 
 always_ff @(posedge clk_i, negedge rst_ni)
 begin
     if(!rst_ni)begin
@@ -124,11 +128,18 @@ begin
             //detection_signal_on_commit_JALR[1] <= 1'b0;
         end
         state_JALR_3 : begin
-            state_JALR <= state_JALR_1;
+            //state_JALR <= state_JALR_1;
             if(available_o==1)
+            begin
                 flow_integrity_violated_o[0] <=1;
+                //detection_signal_on_commit_JALR[2] <= 1'b1;
+                state_JALR <= state_JALR_3;
+                end
             else
+                begin
+                state_JALR <= state_JALR_1;
                 flow_integrity_violated_o[0] <= 0;
+                end
             //detecti on_signal_on_commit_JALR[1] <= 1'b1;
         end
        endcase
@@ -142,8 +153,10 @@ begin
     state_JAL<=state_JAL_1;
     flow_integrity_violated_o[1] <=0;
     //detection_signal_on_commit_JALR <= 4'b0000;
+    
     end else
     begin
+    
     case (state_JAL)
         state_JAL_1: begin
             if(a2||a5||a7||a0)
@@ -153,6 +166,7 @@ begin
             if (a6)
                 state_JAL <= state_JAL_3;
             flow_integrity_violated_o[1] <=0;
+            //detection_signal_on_commit_JALR[3:2] <= 2'b00;
             //detection_signal_on_commit_JALR[3:2] <= 2'b00;
         end
         state_JAL_2 : begin
@@ -164,13 +178,23 @@ begin
                 state_JAL <= state_JAL_1;
             flow_integrity_violated_o[1] <=0;
            // detection_signal_on_commit_JALR[3:2] <= 2'b00;
+           //detection_signal_on_commit_JALR[3:2] <= 2'b01;
         end
         state_JAL_3 : begin
-            state_JAL <= state_JAL_1; // A voir ct
+           // state_JAL <= state_JAL_1; // A voir ct
             if(available_o==1)
-                flow_integrity_violated_o[1] <=1;
+            begin
+                flow_integrity_violated_o[1] <=0;
+                //detection_signal_on_commit_JALR[1] <= 1'b1;
+                //detection_signal_on_commit_JALR[3:2] <= 2'b11;
+                state_JAL <= state_JAL_3; // A voir ct
+                end
             else
+                begin
                 flow_integrity_violated_o[1] <= 0;
+                state_JAL <= state_JAL_1; // A voir ct
+                //detection_signal_on_commit_JALR[3:2] <= 2'b10;
+                end
             //detection_signal_on_commit_JALR[3:2] <= 2'b11;
         end
        endcase
@@ -182,24 +206,24 @@ begin
     if(!rst_ni)begin
     state_enable<=state_halt;
     available_o <=0;
-    //detection_signal_on_commit_JALR <= 4'b0000;
+    detection_signal_on_commit_JALR <= 4'b0000;
     end else
     begin
     case (state_enable)
         state_halt: begin
             if(b1||b2||b3||b4)
                 state_enable <= state_check;
-                detection_signal_on_commit_JALR <= 4'b0000;
+                //detection_signal_on_commit_JALR <= 4'b0000;
             if(a0)
                 state_enable <= state_halt;
-                detection_signal_on_commit_JALR <= 4'b0000;
+                //detection_signal_on_commit_JALR <= 4'b0000;
             available_o <=0;
             //detection_signal_on_commit_JALR[3:2] <= 2'b00;
         end
         state_check : begin
             available_o <=1;
             state_enable <= state_check;
-            detection_signal_on_commit_JALR <= 4'b1111;
+           // detection_signal_on_commit_JALR[0] <= 1'b1;
         end
        endcase
    end

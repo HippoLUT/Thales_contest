@@ -8,13 +8,15 @@ void main()
 	__asm__("ADDI x0, x1, 1");
 	 __asm__("ADDI x0, x1, 2");
 	 __asm__("ADDI x0, x1, 7");
-
+	 function();
+	printf("Vos darrons");
 //	x = squared(x,y);	
 	y = x * x ;
 //	printf("Je vais dans cette fonction\n");
 	__asm__("ADDI x0, x1, 7");
 	char str[20];
 	memset(str,'a',sizeof(str));
+	printk("WAOAOAO");
 	printf("OK");
 	function();
 	//otherfunction();

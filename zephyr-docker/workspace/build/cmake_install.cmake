@@ -1,4 +1,4 @@
-# Install script for directory: /workdir/ripe
+# Install script for directory: /workdir/test/ripe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

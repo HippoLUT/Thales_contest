@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Sun Apr 16 17:12:14 2023
+| Date         : Tue Apr 18 17:53:43 2023
 | Host         : boyer-Inspiron-16-Plus running 64-bit Ubuntu 20.04.5 LTS
 | Command      : check_timing -verbose -file reports_cva6_fpga_synth/cva6_fpga.check_timing.rpt
 | Design       : cva6_zybo_z7_20
@@ -19,7 +19,7 @@ Table of Contents
 3. checking pulse_width_clock (0)
 4. checking unconstrained_internal_endpoints (0)
 5. checking no_input_delay (2)
-6. checking no_output_delay (5)
+6. checking no_output_delay (1)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -59,14 +59,10 @@ rx
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (5)
+6. checking no_output_delay (1)
 -------------------------------
- There are 5 ports with no output delay specified. (HIGH)
+ There is 1 port with no output delay specified. (HIGH)
 
-JALR[0]
-JALR[1]
-JALR[2]
-JALR[3]
 tx
 
  There are 0 ports with no output delay but user has a false path constraint
