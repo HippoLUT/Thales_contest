@@ -1,0 +1,7 @@
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+Begining of execution with depth 12, call number 50, seed value 63728127.000000
+SUCCESS: computed value 868200.000000 - duration: 24.321325 sec 608033130 cycles
+~.Connected.
+Connected.
+
+Disconnected.

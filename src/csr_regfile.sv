@@ -87,8 +87,8 @@ module csr_regfile import ariane_pkg::*; #(
     output riscv::pmpcfg_t [15:0] pmpcfg_o,   // PMP configuration containing pmpcfg for max 16 PMPs
     output logic [15:0][53:0]     pmpaddr_o,   // PMP addresses
     
-    input logic [1:0]             cfi_interupt_i, //CNR
-    input logic                   available_i
+    input logic                  cfi_interupt_i //CNR
+   // input logic                   available_i
     
 );
     // internal signal to keep track of access exceptions
@@ -967,14 +967,14 @@ module csr_regfile import ariane_pkg::*; #(
         // ----------------------------------
         // we got an exception in one of the processes above
         // throw an illegal instruction exception
-        if (update_access_exception || read_access_exception || cfi_interupt_i[0] || cfi_interupt_i[1])begin // CNR ajout de la condition
+        if (update_access_exception || read_access_exception || cfi_interupt_i)begin // CNR ajout de la condition
             csr_exception_o.cause = riscv::ILLEGAL_INSTR;
             // we don't set the tval field as this will be set by the commit stage
             // this spares the extra wiring from commit to CSR and back to commit
             csr_exception_o.valid = 1'b1;
         end
 
-        if (privilege_violation || (cfi_interupt_i[0]) || (cfi_interupt_i[1])) begin // CNR ajout de la condition
+        if (privilege_violation || cfi_interupt_i) begin // CNR ajout de la condition
           csr_exception_o.cause = riscv::ILLEGAL_INSTR;
           csr_exception_o.valid = 1'b1;
         end

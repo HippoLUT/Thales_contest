@@ -88,6 +88,7 @@
 /workdir/build/zephyr/subsys/usb/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/subsys/random/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/subsys/random/CMakeFiles/edit_cache.dir
+/workdir/build/zephyr/subsys/random/CMakeFiles/subsys__random.dir
 /workdir/build/zephyr/subsys/storage/CMakeFiles/rebuild_cache.dir
 /workdir/build/zephyr/subsys/storage/CMakeFiles/edit_cache.dir
 /workdir/build/zephyr/subsys/fb/CMakeFiles/rebuild_cache.dir
