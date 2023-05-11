@@ -34,3 +34,434 @@ Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0_ succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_77506 && [1/2] Building C object CMakeFiles/cmTC_77506.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_77506
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wall_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_73e28 && [1/2] Building C object CMakeFiles/cmTC_73e28.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_73e28
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_4e653 && [1/2] Building C object CMakeFiles/cmTC_4e653.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_4e653
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_38751 && [1/2] Building C object CMakeFiles/cmTC_38751.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_38751
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmain_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b39bd && [1/2] Building C object CMakeFiles/cmTC_b39bd.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_b39bd
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_sign_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_8d703 && [1/2] Building C object CMakeFiles/cmTC_8d703.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_8d703
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_arith_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fb233 && [1/2] Building C object CMakeFiles/cmTC_fb233.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_fb233
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_164d0 && [1/2] Building C object CMakeFiles/cmTC_164d0.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_164d0
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wlogical_op_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_71703 && [1/2] Building C object CMakeFiles/cmTC_71703.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_71703
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_1fe5d && [1/2] Building C object CMakeFiles/cmTC_1fe5d.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_1fe5d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_af0d2 && [1/2] Building C object CMakeFiles/cmTC_af0d2.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_af0d2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wvla_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_623c5 && [1/2] Building C object CMakeFiles/cmTC_623c5.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_623c5
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_ade26 && [1/2] Building C object CMakeFiles/cmTC_ade26.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_ade26
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Werror_implicit_int_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_0ed9e && [1/2] Building C object CMakeFiles/cmTC_0ed9e.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_0ed9e
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_e06d3 && [1/2] Building C object CMakeFiles/cmTC_e06d3.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_e06d3
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_freestanding_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_1ea5c && [1/2] Building C object CMakeFiles/cmTC_1ea5c.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_1ea5c
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffreestanding_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6a8b5 && [1/2] Building C object CMakeFiles/cmTC_6a8b5.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_6a8b5
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_gdwarf_4_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_44653 && [1/2] Building C object CMakeFiles/cmTC_44653.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_44653
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___print_memory_usage succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_d998f && [1/2] Building C object CMakeFiles/cmTC_d998f.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_d998f
+Memory region         Used Size  Region Size  %age Used
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__pg succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_635b4 && [1/2] Building C object CMakeFiles/cmTC_635b4.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 5 1 19 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_635b4
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__no_pie__mabi_ilp32__march_rv32ima_zicsr_zifencei succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fd399 && [1/2] Building C object CMakeFiles/cmTC_fd399.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_fd399
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___gc_sections succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_85c3f && [1/2] Building C object CMakeFiles/cmTC_85c3f.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_85c3f
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___build_id_none succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_55562 && [1/2] Building C object CMakeFiles/cmTC_55562.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_55562
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_common_descending succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_55b0a && [1/2] Building C object CMakeFiles/cmTC_55b0a.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_55b0a
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_section_alignment succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3e238 && [1/2] Building C object CMakeFiles/cmTC_3e238.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_3e238
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__nostdlib succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_a2c4c && [1/2] Building C object CMakeFiles/cmTC_a2c4c.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_a2c4c
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__static succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f19f6 && [1/2] Building C object CMakeFiles/cmTC_f19f6.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_f19f6
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__X succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_83a19 && [1/2] Building C object CMakeFiles/cmTC_83a19.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_83a19
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__N succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b36f8 && [1/2] Building C object CMakeFiles/cmTC_b36f8.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_b36f8
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___orphan_handling_warn succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b4d0a && [1/2] Building C object CMakeFiles/cmTC_b4d0a.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_b4d0a
+/opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.1.0/../../../../riscv64-zephyr-elf/bin/ld: warning: orphan section `.riscv.attributes' from `CMakeFiles/cmTC_b4d0a.dir/src.c.obj' being placed in section `.riscv.attributes'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_feec5 && [1/2] Building C object CMakeFiles/cmTC_feec5.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_feec5
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_reorder_functions_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_822ea && [1/2] Building C object CMakeFiles/cmTC_822ea.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_822ea
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_dfb34 && [1/2] Building C object CMakeFiles/cmTC_dfb34.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_dfb34
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_defer_pop_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_72a20 && [1/2] Building C object CMakeFiles/cmTC_72a20.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_72a20
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map__workdir_ripe_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_ebafc && [1/2] Building C object CMakeFiles/cmTC_ebafc.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_ebafc
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map__workdir_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_626e3 && [1/2] Building C object CMakeFiles/cmTC_626e3.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_626e3
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map__workdir_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6f9d1 && [1/2] Building C object CMakeFiles/cmTC_6f9d1.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_6f9d1
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffunction_sections_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_849dd && [1/2] Building C object CMakeFiles/cmTC_849dd.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_849dd
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fdata_sections_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include___isystem___opt_toolchains_zephyr_sdk_0_15_1_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_1_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_74afc && [1/2] Building C object CMakeFiles/cmTC_74afc.dir/src.c.obj
+> Inspecting function 'main'
+	 adding function jump after RTL: (note 3 1 16 [bb 2] NOTE_INSN_BASIC_BLOCK)
+[2/2] Linking C executable cmTC_74afc
+
+
+Source file was:
+int main(void) { return 0; }

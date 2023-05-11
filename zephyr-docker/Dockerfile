@@ -146,6 +146,8 @@ RUN mkdir -p /opt/toolchains && \
 	zephyr-sdk-${ZSDK_VERSION}/setup.sh -t all -h -c && \
 	rm zephyr-sdk-${ZSDK_VERSION}_linux-${HOSTTYPE}.tar.gz
 
+RUN cd /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/ && sudo mv riscv64-zephyr-elf-gcc chuck_riscv64-zephyr-elf-gcc && sudo echo -e '#!/bin/bash\ncmd="$@"\ncmd="$cmd -fplugin=/workdir/test/mypluginAddInstructChuckRISCV9.so"\neval "/opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/chuck_riscv64-zephyr-elf-gcc $cmd "' >> riscv64-zephyr-elf-gcc && sudo chmod +x riscv64-zephyr-elf-gcc && cd /
+
 # Clean up stale packages
 RUN apt-get clean -y && \
 	apt-get autoremove --purge -y && \
